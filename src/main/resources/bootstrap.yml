@@ -1,0 +1,20 @@
+#spring.cloud.config.server.git.clone-on-start=true
+#spring.cloud.config.fail-fast=true
+
+spring:
+  cloud:
+    config:
+      uri: http://192.180.4.103:8888
+      name: sample-microservice
+      username: config
+      password: config123   
+      fail-fast: true   
+      #label: master    
+      # discovery:
+      #   enabled: true
+      # retry:
+      #   max-attempts: 5
+      #   max-interval: 1500
+      #   multiplier: 1.5
+
+  

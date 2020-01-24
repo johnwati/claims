@@ -1,0 +1,71 @@
+server:
+  port: 8090
+
+spring:
+  application:
+    name: sample-microservice
+  #profiles:
+    #active: default
+  cloud:
+    config:
+      #label: master
+      fail-fast: true
+      retry:
+        max-attempts: 5
+        max-interval: 1500
+        multiplier: 1.5
+      discovery:
+        enabled: true
+    loadbalancer:
+      ribbon:
+        enabled: false
+
+        
+eureka:
+  #registryFetchIntervalSeconds: 1 #COMMENT THIS IN PRODUCTION
+  client:
+      register-with-eureka: true
+      fetch-registry: true
+      serviceUrl:
+         defaultZone: http://192.180.3.78:8761/eureka
+      instance:
+        preferIpAddress: true        
+        #hostname: localhost
+        #lease-renewal-interval-in-seconds: 300
+  instance:
+    #leaseRenewalIntervalInSeconds: 1  #COMMENT THIS IN PRODUCTION
+  ribbon:
+    #ServerListRefreshInterval: 1000   #COMMENT THIS IN PRODUCTION
+
+
+management:
+  #context-path: /admin
+  endpoint:
+    health:
+      enabled: true
+      show-details: always
+    shutdown:
+      enabled: false
+  endpoints:
+    web:
+      base-path: /actuator
+      # By default, only 'health' and 'info' are accessible via web
+      exposure:
+        include: '*' 
+
+
+logging:
+  file: sample-microservice.log
+  pattern:
+    console: '%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n'
+  level:
+    org:
+      hibernate:
+        SQL: INFO
+      type:
+        decriptor:
+          sql:
+            BasicBinder: TRACE
+    com:
+      netflix:
+        loadbalancer: debug   

@@ -1,0 +1,285 @@
+2020-01-24 11:32:12.095  INFO 26570 --- [main] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://192.180.4.103:8888
+2020-01-24 11:32:13.863  INFO 26570 --- [main] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=eureka-client, profiles=[default], label=null, version=2b2d320c6dec76e79d209fcbd96a3c620895e0ab, state=null
+2020-01-24 11:32:13.864  INFO 26570 --- [main] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}, BootstrapPropertySource {name='bootstrapProperties-http://@192.180.3.23/microservices/microservice-configs.git/eureka-client.properties'}]
+2020-01-24 11:32:14.139  INFO 26570 --- [main] com.smart.sample.Application             : No active profile set, falling back to default profiles: default
+2020-01-24 11:32:15.125  WARN 26570 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2020-01-24 11:32:15.435  INFO 26570 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=f68cbc23-2853-32df-977e-a4858375f426
+2020-01-24 11:32:16.281  INFO 26570 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8090 (http)
+2020-01-24 11:32:16.329  INFO 26570 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-01-24 11:32:16.329  INFO 26570 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-01-24 11:32:16.497  INFO 26570 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-01-24 11:32:16.498  INFO 26570 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2325 ms
+2020-01-24 11:32:16.735  WARN 26570 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-01-24 11:32:16.735  INFO 26570 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-01-24 11:32:16.763  INFO 26570 --- [main] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@53fe15ff
+2020-01-24 11:32:17.197  WARN 26570 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sampleController': Unsatisfied dependency expressed through field 'restTemplate'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.web.client.RestTemplate' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2020-01-24 11:32:17.202  INFO 26570 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-01-24 11:32:17.240  INFO 26570 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-01-24 11:32:17.466 ERROR 26570 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field restTemplate in com.smart.sample.controller.SampleController required a bean of type 'org.springframework.web.client.RestTemplate' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'org.springframework.web.client.RestTemplate' in your configuration.
+
+2020-01-24 11:33:35.328  INFO 26709 --- [main] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://192.180.4.103:8888
+2020-01-24 11:33:36.032  INFO 26709 --- [main] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=eureka-client, profiles=[default], label=null, version=2b2d320c6dec76e79d209fcbd96a3c620895e0ab, state=null
+2020-01-24 11:33:36.034  INFO 26709 --- [main] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}, BootstrapPropertySource {name='bootstrapProperties-http://@192.180.3.23/microservices/microservice-configs.git/eureka-client.properties'}]
+2020-01-24 11:33:36.162  INFO 26709 --- [main] com.smart.sample.Application             : No active profile set, falling back to default profiles: default
+2020-01-24 11:33:37.535  WARN 26709 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2020-01-24 11:33:37.768  INFO 26709 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=ede7cfc9-d22e-3b39-a968-2d8da8371a3b
+2020-01-24 11:33:38.591  INFO 26709 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8090 (http)
+2020-01-24 11:33:38.607  INFO 26709 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-01-24 11:33:38.608  INFO 26709 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-01-24 11:33:38.725  INFO 26709 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-01-24 11:33:38.726  INFO 26709 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2517 ms
+2020-01-24 11:33:38.908  WARN 26709 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-01-24 11:33:38.908  INFO 26709 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-01-24 11:33:38.924  INFO 26709 --- [main] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@45099dd3
+2020-01-24 11:33:39.321  WARN 26709 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-01-24 11:33:39.322  INFO 26709 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-01-24 11:33:39.610  INFO 26709 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-01-24 11:33:40.023  WARN 26709 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with default default cache. You can switch to using Caffeine cache, by adding it to the classpath.
+2020-01-24 11:33:40.050  INFO 26709 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 19 endpoint(s) beneath base path '/actuator'
+2020-01-24 11:33:40.151  INFO 26709 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2020-01-24 11:33:40.380  INFO 26709 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2020-01-24 11:33:41.090  INFO 26709 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2020-01-24 11:33:41.091  INFO 26709 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2020-01-24 11:33:41.377  INFO 26709 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2020-01-24 11:33:41.377  INFO 26709 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2020-01-24 11:33:41.650  INFO 26709 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-01-24 11:33:41.682  INFO 26709 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2020-01-24 11:33:41.683  INFO 26709 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2020-01-24 11:33:41.683  INFO 26709 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2020-01-24 11:33:41.683  INFO 26709 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2020-01-24 11:33:41.684  INFO 26709 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2020-01-24 11:33:41.685  INFO 26709 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2020-01-24 11:33:41.685  INFO 26709 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2020-01-24 11:33:41.920  INFO 26709 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2020-01-24 11:33:41.931  INFO 26709 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2020-01-24 11:33:41.934  INFO 26709 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2020-01-24 11:33:41.952  INFO 26709 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1579854821938 with initial instances count: 4
+2020-01-24 11:33:41.955  INFO 26709 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application SAMPLE-MICROSERVICE with eureka with status UP
+2020-01-24 11:33:41.961  INFO 26709 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1579854821961, current=UP, previous=STARTING]
+2020-01-24 11:33:41.974  INFO 26709 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_SAMPLE-MICROSERVICE/10.0.2.15:sample-microservice:8090: registering service...
+2020-01-24 11:33:42.102  INFO 26709 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_SAMPLE-MICROSERVICE/10.0.2.15:sample-microservice:8090 - registration status: 204
+2020-01-24 11:33:42.123  INFO 26709 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8090 (http) with context path ''
+2020-01-24 11:33:42.124  INFO 26709 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8090
+2020-01-24 11:33:42.138  INFO 26709 --- [main] com.smart.sample.Application             : Started Application in 8.088 seconds (JVM running for 8.692)
+2020-01-24 11:35:14.513  INFO 26709 --- [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-01-24 11:35:14.513  INFO 26709 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-01-24 11:35:14.530  INFO 26709 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 17 ms
+2020-01-24 11:35:14.769  WARN 26709 --- [boundedElastic-1] o.s.c.l.core.RoundRobinLoadBalancer      : No servers available for service: sample-crud-api
+2020-01-24 11:35:14.811 ERROR 26709 --- [http-nio-8090-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalStateException: No instances available for sample-crud-api] with root cause
+
+java.lang.IllegalStateException: No instances available for sample-crud-api
+	at org.springframework.cloud.loadbalancer.blocking.client.BlockingLoadBalancerClient.execute(BlockingLoadBalancerClient.java:53) ~[spring-cloud-loadbalancer-2.2.1.RELEASE.jar!/:2.2.1.RELEASE]
+	at org.springframework.cloud.client.loadbalancer.LoadBalancerInterceptor.intercept(LoadBalancerInterceptor.java:58) ~[spring-cloud-commons-2.2.1.RELEASE.jar!/:2.2.1.RELEASE]
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:93) ~[spring-web-5.2.2.RELEASE.jar!/:5.2.2.RELEASE]
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:77) ~[spring-web-5.2.2.RELEASE.jar!/:5.2.2.RELEASE]
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48) ~[spring-web-5.2.2.RELEASE.jar!/:5.2.2.RELEASE]
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:53) ~[spring-web-5.2.2.RELEASE.jar!/:5.2.2.RELEASE]
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:742) ~[spring-web-5.2.2.RELEASE.jar!/:5.2.2.RELEASE]
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:677) ~[spring-web-5.2.2.RELEASE.jar!/:5.2.2.RELEASE]
+	at org.springframework.web.client.RestTemplate.getForObject(RestTemplate.java:318) ~[spring-web-5.2.2.RELEASE.jar!/:5.2.2.RELEASE]
+	at com.smart.sample.controller.SampleController.getClientMap(SampleController.java:61) ~[classes!/:beta]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_221]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_221]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_221]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_221]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190) ~[spring-web-5.2.2.RELEASE.jar!/:5.2.2.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138) ~[spring-web-5.2.2.RELEASE.jar!/:5.2.2.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) ~[spring-webmvc-5.2.2.RELEASE.jar!/:5.2.2.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:888) ~[spring-webmvc-5.2.2.RELEASE.jar!/:5.2.2.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793) ~[spring-webmvc-5.2.2.RELEASE.jar!/:5.2.2.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.2.2.RELEASE.jar!/:5.2.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040) ~[spring-webmvc-5.2.2.RELEASE.jar!/:5.2.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.2.RELEASE.jar!/:5.2.2.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.2.RELEASE.jar!/:5.2.2.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.2.2.RELEASE.jar!/:5.2.2.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[tomcat-embed-core-9.0.29.jar!/:9.0.29]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.2.RELEASE.jar!/:5.2.2.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.29.jar!/:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.29.jar!/:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar!/:9.0.29]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.29.jar!/:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.29.jar!/:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar!/:9.0.29]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.2.RELEASE.jar!/:5.2.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.2.RELEASE.jar!/:5.2.2.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.29.jar!/:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar!/:9.0.29]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.2.RELEASE.jar!/:5.2.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.2.RELEASE.jar!/:5.2.2.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.29.jar!/:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar!/:9.0.29]
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:108) ~[spring-boot-actuator-2.2.2.RELEASE.jar!/:2.2.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.2.RELEASE.jar!/:5.2.2.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.29.jar!/:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar!/:9.0.29]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.2.RELEASE.jar!/:5.2.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.2.RELEASE.jar!/:5.2.2.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.29.jar!/:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar!/:9.0.29]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.29.jar!/:9.0.29]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.29.jar!/:9.0.29]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526) [tomcat-embed-core-9.0.29.jar!/:9.0.29]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.29.jar!/:9.0.29]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.29.jar!/:9.0.29]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.29.jar!/:9.0.29]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.29.jar!/:9.0.29]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367) [tomcat-embed-core-9.0.29.jar!/:9.0.29]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.29.jar!/:9.0.29]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860) [tomcat-embed-core-9.0.29.jar!/:9.0.29]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1591) [tomcat-embed-core-9.0.29.jar!/:9.0.29]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.29.jar!/:9.0.29]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_221]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_221]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.29.jar!/:9.0.29]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_221]
+
+2020-01-24 11:35:26.413  INFO 26709 --- [SpringContextShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application SAMPLE-MICROSERVICE with eureka with status DOWN
+2020-01-24 11:35:26.414  WARN 26709 --- [SpringContextShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1579854926414, current=DOWN, previous=UP]
+2020-01-24 11:35:26.416  INFO 26709 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_SAMPLE-MICROSERVICE/10.0.2.15:sample-microservice:8090: registering service...
+2020-01-24 11:35:26.434  INFO 26709 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_SAMPLE-MICROSERVICE/10.0.2.15:sample-microservice:8090 - registration status: 204
+2020-01-24 11:35:26.440  INFO 26709 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-01-24 11:35:26.445  INFO 26709 --- [SpringContextShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2020-01-24 11:35:29.448  INFO 26709 --- [SpringContextShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2020-01-24 11:35:29.466  INFO 26709 --- [SpringContextShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_SAMPLE-MICROSERVICE/10.0.2.15:sample-microservice:8090 - deregister  status: 200
+2020-01-24 11:35:29.491  INFO 26709 --- [SpringContextShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2020-01-24 11:36:40.021  INFO 26935 --- [main] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://192.180.4.103:8888
+2020-01-24 11:36:41.138  INFO 26935 --- [main] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=eureka-client, profiles=[default], label=null, version=2b2d320c6dec76e79d209fcbd96a3c620895e0ab, state=null
+2020-01-24 11:36:41.140  INFO 26935 --- [main] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}, BootstrapPropertySource {name='bootstrapProperties-http://@192.180.3.23/microservices/microservice-configs.git/eureka-client.properties'}]
+2020-01-24 11:36:41.281  INFO 26935 --- [main] com.smart.sample.Application             : No active profile set, falling back to default profiles: default
+2020-01-24 11:36:43.131  WARN 26935 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2020-01-24 11:36:43.577  INFO 26935 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=ede7cfc9-d22e-3b39-a968-2d8da8371a3b
+2020-01-24 11:36:45.142  INFO 26935 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8090 (http)
+2020-01-24 11:36:45.476  INFO 26935 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-01-24 11:36:45.477  INFO 26935 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-01-24 11:36:46.003  INFO 26935 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-01-24 11:36:46.003  INFO 26935 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4619 ms
+2020-01-24 11:36:46.288  WARN 26935 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-01-24 11:36:46.288  INFO 26935 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-01-24 11:36:46.325  INFO 26935 --- [main] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@25ce9dc4
+2020-01-24 11:36:46.898  WARN 26935 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-01-24 11:36:46.898  INFO 26935 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-01-24 11:36:48.806  INFO 26935 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-01-24 11:36:49.732  WARN 26935 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with default default cache. You can switch to using Caffeine cache, by adding it to the classpath.
+2020-01-24 11:36:49.789  INFO 26935 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 19 endpoint(s) beneath base path '/actuator'
+2020-01-24 11:36:49.905  INFO 26935 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2020-01-24 11:36:50.187  INFO 26935 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2020-01-24 11:36:51.436  INFO 26935 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2020-01-24 11:36:51.437  INFO 26935 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2020-01-24 11:36:51.930  INFO 26935 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2020-01-24 11:36:51.930  INFO 26935 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2020-01-24 11:36:52.266  INFO 26935 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-01-24 11:36:52.318  INFO 26935 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2020-01-24 11:36:52.318  INFO 26935 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2020-01-24 11:36:52.318  INFO 26935 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2020-01-24 11:36:52.318  INFO 26935 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2020-01-24 11:36:52.318  INFO 26935 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2020-01-24 11:36:52.318  INFO 26935 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2020-01-24 11:36:52.319  INFO 26935 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2020-01-24 11:36:52.752  INFO 26935 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2020-01-24 11:36:52.764  INFO 26935 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2020-01-24 11:36:52.767  INFO 26935 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2020-01-24 11:36:52.773  INFO 26935 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1579855012771 with initial instances count: 5
+2020-01-24 11:36:52.775  INFO 26935 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application SAMPLE-MICROSERVICE with eureka with status UP
+2020-01-24 11:36:52.776  INFO 26935 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1579855012776, current=UP, previous=STARTING]
+2020-01-24 11:36:52.782  INFO 26935 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_SAMPLE-MICROSERVICE/10.0.2.15:sample-microservice:8090: registering service...
+2020-01-24 11:36:52.948  INFO 26935 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_SAMPLE-MICROSERVICE/10.0.2.15:sample-microservice:8090 - registration status: 204
+2020-01-24 11:36:53.044  INFO 26935 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8090 (http) with context path ''
+2020-01-24 11:36:53.045  INFO 26935 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8090
+2020-01-24 11:36:53.053  INFO 26935 --- [main] com.smart.sample.Application             : Started Application in 15.487 seconds (JVM running for 16.246)
+2020-01-24 11:37:01.051  INFO 26935 --- [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-01-24 11:37:01.052  INFO 26935 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-01-24 11:37:01.075  INFO 26935 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 23 ms
+2020-01-24 11:37:01.145  INFO 26935 --- [http-nio-8090-exec-1] c.s.s.c.ServiceInstanceController        : Title from config server : Eureka Client
+2020-01-24 11:37:56.452  INFO 26935 --- [http-nio-8090-exec-3] c.s.s.c.ServiceInstanceController        : Title from config server : Eureka Client
+2020-01-24 11:38:59.506  INFO 26935 --- [http-nio-8090-exec-5] c.s.s.c.ServiceInstanceController        : Title from config server : Eureka Client
+2020-01-24 11:39:47.938  INFO 26935 --- [http-nio-8090-exec-6] c.s.s.c.ServiceInstanceController        : Title from config server : Eureka Client
+2020-01-24 11:40:07.662  INFO 26935 --- [http-nio-8090-exec-7] c.s.s.c.ServiceInstanceController        : Title from config server : Eureka Client
+2020-01-24 11:40:17.310  INFO 26935 --- [http-nio-8090-exec-8] c.s.s.c.ServiceInstanceController        : Title from config server : Eureka Client
+2020-01-24 11:40:34.093  INFO 26935 --- [SpringContextShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application SAMPLE-MICROSERVICE with eureka with status DOWN
+2020-01-24 11:40:34.094  WARN 26935 --- [SpringContextShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1579855234094, current=DOWN, previous=UP]
+2020-01-24 11:40:34.094  INFO 26935 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_SAMPLE-MICROSERVICE/10.0.2.15:sample-microservice:8090: registering service...
+2020-01-24 11:40:34.113  INFO 26935 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-01-24 11:40:34.131  INFO 26935 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_SAMPLE-MICROSERVICE/10.0.2.15:sample-microservice:8090 - registration status: 204
+2020-01-24 11:40:34.211  INFO 26935 --- [SpringContextShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2020-01-24 11:40:37.213  INFO 26935 --- [SpringContextShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2020-01-24 11:40:37.260  INFO 26935 --- [SpringContextShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_SAMPLE-MICROSERVICE/10.0.2.15:sample-microservice:8090 - deregister  status: 200
+2020-01-24 11:40:37.297  INFO 26935 --- [SpringContextShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2020-01-24 15:34:44.673  INFO 4592 --- [main] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://192.180.4.103:8888
+2020-01-24 15:34:45.390  INFO 4592 --- [main] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=eureka-client, profiles=[default], label=null, version=2b2d320c6dec76e79d209fcbd96a3c620895e0ab, state=null
+2020-01-24 15:34:45.392  INFO 4592 --- [main] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}, BootstrapPropertySource {name='bootstrapProperties-http://@192.180.3.23/microservices/microservice-configs.git/eureka-client.properties'}]
+2020-01-24 15:34:45.512  INFO 4592 --- [main] com.smart.sample.Application             : No active profile set, falling back to default profiles: default
+2020-01-24 15:34:47.966  WARN 4592 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2020-01-24 15:34:48.258  INFO 4592 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=ede7cfc9-d22e-3b39-a968-2d8da8371a3b
+2020-01-24 15:34:50.383  INFO 4592 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8090 (http)
+2020-01-24 15:34:50.465  INFO 4592 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-01-24 15:34:50.467  INFO 4592 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-01-24 15:34:50.639  INFO 4592 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-01-24 15:34:50.640  INFO 4592 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 5053 ms
+2020-01-24 15:34:50.882  WARN 4592 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-01-24 15:34:50.882  INFO 4592 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-01-24 15:34:50.920  INFO 4592 --- [main] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@11392934
+2020-01-24 15:34:52.013  WARN 4592 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-01-24 15:34:52.014  INFO 4592 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-01-24 15:34:53.152  INFO 4592 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-01-24 15:34:54.436  WARN 4592 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with default default cache. You can switch to using Caffeine cache, by adding it to the classpath.
+2020-01-24 15:34:54.501  INFO 4592 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 19 endpoint(s) beneath base path '/actuator'
+2020-01-24 15:34:54.605  INFO 4592 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2020-01-24 15:34:55.674  INFO 4592 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2020-01-24 15:34:58.336  INFO 4592 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2020-01-24 15:34:58.336  INFO 4592 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2020-01-24 15:34:58.811  INFO 4592 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2020-01-24 15:34:58.811  INFO 4592 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2020-01-24 15:35:00.132  INFO 4592 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-01-24 15:35:00.278  INFO 4592 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2020-01-24 15:35:00.281  INFO 4592 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2020-01-24 15:35:00.281  INFO 4592 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2020-01-24 15:35:00.281  INFO 4592 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2020-01-24 15:35:00.281  INFO 4592 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2020-01-24 15:35:00.281  INFO 4592 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2020-01-24 15:35:00.282  INFO 4592 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2020-01-24 15:35:00.847  INFO 4592 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2020-01-24 15:35:00.866  INFO 4592 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2020-01-24 15:35:00.878  INFO 4592 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2020-01-24 15:35:01.059  INFO 4592 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1579869300882 with initial instances count: 4
+2020-01-24 15:35:01.061  INFO 4592 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application SAMPLE-MICROSERVICE with eureka with status UP
+2020-01-24 15:35:01.062  INFO 4592 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1579869301062, current=UP, previous=STARTING]
+2020-01-24 15:35:01.070  INFO 4592 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_SAMPLE-MICROSERVICE/10.0.2.15:sample-microservice:8090: registering service...
+2020-01-24 15:35:01.489  INFO 4592 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_SAMPLE-MICROSERVICE/10.0.2.15:sample-microservice:8090 - registration status: 204
+2020-01-24 15:35:01.545  INFO 4592 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8090 (http) with context path ''
+2020-01-24 15:35:01.551  INFO 4592 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8090
+2020-01-24 15:35:01.585  INFO 4592 --- [main] com.smart.sample.Application             : Started Application in 20.122 seconds (JVM running for 21.512)
+2020-01-24 15:35:06.926  INFO 4592 --- [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-01-24 15:35:06.927  INFO 4592 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-01-24 15:35:07.087  INFO 4592 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 160 ms
+2020-01-24 15:35:07.437  INFO 4592 --- [http-nio-8090-exec-1] c.s.s.c.ServiceInstanceController        : Title from config server : Eureka Client
+2020-01-24 15:35:26.306  INFO 4592 --- [http-nio-8090-exec-2] c.s.s.c.ServiceInstanceController        : Title from config server : Eureka Client
+2020-01-24 15:35:28.720  INFO 4592 --- [http-nio-8090-exec-4] c.s.s.c.ServiceInstanceController        : Title from config server : Eureka Client
+2020-01-24 15:35:45.537  INFO 4592 --- [http-nio-8090-exec-3] c.s.s.c.ServiceInstanceController        : Title from config server : Eureka Client
+2020-01-24 15:35:58.132  INFO 4592 --- [http-nio-8090-exec-5] c.s.s.c.ServiceInstanceController        : Title from config server : Eureka Client
+2020-01-24 15:36:51.116  INFO 4592 --- [SpringContextShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application SAMPLE-MICROSERVICE with eureka with status DOWN
+2020-01-24 15:36:51.154  WARN 4592 --- [SpringContextShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1579869411154, current=DOWN, previous=UP]
+2020-01-24 15:36:51.154  INFO 4592 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_SAMPLE-MICROSERVICE/10.0.2.15:sample-microservice:8090: registering service...
+2020-01-24 15:36:51.174  INFO 4592 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-01-24 15:36:51.176  INFO 4592 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_SAMPLE-MICROSERVICE/10.0.2.15:sample-microservice:8090 - registration status: 204
+2020-01-24 15:36:51.234  INFO 4592 --- [SpringContextShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2020-01-24 15:36:54.236  INFO 4592 --- [SpringContextShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2020-01-24 15:36:54.275  INFO 4592 --- [SpringContextShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_SAMPLE-MICROSERVICE/10.0.2.15:sample-microservice:8090 - deregister  status: 200
+2020-01-24 15:36:54.293  INFO 4592 --- [SpringContextShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
