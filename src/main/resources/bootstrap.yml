@@ -5,7 +5,7 @@ spring:
   cloud:
     config:
       uri: http://192.180.4.103:8888
-      name: sample-microservice
+      name: jubilee-microservice
       username: config
       password: config123   
       fail-fast: true   

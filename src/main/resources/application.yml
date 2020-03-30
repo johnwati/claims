@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: sample-microservice
+    name: jubilee-microservice
   #profiles:
     #active: default
   cloud:
@@ -55,7 +55,7 @@ management:
 
 
 logging:
-  file: sample-microservice.log
+  file: jubilee-microservice.log
   pattern:
     console: '%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n'
   level:

@@ -15,6 +15,8 @@ import java.time.*;
 
 import javax.sql.DataSource;
 
+import com.smart.integ.interfaces.EDIInterface;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;

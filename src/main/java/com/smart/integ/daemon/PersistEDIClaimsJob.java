@@ -42,7 +42,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.dao.EmptyResultDataAccessException;
 
 import java.util.logging.Logger;
-import c.s.integ.edi.interfaces.EDIInterface;
+import com.smart.integ.interfaces.EDIInterface;
 
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.EnableAsync;
