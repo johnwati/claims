@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.smart</groupId>
-	<artifactId>sample-microservice</artifactId>
+	<artifactId>jubilee-microservice</artifactId>
 	<version>beta</version>
-	<name>sample-microservice</name>
-	<description>Sample Microservice. This will be used as the basis of microservices </description>
+	<name>jubilee-microservice</name>
+	<description>Jubilee eClaims.</description>
 
 	<properties>
 		<java.version>1.8</java.version>

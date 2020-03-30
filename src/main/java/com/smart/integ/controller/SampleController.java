@@ -1,4 +1,4 @@
-package com.smart.sample.controller;
+package com.smart.integ.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

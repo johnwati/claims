@@ -1,4 +1,4 @@
-package com.smart.sample.controller;
+package com.smart.integ.controller;
 
 import java.util.List;
 
