@@ -44,7 +44,6 @@ import org.json.simple.JsonObject;
 import org.json.simple.Jsoner;
 
 import java.util.logging.Logger;
-//import org.apache.commons.lang.StringUtils;
 import org.springframework.web.client.RestTemplate;
 
 
@@ -77,7 +76,6 @@ public class EDIService implements EDIInterface {
         
         //Production. Need to use integ endpoint
         String url = "https://data.smartapplicationsgroup.com/api/abacus/edi/claims/fetch2?lastFetchId=" + offset + "&provCode=" + smartProviderCode;      
-        //String url = "https://data.smartapplicationsgroup.com/api/abacus/integ/claims/fetch?provCode=" + smartProviderCode + "&dateFrom=" + now.getYear() + "-" + now.getMonthValue() + "-" + now.getDayOfMonth();      
         
         //QA dev
         //String url = "https://data.smartapplicationsgroup.com/qa/abacus/edi/claims/fetch2?lastFetchId=" + offset + "&provCode=" + smartProviderCode  + "&dateFrom=2019-06-01";      
@@ -87,7 +85,7 @@ public class EDIService implements EDIInterface {
   
         log.info("Preparing request to ... " + url);
 
-       
+        
         //Set the headers you need send
         HttpHeaders headers = new HttpHeaders();
         headers.set("Accept", "application/json");
