@@ -69,12 +69,6 @@ public class PersistEDIClaimsJob{
     @Autowired
     private EDIInterface ediService;
 
-    // @Autowired
-    // private RedisTemplate redisTemplate;
-
-    // @Autowired
-    // private StringRedisTemplate stringRedisTemplate;
-  
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
@@ -84,14 +78,6 @@ public class PersistEDIClaimsJob{
     String[] clientIds = {"61000954"};      //abacus cust_id
     String[] customerIds = {"156578462"};    //integ consolidated customerid
     
-    //String[] clients;             //codes
-    //String[] clientIds;      //abacus cust_id
-    //String[] customerIds;    //integ consolidated customerid
-    
-    // String[][] providerIds = {
-    //                          {"14394"}
-    //                          };
-
                              
     // {"SKSP_503"} = gertrudes
     // {"SKSP_148"} = melchizedek
@@ -106,25 +92,18 @@ public class PersistEDIClaimsJob{
     // ROYAL DENTAL KISUMU = SKSP_1844
     // OPTICA LIMITED = SKSP_204
     String[][] smartProviderCodes = {
-        //{"SKSP_358","SKSP_174","SKSP_148","SKSP_503","SKSP_116","SKSP_2303","SKSP_3090","SKSP_92","SKSP_243","SKSP_2918","SKSP_440","SKSP_1333","SKSP_299","SKSP_505","SKSP_200","SKSP_760","SKSP_1844","SKSP_204","SKSP_2402","SKSP_2403","SKSP_2644","SKSP_1900","SKSP_273"}
-        //{"SKSP_2402","SKSP_2403","SKSP_2644","SKSP_1900","SKSP_273","SKSP_204"}       //cohorts
-        //{"SKSP_2303","SKSP_148","SKSP_358","SKSP_174"}      //pilot
-        //{"SKSP_156","SKSP_503"}     //Avenue , Gert
         {"SKSP_2303","SKSP_174","SKSP_358", "SKSP_503"}
         };
 
 
 
     public PersistEDIClaimsJob(){
-        //clients = env.getProperty("integ_clients").split(",");
-        //clientIds = env.getProperty("integ_clientids").split(",");
-        //customerIds = env.getProperty("integ_customerids").split(",");
         }
 
 
 
     //https://examples.javacodegeeks.com/enterprise-java/spring/spring-data-redis-example-2/
-    @Scheduled(cron = "0 */15 1-3 * * *")            //every 15 minutes between 1 and 3
+    @Scheduled(cron = "0 */15 * * * *")            //every 15 minutes between 1 and 3
     //@Scheduled(fixedDelay=1000 * 60 * 5)          //testing testing
     public void loadEdiClaims() {
     

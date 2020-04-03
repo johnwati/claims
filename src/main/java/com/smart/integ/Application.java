@@ -1,4 +1,4 @@
-package com.smart.sample;
+package com.smart.integ;
 
 import org.springframework.boot.SpringApplication;
 
@@ -18,6 +18,8 @@ import org.springframework.web.client.RestTemplate;
 @EnableDiscoveryClient
 @SpringBootApplication
 public class Application {
+
+  public static String BEARER_TOKEN = ""; // Renewed every hour by the RenewToken daemon
 
   public static void main(String[] args) {
     SpringApplication.run(Application.class, args);

@@ -15,6 +15,7 @@ import java.time.*;
 
 import javax.sql.DataSource;
 
+import com.smart.integ.Application;
 import com.smart.integ.interfaces.EDIInterface;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -74,23 +75,16 @@ public class EDIService implements EDIInterface {
         
         now = LocalDate.now();
         
-        //Production. Need to use integ endpoint
-        String url = "https://data.smartapplicationsgroup.com/api/abacus/edi/claims/fetch2?lastFetchId=" + offset + "&provCode=" + smartProviderCode;      
+         
+        String url = "https://data.smartapplicationsgroup.com/api/v2/integqa/claims/edi?customerid=RESOECLAIMS&countrycode=KE&isUpdate=false";      
         
-        //QA dev
-        //String url = "https://data.smartapplicationsgroup.com/qa/abacus/edi/claims/fetch2?lastFetchId=" + offset + "&provCode=" + smartProviderCode  + "&dateFrom=2019-06-01";      
-        
-        //Date        
-        //String url = "https://data.smartapplicationsgroup.com/api/abacus_qa/edi/claims/fetch2?lastFetchId=" + offset + "&provCode=" + smartProviderCode + "&dateFrom=" + now.getYear() + "-" + now.getMonthValue() + "-" + now.getDayOfMonth();      
-  
         log.info("Preparing request to ... " + url);
 
         
         //Set the headers you need send
         HttpHeaders headers = new HttpHeaders();
         headers.set("Accept", "application/json");
-        headers.set("userId", "35906");     //INTEGEDI @ production/qa
-
+        headers.set("Authorization", "Bearer " + Application.BEARER_TOKEN);     //INTEGEDI @ production/qa
 
         // //Create a new HttpEntity
         final HttpEntity<String> entity = new HttpEntity<String>(headers);
