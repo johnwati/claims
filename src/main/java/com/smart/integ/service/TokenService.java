@@ -4,50 +4,20 @@
 **/
 package com.smart.integ.service;
 
-import java.util.Map;
-import java.util.HashMap;
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Random;
-import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.time.*;
-
-import javax.sql.DataSource;
-
-import com.smart.integ.interfaces.TokenInterface;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Component;
-import org.springframework.context.annotation.Scope;
-import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;
-
-import org.springframework.web.context.WebApplicationContext;
-import org.springframework.context.annotation.ScopedProxyMode;
-import org.springframework.ui.Model;
-import org.springframework.scheduling.annotation.Async;
-
-
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
-import org.springframework.http.HttpStatus;
-
 import org.springframework.core.env.Environment;
-
-import org.json.simple.DeserializationException;
-import org.json.simple.JsonArray;
-import org.json.simple.JsonObject;
-import org.json.simple.Jsoner;
-
-import java.util.logging.Logger;
 import org.springframework.web.client.RestTemplate;
 
+import com.smart.integ.interfaces.TokenInterface;
 import com.smart.integ.model.AuthToken;
 
+import java.util.logging.Logger;
 
 @Service("tokenservice")
 public class TokenService implements TokenInterface {
@@ -62,8 +32,6 @@ public class TokenService implements TokenInterface {
     @Autowired
     @Qualifier("plainRestTemplate")         //does not use ribbon
     private RestTemplate plainRestTemplate;
-
-    LocalDate now;
 
     public String getToken(String clientId, String clientSecret){
 

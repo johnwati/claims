@@ -15,12 +15,12 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.Oracle10gDialect
 
-  datasource:
-    driver:
-      class: oracle.jdbc.driver.OracleDriver
-    url: ${spring.datasource.url}
-    username: ${spring.datasource.username}
-    password: ${spring.datasource.password}
+  # datasource:
+  #   driver:
+  #     class: oracle.jdbc.driver.OracleDriver
+  #   url: ${integ.datasource.url}
+  #   username: ${integ.datasource.username}
+  #   password: ${integ.datasource.password}
 
   cloud:
     config:
@@ -35,9 +35,21 @@ spring:
     loadbalancer:
       ribbon:
         enabled: false
-  
 
-        
+integ:
+  datasource:
+    jdbc-url: ${integ.datasource.url}
+    username: ${integ.datasource.username}
+    password: ${integ.datasource.password}
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+
+abacus:
+  datasource:
+    jdbc-url: ${abacus.datasource.url}
+    username: ${abacus.datasource.username}
+    password: ${abacus.datasource.password}
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+
 eureka:
   #registryFetchIntervalSeconds: 1 #COMMENT THIS IN PRODUCTION
   client:

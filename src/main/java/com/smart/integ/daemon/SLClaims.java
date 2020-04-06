@@ -36,25 +36,28 @@ import org.json.simple.Jsoner;
 import org.springframework.core.env.Environment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Profile;
 
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.dao.EmptyResultDataAccessException;
 
 import java.util.logging.Logger;
-import com.smart.integ.interfaces.TokenInterface;
-import com.smart.integ.Application;
 
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.stereotype.Component;
 import org.springframework.jdbc.core.JdbcTemplate;
 
+import com.smart.integ.interfaces.TokenInterface;
+import com.smart.integ.service.SLClaimsFetchService;
+import com.smart.integ.Application;
+import com.smart.integ.interfaces.FetchSLInterface;
+
 @Component    
 @EnableScheduling
-//@Profile({"onpremise"})       //smart, ril, jic, apa
 //@Profile({"default", "dev", "lab"})
-public class RenewToken{
+public class SLClaims{
 
    
 
@@ -63,29 +66,48 @@ public class RenewToken{
     private Environment env;
 
     @Autowired
-    private TokenInterface tokenService;
+    @Qualifier("abacusJdbcTemplate")
+    private JdbcTemplate abacusJdbcTemplate;
 
-    //public String bearerToken = "";
+    @Autowired
+    @Qualifier("integJdbcTemplate")
+    private JdbcTemplate integJdbcTemplate;
 
-    //public static Map <String, String> cache = new HashMap <> (); // GLOBAL VARIABLE
-    private String bearerToken = ""; // GLOBAL VARIABLE
-    //public static final int ID = 100; // GLOBAL VARIABLE
-
-    Logger log = Logger.getLogger(RenewToken.class.getName());
 
     
-    public RenewToken(){
+    @Autowired
+    private FetchSLInterface slClaimsFetchService;
+
+
+    @Value("${claims.fetch.slink:SELECT 1 FROM DUAL}")
+    String dynamicQuery;
+
+    @Value("${claims.fetch.clients:JIC}")
+    String dynamicCustArray;
+
+    @Value("${claims.fetch.providers:SKSP_505}")
+    String dynamicProviderArray;
+
+    Logger log = Logger.getLogger(SLClaims.class.getName());
+
+    
+    public SLClaims(){
         }
 
 
+    @Scheduled(fixedDelay=1000 * 60 * 5)        //every 5 minutes after previous run
+    public void fetchSLClaims() {
+        log.info("Getting Smartlink Claims. STUB");
+        
+        String claimSql = dynamicQuery     
+        // + " AND fc.central_id > " + lastCentralId + " " 
+        // + " AND cust_id = " + cust + " "
+        + " ORDER BY a.central_id ASC "
+        + " FETCH FIRST 100 ROWS ONLY ";
 
-    //https://examples.javacodegeeks.com/enterprise-java/spring/spring-data-redis-example-2/
+        log.info("claimSql = " + claimSql);
+        slClaimsFetchService.fetchSLClaims(claimSql);
 
-    //@Scheduled(fixedDelay=1000 * 60 * 60)        //every 60 minutes regardless of the completion of the previous
-    public void getNewToken() {
-        log.info("GETTING NEW TOKEN");
-        Application.BEARER_TOKEN = tokenService.getToken("RESOECLAIMS", "zDPxTn6V3fql3oh00xIKLbNgkj4");
-        log.info("UPDATING TOKEN : " + Application.BEARER_TOKEN);
         }
 
 }

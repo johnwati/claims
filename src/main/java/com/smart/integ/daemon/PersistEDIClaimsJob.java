@@ -103,8 +103,8 @@ public class PersistEDIClaimsJob{
 
 
     //https://examples.javacodegeeks.com/enterprise-java/spring/spring-data-redis-example-2/
-    @Scheduled(cron = "0 */5 * * * *")            //every 15 minutes between 1 and 3
-    //@Scheduled(fixedDelay=1000 * 60 * 5)          //testing testing
+    //@Scheduled(cron = "0 */5 * * * *")            //every 15 minutes between 1 and 3
+    //@Scheduled(fixedDelay=1000 * 60 * 5)          //every 5 minutes after previous
     public void loadEdiClaims() {
     
         log.info("PERSISTING EDI claims");
