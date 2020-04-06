@@ -1,4 +1,4 @@
-package com.smart.integ.models;
+package com.smart.integ.model;
 
 public class AuthToken {
 

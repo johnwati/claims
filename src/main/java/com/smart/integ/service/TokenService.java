@@ -46,7 +46,7 @@ import org.json.simple.Jsoner;
 import java.util.logging.Logger;
 import org.springframework.web.client.RestTemplate;
 
-import com.smart.integ.models.AuthToken;
+import com.smart.integ.model.AuthToken;
 
 
 @Service("tokenservice")
