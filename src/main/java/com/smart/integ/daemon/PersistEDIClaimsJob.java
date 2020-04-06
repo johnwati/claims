@@ -103,7 +103,7 @@ public class PersistEDIClaimsJob{
 
 
     //https://examples.javacodegeeks.com/enterprise-java/spring/spring-data-redis-example-2/
-    @Scheduled(cron = "0 */15 * * * *")            //every 15 minutes between 1 and 3
+    @Scheduled(cron = "0 */5 * * * *")            //every 15 minutes between 1 and 3
     //@Scheduled(fixedDelay=1000 * 60 * 5)          //testing testing
     public void loadEdiClaims() {
     
@@ -140,7 +140,6 @@ public class PersistEDIClaimsJob{
                         
                         log.info("FOUND Claim. code = " + clm.get("claim_code"));  
                                                 
-                        //END UAT                        
                         String cacheEdiSql = "INSERT INTO INTEG_API.edi_claim_cache(claims_key, claim_code, customer_id, smart_prov_code, request_url, claim_json) VALUES(?,?,?,?,?,?)"; 
                         jdbcTemplate.update(cacheEdiSql, claimsKey, clm.get("claim_code").toString(),customerIds[i], prov, "", clm.toJson());    //toJSONString                    
                         }  

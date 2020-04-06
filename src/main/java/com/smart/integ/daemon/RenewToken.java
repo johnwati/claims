@@ -81,11 +81,12 @@ public class RenewToken{
 
     //https://examples.javacodegeeks.com/enterprise-java/spring/spring-data-redis-example-2/
     //@Scheduled(cron = "0 0 * * * *")          //every hour
-    @Scheduled(cron = "0 */15 * * * *")     //every 15 minutes
+
+    @Scheduled(fixedDelay=1000 * 60 * 60)        //every 60 minutes regardless of the completion of the previous
     public void getNewToken() {
-        log.info("GETTING TOKEN");
+        log.info("GETTING NEW TOKEN");
         Application.BEARER_TOKEN = tokenService.getToken("RESOECLAIMS", "zDPxTn6V3fql3oh00xIKLbNgkj4");
-        log.info("Update TOKEN : " + Application.BEARER_TOKEN);
+        log.info("UPDATING TOKEN : " + Application.BEARER_TOKEN);
         }
 
 }

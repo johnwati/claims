@@ -32,9 +32,9 @@ spring:
         multiplier: 1.5
       discovery:
         enabled: true
-    # loadbalancer:
-    #   ribbon:
-    #     enabled: false
+    loadbalancer:
+      ribbon:
+        enabled: false
   
 
         
@@ -85,4 +85,4 @@ logging:
             BasicBinder: TRACE
     com:
       netflix:
-        loadbalancer: debug   
+        loadbalancer: info   

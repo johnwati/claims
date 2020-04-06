@@ -46,6 +46,7 @@ import org.json.simple.Jsoner;
 import java.util.logging.Logger;
 import org.springframework.web.client.RestTemplate;
 
+import com.smart.integ.models.AuthToken;
 
 
 @Service("tokenservice")
@@ -57,14 +58,15 @@ public class TokenService implements TokenInterface {
     @Autowired
     private Environment env;
 
+
     @Autowired
-    private RestTemplate restTemplate;
+    @Qualifier("plainRestTemplate")         //does not use ribbon
+    private RestTemplate plainRestTemplate;
 
     LocalDate now;
 
     public String getToken(String clientId, String clientSecret){
 
-        //String url = "https://data.smartapplicationsgroup.com/auth/integ-clients/oauth/token?client_id=JUBILEEECLAIMS&client_secret=J-XkwYmHJ3PerbOD8qrg9qR5w7I&grant_type=client_credentials";      
         String url = "https://data.smartapplicationsgroup.com/auth/integ-clients/oauth/token?client_id=" + clientId + "&client_secret=" + clientSecret + "&grant_type=client_credentials";      
         
         log.info("Preparing request to ... " + url);
@@ -72,17 +74,15 @@ public class TokenService implements TokenInterface {
         //Set the headers you need send
         HttpHeaders headers = new HttpHeaders();
         headers.set("Accept", "application/json");
-        //headers.set("userId", "35906");     //INTEGEDI @ production/qa
 
-        // //Create a new HttpEntity
         final HttpEntity<String> entity = new HttpEntity<String>(headers);
 
-        //return restTemplate.exchange("https://httpbin.org/user-agent", HttpMethod.GET, entity, String.class);        
-        ResponseEntity<String> resp = restTemplate.exchange(url, HttpMethod.GET, entity, String.class);                
-        
-        log.info("resp = " + resp.getBody());
+        //NB: Endpoint will return 404 if you use GET instead of POST
+        ResponseEntity<AuthToken> resp = plainRestTemplate.exchange(url, HttpMethod.POST, entity, AuthToken.class);  
+    
+        log.info("resp token = " + resp.getBody().getAccess_token());
 
-        return resp.getBody();
+        return resp.getBody().getAccess_token();
 
         }
 

@@ -31,4 +31,10 @@ public class Application {
       return new RestTemplate();
       }
 
+  
+  @Bean(name = "plainRestTemplate")
+  RestTemplate plainRestTemplate() {
+      return new RestTemplate();
+      }
+
 }

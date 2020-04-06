@@ -59,7 +59,8 @@ public class EDIService implements EDIInterface {
     private Environment env;
 
     @Autowired
-    private RestTemplate restTemplate;
+    @Qualifier("plainRestTemplate")
+    private RestTemplate plainRestTemplate;
 
     LocalDate now;
     //https://www.journaldev.com/18141/spring-boot-redis-cache
@@ -90,7 +91,7 @@ public class EDIService implements EDIInterface {
         final HttpEntity<String> entity = new HttpEntity<String>(headers);
 
         //return restTemplate.exchange("https://httpbin.org/user-agent", HttpMethod.GET, entity, String.class);        
-        ResponseEntity<String> resp = restTemplate.exchange(url, HttpMethod.GET, entity, String.class);                
+        ResponseEntity<String> resp = plainRestTemplate.exchange(url, HttpMethod.GET, entity, String.class);                
         
         log.info("resp = " + resp.getBody());
 
