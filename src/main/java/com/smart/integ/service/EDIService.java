@@ -80,7 +80,6 @@ public class EDIService implements EDIInterface {
         String url = "https://data.smartapplicationsgroup.com/api/v2/integqa/claims/edi?customerid=RESOECLAIMS&countrycode=KE&isUpdate=false";      
         
         log.info("Preparing request to ... " + url);
-
         
         //Set the headers you need send
         HttpHeaders headers = new HttpHeaders();

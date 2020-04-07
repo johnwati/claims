@@ -46,15 +46,16 @@ import org.json.simple.Jsoner;
 
 import com.smart.integ.util.SLFetchHandler;
 import com.smart.integ.interfaces.FetchSLInterface;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.logging.Logger;
 
 //Ref: https://www.callicoder.com/spring-boot-file-upload-download-jpa-hibernate-mysql-database-example/
 
 @Service
-public class SLClaimsFetchService implements FetchSLInterface{
+public class ClaimService implements FetchSLInterface{
 
-    Logger log = Logger.getLogger(SLClaimsFetchService.class.getName());
+    Logger log = Logger.getLogger(ClaimService.class.getName());
        
     @Autowired
     @Qualifier("abacusJdbcTemplate")
@@ -64,34 +65,23 @@ public class SLClaimsFetchService implements FetchSLInterface{
     @Qualifier("integJdbcTemplate")
     private JdbcTemplate integJdbcTemplate;
 
+    @Autowired
+    @Qualifier("plainRestTemplate")         //does not use ribbon
+    private RestTemplate plainRestTemplate;
+
     @Async
     public void fetchSLClaims(String _sql){
    
-        //String statusSql = "UPDATE reports SET status = ?, status_message = ? WHERE id = ?";
-        //String statusSql = "UPDATE stg_slink_claims SET is_edi=?, edi_status_msg=? WHERE central_id=?";
-
         try {
 
-            SLFetchHandler handler = new SLFetchHandler();
+            SLFetchHandler handler = new SLFetchHandler(plainRestTemplate);
             
-            //if(al.getDatasource().equals("ABACUS")){
-                abacusJdbcTemplate.query(_sql, handler);                     
-            //     }
-            // else if(al.getDatasource().equals("INTEG")){
-            //     integJdbcTemplate.query(al.getAttachementSql(), handler);                     
-            //     }
-            // else{
-            //     log.warning("UNKNOWN DATASOURCE: valid values INTEG, ABACUS");
-            //     Object[] params = {3, "UNKNOWN DATASOURCE: valid values INTEG, ABACUS", al.getId()};
-            //     int[] types = {Types.SMALLINT, Types.VARCHAR, Types.BIGINT};            
-            //     alertsJdbcTemplate.update(statusSql, params, types);
-            //     //continue;
-            //     //return;
-            //     }              
+            abacusJdbcTemplate.query(_sql, handler);                     
 
-            // CreateWorksheetCallbackHandler handler = new CreateWorksheetCallbackHandler();
-            // abacusJdbcTemplate.query(sql, handler);                
+            int success = handler.getLsSuccess().size();
+            int fail = handler.getLsFailed().size();
 
+            log.info("TASK COMPLETED: SUCCEEDED = " + success + ", FAILED = " + fail);
             } 
         catch (DataAccessException dae){
             log.warning("Data Access Exception : " + dae.getMessage());
@@ -122,24 +112,9 @@ public class SLClaimsFetchService implements FetchSLInterface{
 
 
 
-    public boolean deleteFile(String attName){
-        
-        LocalDateTime now = LocalDateTime.now();
-        String FILE_NAME = "./generated/" + attName + "-" + now.getDayOfMonth() + "-" + now.getMonth() + "-" + now.getYear() + ".xlsx";       
-        Path filePath = Paths.get(FILE_NAME).toAbsolutePath().normalize();
 
-        log.info("DELETING file " + FILE_NAME);
 
-        try{
-            boolean deleted = Files.deleteIfExists(filePath);   // Surround it in try catch block
-            log.info("FILE deleted ? = " + deleted);
-            return deleted;
-            }
-        catch(IOException e){
-            log.severe("OOPS !" + e.getMessage());
-            return false;
-            }        
-        }
-
+    
+    
 
 }

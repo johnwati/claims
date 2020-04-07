@@ -77,8 +77,6 @@ public class RenewToken{
     public RenewToken(){
         }
 
-
-
     //https://examples.javacodegeeks.com/enterprise-java/spring/spring-data-redis-example-2/
 
     //@Scheduled(fixedDelay=1000 * 60 * 60)        //every 60 minutes regardless of the completion of the previous

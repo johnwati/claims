@@ -50,7 +50,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import com.smart.integ.interfaces.TokenInterface;
-import com.smart.integ.service.SLClaimsFetchService;
+import com.smart.integ.service.ClaimService;
 import com.smart.integ.Application;
 import com.smart.integ.interfaces.FetchSLInterface;
 
@@ -76,7 +76,7 @@ public class SLClaims{
 
     
     @Autowired
-    private FetchSLInterface slClaimsFetchService;
+    private ClaimService claimService;
 
 
     @Value("${claims.fetch.slink:SELECT 1 FROM DUAL}")
@@ -103,10 +103,10 @@ public class SLClaims{
         // + " AND fc.central_id > " + lastCentralId + " " 
         // + " AND cust_id = " + cust + " "
         + " ORDER BY a.central_id ASC "
-        + " FETCH FIRST 100 ROWS ONLY ";
+        + " FETCH FIRST 10 ROWS ONLY ";
 
         log.info("claimSql = " + claimSql);
-        slClaimsFetchService.fetchSLClaims(claimSql);
+        claimService.fetchSLClaims(claimSql);
 
         }
 
