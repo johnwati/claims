@@ -5,7 +5,8 @@ package com.smart.integ.util;
 
 import java.util.List;
 import java.util.ArrayList;
-
+import java.util.Map;
+import java.util.HashMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -40,13 +41,16 @@ public class SLFetchHandler implements RowCallbackHandler {
     int columnCount = 0;        //need to get the actual column count
     int rowNum = 1;
 
-    private List<String> lsSuccess = new ArrayList<String>(); 
-    private List<String> lsFailed = new ArrayList<String>();
+    private List<Long> lsSuccess = new ArrayList<Long>(); 
+    private List<Map<String,String>> lsFailed = new ArrayList<Map<String,String>>();
+
+    Map<String,String> err;
 
     RestTemplate restTemplate;
 
     public SLFetchHandler(RestTemplate _restTemplate){
         this.restTemplate = _restTemplate;
+        err = new HashMap<String,String>();
     }
 
     @Override
@@ -80,41 +84,46 @@ public class SLFetchHandler implements RowCallbackHandler {
         //return resp.getBody().getAccess_token();
 
         if(resp.isSuccessful() == true){
-            lsSuccess.add(rs.getString("central_id"));
+            lsSuccess.add(rs.getLong("central_id"));
             }
         else{
-            lsFailed.add(rs.getString("central_id"));
+            err = new HashMap<String,String>();
+            err.put("central_id", rs.getString("central_id"));
+            err.put("status_msg",resp.getStatus_msg());
+
+            lsFailed.add(err);
             }
     
-
         }
             
    
+   
+
     /**
-     * @return List<String> return the lsSuccess
+     * @return List<Long> return the lsSuccess
      */
-    public List<String> getLsSuccess() {
+    public List<Long> getLsSuccess() {
         return lsSuccess;
     }
 
     /**
      * @param lsSuccess the lsSuccess to set
      */
-    public void setLsSuccess(List<String> lsSuccess) {
+    public void setLsSuccess(List<Long> lsSuccess) {
         this.lsSuccess = lsSuccess;
     }
 
     /**
-     * @return List<String> return the lsFailed
+     * @return List<Map<Long,String>> return the lsFailed
      */
-    public List<String> getLsFailed() {
+    public List<Map<String,String>> getLsFailed() {
         return lsFailed;
     }
 
     /**
      * @param lsFailed the lsFailed to set
      */
-    public void setLsFailed(List<String> lsFailed) {
+    public void setLsFailed(List<Map<String,String>> lsFailed) {
         this.lsFailed = lsFailed;
     }
 

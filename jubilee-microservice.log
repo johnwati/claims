@@ -667,3 +667,488 @@ org.springframework.web.client.HttpClientErrorException$UnsupportedMediaType: 41
 2020-04-07 11:35:37.550  INFO 18663 --- [SpringContextShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
 2020-04-07 11:35:37.578  INFO 18663 --- [SpringContextShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_JUBILEE-MICROSERVICE/10.0.2.15:jubilee-microservice:8090 - deregister  status: 200
 2020-04-07 11:35:37.607  INFO 18663 --- [SpringContextShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2020-04-07 12:52:54.170  INFO 23349 --- [main] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://192.180.4.103:8888
+2020-04-07 12:52:55.007  INFO 23349 --- [main] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=jubilee-microservice, profiles=[default], label=null, version=c7066ba9d26ddbf909f51c3e7b4d9423dedbed70, state=null
+2020-04-07 12:52:55.014  INFO 23349 --- [main] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}, BootstrapPropertySource {name='bootstrapProperties-http://@192.180.3.23/microservices/microservice-configs.git/jubilee-microservice.properties'}]
+2020-04-07 12:52:55.221  INFO 23349 --- [main] com.smart.integ.Application              : The following profiles are active: default
+2020-04-07 12:52:56.304  INFO 23349 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-04-07 12:52:56.331  INFO 23349 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11ms. Found 0 JPA repository interfaces.
+2020-04-07 12:52:56.333  INFO 23349 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-04-07 12:52:56.335  INFO 23349 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1ms. Found 0 JPA repository interfaces.
+2020-04-07 12:52:56.942  WARN 23349 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2020-04-07 12:52:57.219  INFO 23349 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=e5a5b779-620e-3d76-9d40-96c36227fdc3
+2020-04-07 12:52:57.596  INFO 23349 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-07 12:52:58.538  INFO 23349 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8090 (http)
+2020-04-07 12:52:58.626  INFO 23349 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-04-07 12:52:58.627  INFO 23349 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-04-07 12:52:58.754  INFO 23349 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-04-07 12:52:58.755  INFO 23349 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3505 ms
+2020-04-07 12:52:59.054  WARN 23349 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-04-07 12:52:59.055  INFO 23349 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-04-07 12:52:59.081  INFO 23349 --- [main] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@7dc3712
+2020-04-07 12:53:00.516  INFO 23349 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: integ]
+2020-04-07 12:53:00.716  INFO 23349 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.9.Final}
+2020-04-07 12:53:01.138  INFO 23349 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-04-07 12:53:01.491  INFO 23349 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-04-07 12:53:01.498  WARN 23349 --- [main] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2020-04-07 12:53:02.716  INFO 23349 --- [main] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+2020-04-07 12:53:02.744  INFO 23349 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-04-07 12:53:02.794  INFO 23349 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2020-04-07 12:53:06.916  INFO 23349 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-04-07 12:53:06.928  INFO 23349 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'integ'
+2020-04-07 12:53:06.938  INFO 23349 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: abacus]
+2020-04-07 12:53:07.075  INFO 23349 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2020-04-07 12:53:07.076  WARN 23349 --- [main] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2020-04-07 12:53:07.751  INFO 23349 --- [main] com.zaxxer.hikari.pool.PoolBase          : HikariPool-2 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+2020-04-07 12:53:07.823  INFO 23349 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2020-04-07 12:53:07.824  INFO 23349 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2020-04-07 12:53:11.348  INFO 23349 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-04-07 12:53:11.348  INFO 23349 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'abacus'
+2020-04-07 12:53:11.552  WARN 23349 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-04-07 12:53:11.552  INFO 23349 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-04-07 12:53:11.649  WARN 23349 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-04-07 12:53:12.042  INFO 23349 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-07 12:53:12.500  INFO 23349 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-04-07 12:53:12.699  WARN 23349 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with default default cache. You can switch to using Caffeine cache, by adding it to the classpath.
+2020-04-07 12:53:12.726  INFO 23349 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 19 endpoint(s) beneath base path '/actuator'
+2020-04-07 12:53:12.804  INFO 23349 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2020-04-07 12:53:12.930  INFO 23349 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2020-04-07 12:53:13.338  INFO 23349 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2020-04-07 12:53:13.339  INFO 23349 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2020-04-07 12:53:13.636  INFO 23349 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2020-04-07 12:53:13.636  INFO 23349 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2020-04-07 12:53:14.046  INFO 23349 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-04-07 12:53:14.078  INFO 23349 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2020-04-07 12:53:14.078  INFO 23349 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2020-04-07 12:53:14.078  INFO 23349 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2020-04-07 12:53:14.078  INFO 23349 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2020-04-07 12:53:14.078  INFO 23349 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2020-04-07 12:53:14.078  INFO 23349 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2020-04-07 12:53:14.078  INFO 23349 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2020-04-07 12:53:14.376  INFO 23349 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2020-04-07 12:53:14.381  INFO 23349 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2020-04-07 12:53:14.384  INFO 23349 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2020-04-07 12:53:14.389  INFO 23349 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1586253194387 with initial instances count: 7
+2020-04-07 12:53:14.392  INFO 23349 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application JUBILEE-MICROSERVICE with eureka with status UP
+2020-04-07 12:53:14.393  INFO 23349 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1586253194393, current=UP, previous=STARTING]
+2020-04-07 12:53:14.407  INFO 23349 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_JUBILEE-MICROSERVICE/10.0.2.15:jubilee-microservice:8090: registering service...
+2020-04-07 12:53:14.481  INFO 23349 --- [scheduling-1] com.smart.integ.daemon.SLClaims          : Getting Smartlink Claims. STUB
+2020-04-07 12:53:14.481  INFO 23349 --- [scheduling-1] com.smart.integ.daemon.SLClaims          : claimSql = SELECT a.central_id, a.ip_address, a.edi_data FROM stg_slink_claims a INNER JOIN fin_client_details cl2 ON a.patient_medicalaid_code=cl2.smart_code INNER JOIN fin_providers pr ON a.ip_address=pr.provider_key INNER JOIN fin_providers pr2 ON pr.parent_provider=pr2.provider_key INNER JOIN fin_client_details cl ON pr2.prov_id=cl.prov_id and (cl.is_edi=0 or (cl.is_edi=1 and cl.is_edi_backend=0)) WHERE INSERT_DATE >= cl2.edi_start_date AND a.is_edi=0 AND a.edi_data is not null and a.patient_medicalaid_code IN ('JIC') ORDER BY a.central_id ASC  FETCH FIRST 10 ROWS ONLY 
+2020-04-07 12:53:14.540  INFO 23349 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8090 (http) with context path ''
+2020-04-07 12:53:14.541  INFO 23349 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8090
+2020-04-07 12:53:14.612  INFO 23349 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_JUBILEE-MICROSERVICE/10.0.2.15:jubilee-microservice:8090 - registration status: 204
+2020-04-07 12:53:14.614  INFO 23349 --- [main] com.smart.integ.Application              : Started Application in 23.025 seconds (JVM running for 26.288)
+2020-04-07 12:53:37.582  INFO 23349 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : processing row 1
+2020-04-07 12:53:37.595  INFO 23349 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Preparing request to ... https://data.smartapplicationsgroup.com/api/abacus_dev/edi/claim?integ_app_code=JUBILEEECLAIMS&prov_code=SKSP_1187&centralId=318554201
+2020-04-07 12:53:38.994  INFO 23349 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Response successful=false, status_msg=null
+2020-04-07 12:53:38.995  INFO 23349 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : processing row 2
+2020-04-07 12:53:38.995  INFO 23349 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Preparing request to ... https://data.smartapplicationsgroup.com/api/abacus_dev/edi/claim?integ_app_code=JUBILEEECLAIMS&prov_code=SKSP_446&centralId=318554408
+2020-04-07 12:53:39.332  INFO 23349 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Response successful=false, status_msg=null
+2020-04-07 12:53:39.332  INFO 23349 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : processing row 3
+2020-04-07 12:53:39.332  INFO 23349 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Preparing request to ... https://data.smartapplicationsgroup.com/api/abacus_dev/edi/claim?integ_app_code=JUBILEEECLAIMS&prov_code=SKSP_505&centralId=318554627
+2020-04-07 12:53:39.735  INFO 23349 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Response successful=false, status_msg=null
+2020-04-07 12:53:39.735  INFO 23349 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : processing row 4
+2020-04-07 12:53:39.735  INFO 23349 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Preparing request to ... https://data.smartapplicationsgroup.com/api/abacus_dev/edi/claim?integ_app_code=JUBILEEECLAIMS&prov_code=SKSP_125&centralId=318554698
+2020-04-07 12:53:40.070  INFO 23349 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Response successful=false, status_msg=null
+2020-04-07 12:53:40.071  INFO 23349 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : processing row 5
+2020-04-07 12:53:40.071  INFO 23349 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Preparing request to ... https://data.smartapplicationsgroup.com/api/abacus_dev/edi/claim?integ_app_code=JUBILEEECLAIMS&prov_code=SKSP_1618&centralId=318554742
+2020-04-07 12:53:40.429  INFO 23349 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Response successful=false, status_msg=null
+2020-04-07 12:53:40.429  INFO 23349 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : processing row 6
+2020-04-07 12:53:40.430  INFO 23349 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Preparing request to ... https://data.smartapplicationsgroup.com/api/abacus_dev/edi/claim?integ_app_code=JUBILEEECLAIMS&prov_code=SKSP_156&centralId=318554863
+2020-04-07 12:53:40.780  INFO 23349 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Response successful=false, status_msg=null
+2020-04-07 12:53:40.780  INFO 23349 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : processing row 7
+2020-04-07 12:53:40.780  INFO 23349 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Preparing request to ... https://data.smartapplicationsgroup.com/api/abacus_dev/edi/claim?integ_app_code=JUBILEEECLAIMS&prov_code=SKSP_505&centralId=318554905
+2020-04-07 12:53:41.127  INFO 23349 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Response successful=false, status_msg=null
+2020-04-07 12:53:41.127  INFO 23349 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : processing row 8
+2020-04-07 12:53:41.128  INFO 23349 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Preparing request to ... https://data.smartapplicationsgroup.com/api/abacus_dev/edi/claim?integ_app_code=JUBILEEECLAIMS&prov_code=SKSP_505&centralId=318555125
+2020-04-07 12:53:41.627  INFO 23349 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Response successful=false, status_msg=null
+2020-04-07 12:53:41.627  INFO 23349 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : processing row 9
+2020-04-07 12:53:41.627  INFO 23349 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Preparing request to ... https://data.smartapplicationsgroup.com/api/abacus_dev/edi/claim?integ_app_code=JUBILEEECLAIMS&prov_code=SKSP_1618&centralId=318555140
+2020-04-07 12:53:41.950  INFO 23349 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Response successful=false, status_msg=null
+2020-04-07 12:53:41.950  INFO 23349 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : processing row 10
+2020-04-07 12:53:41.950  INFO 23349 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Preparing request to ... https://data.smartapplicationsgroup.com/api/abacus_dev/edi/claim?integ_app_code=JUBILEEECLAIMS&prov_code=SKSP_505&centralId=318555164
+2020-04-07 12:53:42.327  INFO 23349 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Response successful=false, status_msg=null
+2020-04-07 12:53:42.382  INFO 23349 --- [scheduling-1] com.smart.integ.service.ClaimService     : TASK COMPLETED: SUCCEEDED = 0, FAILED = 10
+2020-04-07 12:53:42.873  WARN 23349 --- [scheduling-1] com.smart.integ.service.ClaimService     : Data Access Exception : PreparedStatementCallback; uncategorized SQLException for SQL [UPDATE stg_slink_claims SET is_edi=?, edi_status_msg=? WHERE central_id IN (?) ]; SQL state [99999]; error code [17059]; Fail to convert to internal representation: []; nested exception is java.sql.SQLException: Fail to convert to internal representation: []
+2020-04-07 12:53:48.719  INFO 23349 --- [SpringContextShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application JUBILEE-MICROSERVICE with eureka with status DOWN
+2020-04-07 12:53:48.720  WARN 23349 --- [SpringContextShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1586253228720, current=DOWN, previous=UP]
+2020-04-07 12:53:48.720  INFO 23349 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_JUBILEE-MICROSERVICE/10.0.2.15:jubilee-microservice:8090: registering service...
+2020-04-07 12:53:48.749  INFO 23349 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2020-04-07 12:53:48.751  INFO 23349 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-04-07 12:53:48.756  INFO 23349 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'abacus'
+2020-04-07 12:53:48.757  INFO 23349 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'integ'
+2020-04-07 12:53:48.768  INFO 23349 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2020-04-07 12:53:48.813  INFO 23349 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_JUBILEE-MICROSERVICE/10.0.2.15:jubilee-microservice:8090 - registration status: 204
+2020-04-07 12:53:49.980  INFO 23349 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2020-04-07 12:53:49.981  INFO 23349 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-04-07 12:53:50.818  INFO 23349 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-04-07 12:53:50.822  INFO 23349 --- [SpringContextShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2020-04-07 12:53:53.824  INFO 23349 --- [SpringContextShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2020-04-07 12:53:53.864  INFO 23349 --- [SpringContextShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_JUBILEE-MICROSERVICE/10.0.2.15:jubilee-microservice:8090 - deregister  status: 200
+2020-04-07 12:53:53.900  INFO 23349 --- [SpringContextShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2020-04-07 12:56:42.891  INFO 23700 --- [main] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://192.180.4.103:8888
+2020-04-07 12:56:44.024  INFO 23700 --- [main] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=jubilee-microservice, profiles=[default], label=null, version=c7066ba9d26ddbf909f51c3e7b4d9423dedbed70, state=null
+2020-04-07 12:56:44.025  INFO 23700 --- [main] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}, BootstrapPropertySource {name='bootstrapProperties-http://@192.180.3.23/microservices/microservice-configs.git/jubilee-microservice.properties'}]
+2020-04-07 12:56:44.189  INFO 23700 --- [main] com.smart.integ.Application              : The following profiles are active: default
+2020-04-07 12:56:45.259  INFO 23700 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-04-07 12:56:45.289  INFO 23700 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8ms. Found 0 JPA repository interfaces.
+2020-04-07 12:56:45.290  INFO 23700 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-04-07 12:56:45.292  INFO 23700 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1ms. Found 0 JPA repository interfaces.
+2020-04-07 12:56:45.963  WARN 23700 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2020-04-07 12:56:46.266  INFO 23700 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=e5a5b779-620e-3d76-9d40-96c36227fdc3
+2020-04-07 12:56:47.214  INFO 23700 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-07 12:56:48.280  INFO 23700 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8090 (http)
+2020-04-07 12:56:48.293  INFO 23700 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-04-07 12:56:48.293  INFO 23700 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-04-07 12:56:48.367  INFO 23700 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-04-07 12:56:48.368  INFO 23700 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4127 ms
+2020-04-07 12:56:48.585  WARN 23700 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-04-07 12:56:48.586  INFO 23700 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-04-07 12:56:48.643  INFO 23700 --- [main] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@17d919b6
+2020-04-07 12:56:49.470  INFO 23700 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: integ]
+2020-04-07 12:56:49.731  INFO 23700 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.9.Final}
+2020-04-07 12:56:50.185  INFO 23700 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-04-07 12:56:50.787  INFO 23700 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-04-07 12:56:50.796  WARN 23700 --- [main] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2020-04-07 12:56:51.686  INFO 23700 --- [main] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+2020-04-07 12:56:51.721  INFO 23700 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-04-07 12:56:51.748  INFO 23700 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2020-04-07 12:56:56.158  INFO 23700 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-04-07 12:56:56.168  INFO 23700 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'integ'
+2020-04-07 12:56:56.183  INFO 23700 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: abacus]
+2020-04-07 12:56:56.314  INFO 23700 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2020-04-07 12:56:56.315  WARN 23700 --- [main] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2020-04-07 12:56:56.842  INFO 23700 --- [main] com.zaxxer.hikari.pool.PoolBase          : HikariPool-2 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+2020-04-07 12:56:56.890  INFO 23700 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2020-04-07 12:56:56.890  INFO 23700 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2020-04-07 12:57:00.833  INFO 23700 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-04-07 12:57:00.833  INFO 23700 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'abacus'
+2020-04-07 12:57:00.982  WARN 23700 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-04-07 12:57:00.982  INFO 23700 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-04-07 12:57:01.080  WARN 23700 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-04-07 12:57:01.503  INFO 23700 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-07 12:57:01.901  INFO 23700 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-04-07 12:57:02.079  WARN 23700 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with default default cache. You can switch to using Caffeine cache, by adding it to the classpath.
+2020-04-07 12:57:02.096  INFO 23700 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 19 endpoint(s) beneath base path '/actuator'
+2020-04-07 12:57:02.160  INFO 23700 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2020-04-07 12:57:02.222  INFO 23700 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2020-04-07 12:57:02.520  INFO 23700 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2020-04-07 12:57:02.520  INFO 23700 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2020-04-07 12:57:02.758  INFO 23700 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2020-04-07 12:57:02.758  INFO 23700 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2020-04-07 12:57:03.073  INFO 23700 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-04-07 12:57:03.121  INFO 23700 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2020-04-07 12:57:03.122  INFO 23700 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2020-04-07 12:57:03.123  INFO 23700 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2020-04-07 12:57:03.123  INFO 23700 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2020-04-07 12:57:03.123  INFO 23700 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2020-04-07 12:57:03.123  INFO 23700 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2020-04-07 12:57:03.123  INFO 23700 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2020-04-07 12:57:03.508  INFO 23700 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2020-04-07 12:57:03.514  INFO 23700 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2020-04-07 12:57:03.517  INFO 23700 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2020-04-07 12:57:03.522  INFO 23700 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1586253423521 with initial instances count: 7
+2020-04-07 12:57:03.527  INFO 23700 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application JUBILEE-MICROSERVICE with eureka with status UP
+2020-04-07 12:57:03.528  INFO 23700 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1586253423528, current=UP, previous=STARTING]
+2020-04-07 12:57:03.543  INFO 23700 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_JUBILEE-MICROSERVICE/10.0.2.15:jubilee-microservice:8090: registering service...
+2020-04-07 12:57:03.652  INFO 23700 --- [scheduling-1] com.smart.integ.daemon.SLClaims          : Getting Smartlink Claims. STUB
+2020-04-07 12:57:03.652  INFO 23700 --- [scheduling-1] com.smart.integ.daemon.SLClaims          : claimSql = SELECT a.central_id, a.ip_address, a.edi_data FROM stg_slink_claims a INNER JOIN fin_client_details cl2 ON a.patient_medicalaid_code=cl2.smart_code INNER JOIN fin_providers pr ON a.ip_address=pr.provider_key INNER JOIN fin_providers pr2 ON pr.parent_provider=pr2.provider_key INNER JOIN fin_client_details cl ON pr2.prov_id=cl.prov_id and (cl.is_edi=0 or (cl.is_edi=1 and cl.is_edi_backend=0)) WHERE INSERT_DATE >= cl2.edi_start_date AND a.is_edi=0 AND a.edi_data is not null and a.patient_medicalaid_code IN ('JIC') ORDER BY a.central_id ASC  FETCH FIRST 10 ROWS ONLY 
+2020-04-07 12:57:03.732  INFO 23700 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8090 (http) with context path ''
+2020-04-07 12:57:03.734  INFO 23700 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8090
+2020-04-07 12:57:03.769  INFO 23700 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_JUBILEE-MICROSERVICE/10.0.2.15:jubilee-microservice:8090 - registration status: 204
+2020-04-07 12:57:03.824  INFO 23700 --- [main] com.smart.integ.Application              : Started Application in 23.365 seconds (JVM running for 24.029)
+2020-04-07 12:57:26.890  INFO 23700 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : processing row 1
+2020-04-07 12:57:26.898  INFO 23700 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Preparing request to ... https://data.smartapplicationsgroup.com/api/abacus_dev/edi/claim?integ_app_code=JUBILEEECLAIMS&prov_code=SKSP_1187&centralId=318554201
+2020-04-07 12:57:27.662  INFO 23700 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Response successful=false, status_msg=null
+2020-04-07 12:57:27.662  INFO 23700 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : processing row 2
+2020-04-07 12:57:27.662  INFO 23700 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Preparing request to ... https://data.smartapplicationsgroup.com/api/abacus_dev/edi/claim?integ_app_code=JUBILEEECLAIMS&prov_code=SKSP_446&centralId=318554408
+2020-04-07 12:57:28.027  INFO 23700 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Response successful=false, status_msg=null
+2020-04-07 12:57:28.028  INFO 23700 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : processing row 3
+2020-04-07 12:57:28.028  INFO 23700 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Preparing request to ... https://data.smartapplicationsgroup.com/api/abacus_dev/edi/claim?integ_app_code=JUBILEEECLAIMS&prov_code=SKSP_505&centralId=318554627
+2020-04-07 12:57:28.464  INFO 23700 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Response successful=false, status_msg=null
+2020-04-07 12:57:28.465  INFO 23700 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : processing row 4
+2020-04-07 12:57:28.465  INFO 23700 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Preparing request to ... https://data.smartapplicationsgroup.com/api/abacus_dev/edi/claim?integ_app_code=JUBILEEECLAIMS&prov_code=SKSP_125&centralId=318554698
+2020-04-07 12:57:28.878  INFO 23700 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Response successful=false, status_msg=null
+2020-04-07 12:57:28.878  INFO 23700 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : processing row 5
+2020-04-07 12:57:28.878  INFO 23700 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Preparing request to ... https://data.smartapplicationsgroup.com/api/abacus_dev/edi/claim?integ_app_code=JUBILEEECLAIMS&prov_code=SKSP_1618&centralId=318554742
+2020-04-07 12:57:29.276  INFO 23700 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Response successful=false, status_msg=null
+2020-04-07 12:57:29.277  INFO 23700 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : processing row 6
+2020-04-07 12:57:29.277  INFO 23700 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Preparing request to ... https://data.smartapplicationsgroup.com/api/abacus_dev/edi/claim?integ_app_code=JUBILEEECLAIMS&prov_code=SKSP_156&centralId=318554863
+2020-04-07 12:57:29.574  INFO 23700 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Response successful=false, status_msg=null
+2020-04-07 12:57:29.575  INFO 23700 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : processing row 7
+2020-04-07 12:57:29.575  INFO 23700 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Preparing request to ... https://data.smartapplicationsgroup.com/api/abacus_dev/edi/claim?integ_app_code=JUBILEEECLAIMS&prov_code=SKSP_505&centralId=318554905
+2020-04-07 12:57:29.921  INFO 23700 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Response successful=false, status_msg=null
+2020-04-07 12:57:29.921  INFO 23700 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : processing row 8
+2020-04-07 12:57:29.921  INFO 23700 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Preparing request to ... https://data.smartapplicationsgroup.com/api/abacus_dev/edi/claim?integ_app_code=JUBILEEECLAIMS&prov_code=SKSP_505&centralId=318555125
+2020-04-07 12:57:30.248  INFO 23700 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Response successful=false, status_msg=null
+2020-04-07 12:57:30.248  INFO 23700 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : processing row 9
+2020-04-07 12:57:30.248  INFO 23700 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Preparing request to ... https://data.smartapplicationsgroup.com/api/abacus_dev/edi/claim?integ_app_code=JUBILEEECLAIMS&prov_code=SKSP_1618&centralId=318555140
+2020-04-07 12:57:30.570  INFO 23700 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Response successful=false, status_msg=null
+2020-04-07 12:57:30.571  INFO 23700 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : processing row 10
+2020-04-07 12:57:30.571  INFO 23700 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Preparing request to ... https://data.smartapplicationsgroup.com/api/abacus_dev/edi/claim?integ_app_code=JUBILEEECLAIMS&prov_code=SKSP_505&centralId=318555164
+2020-04-07 12:57:30.884  INFO 23700 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Response successful=false, status_msg=null
+2020-04-07 12:57:31.035  INFO 23700 --- [scheduling-1] com.smart.integ.service.ClaimService     : TASK COMPLETED: SUCCEEDED = 0, FAILED = 10
+2020-04-07 12:57:31.271  WARN 23700 --- [scheduling-1] com.smart.integ.service.ClaimService     : Data Access Exception : PreparedStatementCallback; uncategorized SQLException for SQL [UPDATE stg_slink_claims SET is_edi=?, edi_status_msg=? WHERE central_id IN (?) ]; SQL state [99999]; error code [17059]; Fail to convert to internal representation: []; nested exception is java.sql.SQLException: Fail to convert to internal representation: []
+2020-04-07 12:57:37.388  INFO 23700 --- [SpringContextShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application JUBILEE-MICROSERVICE with eureka with status DOWN
+2020-04-07 12:57:37.388  WARN 23700 --- [SpringContextShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1586253457388, current=DOWN, previous=UP]
+2020-04-07 12:57:37.389  INFO 23700 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_JUBILEE-MICROSERVICE/10.0.2.15:jubilee-microservice:8090: registering service...
+2020-04-07 12:57:37.400  INFO 23700 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2020-04-07 12:57:37.409  INFO 23700 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-04-07 12:57:37.417  INFO 23700 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'abacus'
+2020-04-07 12:57:37.431  INFO 23700 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'integ'
+2020-04-07 12:57:37.439  INFO 23700 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2020-04-07 12:57:37.571  INFO 23700 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_JUBILEE-MICROSERVICE/10.0.2.15:jubilee-microservice:8090 - registration status: 204
+2020-04-07 12:57:38.128  INFO 23700 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2020-04-07 12:57:38.129  INFO 23700 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-04-07 12:57:39.637  INFO 23700 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-04-07 12:57:39.639  INFO 23700 --- [SpringContextShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2020-04-07 12:57:42.640  INFO 23700 --- [SpringContextShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2020-04-07 12:57:42.672  INFO 23700 --- [SpringContextShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_JUBILEE-MICROSERVICE/10.0.2.15:jubilee-microservice:8090 - deregister  status: 200
+2020-04-07 12:57:42.714  INFO 23700 --- [SpringContextShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2020-04-07 12:59:31.563  INFO 23971 --- [main] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://192.180.4.103:8888
+2020-04-07 12:59:32.401  INFO 23971 --- [main] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=jubilee-microservice, profiles=[default], label=null, version=c7066ba9d26ddbf909f51c3e7b4d9423dedbed70, state=null
+2020-04-07 12:59:32.402  INFO 23971 --- [main] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}, BootstrapPropertySource {name='bootstrapProperties-http://@192.180.3.23/microservices/microservice-configs.git/jubilee-microservice.properties'}]
+2020-04-07 12:59:32.539  INFO 23971 --- [main] com.smart.integ.Application              : The following profiles are active: default
+2020-04-07 12:59:33.835  INFO 23971 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-04-07 12:59:33.862  INFO 23971 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10ms. Found 0 JPA repository interfaces.
+2020-04-07 12:59:33.863  INFO 23971 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-04-07 12:59:33.865  INFO 23971 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1ms. Found 0 JPA repository interfaces.
+2020-04-07 12:59:34.724  WARN 23971 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2020-04-07 12:59:34.984  INFO 23971 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=e5a5b779-620e-3d76-9d40-96c36227fdc3
+2020-04-07 12:59:35.410  INFO 23971 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-07 12:59:36.161  INFO 23971 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8090 (http)
+2020-04-07 12:59:36.187  INFO 23971 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-04-07 12:59:36.188  INFO 23971 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-04-07 12:59:36.282  INFO 23971 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-04-07 12:59:36.282  INFO 23971 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3697 ms
+2020-04-07 12:59:36.501  WARN 23971 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-04-07 12:59:36.501  INFO 23971 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-04-07 12:59:36.524  INFO 23971 --- [main] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@41488b16
+2020-04-07 12:59:37.359  INFO 23971 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: integ]
+2020-04-07 12:59:37.475  INFO 23971 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.9.Final}
+2020-04-07 12:59:37.743  INFO 23971 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-04-07 12:59:38.057  INFO 23971 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-04-07 12:59:38.067  WARN 23971 --- [main] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2020-04-07 12:59:39.096  INFO 23971 --- [main] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+2020-04-07 12:59:39.133  INFO 23971 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-04-07 12:59:39.160  INFO 23971 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2020-04-07 12:59:42.315  INFO 23971 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-04-07 12:59:42.324  INFO 23971 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'integ'
+2020-04-07 12:59:42.340  INFO 23971 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: abacus]
+2020-04-07 12:59:42.490  INFO 23971 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2020-04-07 12:59:42.491  WARN 23971 --- [main] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2020-04-07 12:59:43.494  INFO 23971 --- [main] com.zaxxer.hikari.pool.PoolBase          : HikariPool-2 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+2020-04-07 12:59:43.544  INFO 23971 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2020-04-07 12:59:43.544  INFO 23971 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2020-04-07 12:59:48.667  INFO 23971 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-04-07 12:59:48.669  INFO 23971 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'abacus'
+2020-04-07 12:59:48.840  WARN 23971 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-04-07 12:59:48.845  INFO 23971 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-04-07 12:59:48.946  WARN 23971 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-04-07 12:59:49.382  INFO 23971 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-07 12:59:49.879  INFO 23971 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-04-07 12:59:50.284  WARN 23971 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with default default cache. You can switch to using Caffeine cache, by adding it to the classpath.
+2020-04-07 12:59:50.307  INFO 23971 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 19 endpoint(s) beneath base path '/actuator'
+2020-04-07 12:59:50.395  INFO 23971 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2020-04-07 12:59:50.482  INFO 23971 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2020-04-07 12:59:50.783  INFO 23971 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2020-04-07 12:59:50.784  INFO 23971 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2020-04-07 12:59:51.047  INFO 23971 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2020-04-07 12:59:51.047  INFO 23971 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2020-04-07 12:59:51.429  INFO 23971 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-04-07 12:59:51.476  INFO 23971 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2020-04-07 12:59:51.476  INFO 23971 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2020-04-07 12:59:51.477  INFO 23971 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2020-04-07 12:59:51.477  INFO 23971 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2020-04-07 12:59:51.477  INFO 23971 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2020-04-07 12:59:51.477  INFO 23971 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2020-04-07 12:59:51.477  INFO 23971 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2020-04-07 12:59:51.980  INFO 23971 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2020-04-07 12:59:51.983  INFO 23971 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2020-04-07 12:59:51.991  INFO 23971 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2020-04-07 12:59:51.995  INFO 23971 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1586253591994 with initial instances count: 7
+2020-04-07 12:59:51.998  INFO 23971 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application JUBILEE-MICROSERVICE with eureka with status UP
+2020-04-07 12:59:51.999  INFO 23971 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1586253591999, current=UP, previous=STARTING]
+2020-04-07 12:59:52.027  INFO 23971 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_JUBILEE-MICROSERVICE/10.0.2.15:jubilee-microservice:8090: registering service...
+2020-04-07 12:59:52.108  INFO 23971 --- [scheduling-1] com.smart.integ.daemon.SLClaims          : Getting Smartlink Claims. STUB
+2020-04-07 12:59:52.109  INFO 23971 --- [scheduling-1] com.smart.integ.daemon.SLClaims          : claimSql = SELECT a.central_id, a.ip_address, a.edi_data FROM stg_slink_claims a INNER JOIN fin_client_details cl2 ON a.patient_medicalaid_code=cl2.smart_code INNER JOIN fin_providers pr ON a.ip_address=pr.provider_key INNER JOIN fin_providers pr2 ON pr.parent_provider=pr2.provider_key INNER JOIN fin_client_details cl ON pr2.prov_id=cl.prov_id and (cl.is_edi=0 or (cl.is_edi=1 and cl.is_edi_backend=0)) WHERE INSERT_DATE >= cl2.edi_start_date AND a.is_edi=0 AND a.edi_data is not null and a.patient_medicalaid_code IN ('JIC') ORDER BY a.central_id ASC  FETCH FIRST 10 ROWS ONLY 
+2020-04-07 12:59:52.170  INFO 23971 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8090 (http) with context path ''
+2020-04-07 12:59:52.177  INFO 23971 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8090
+2020-04-07 12:59:52.211  INFO 23971 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_JUBILEE-MICROSERVICE/10.0.2.15:jubilee-microservice:8090 - registration status: 204
+2020-04-07 12:59:52.231  INFO 23971 --- [main] com.smart.integ.Application              : Started Application in 22.149 seconds (JVM running for 22.827)
+2020-04-07 13:00:15.945  INFO 23971 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : processing row 1
+2020-04-07 13:00:15.953  INFO 23971 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Preparing request to ... https://data.smartapplicationsgroup.com/api/abacus_dev/edi/claim?integ_app_code=JUBILEEECLAIMS&prov_code=SKSP_1187&centralId=318554201
+2020-04-07 13:00:16.773  INFO 23971 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Response successful=false, status_msg=null
+2020-04-07 13:00:16.773  INFO 23971 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : processing row 2
+2020-04-07 13:00:16.773  INFO 23971 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Preparing request to ... https://data.smartapplicationsgroup.com/api/abacus_dev/edi/claim?integ_app_code=JUBILEEECLAIMS&prov_code=SKSP_446&centralId=318554408
+2020-04-07 13:00:17.147  INFO 23971 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Response successful=false, status_msg=null
+2020-04-07 13:00:17.148  INFO 23971 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : processing row 3
+2020-04-07 13:00:17.148  INFO 23971 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Preparing request to ... https://data.smartapplicationsgroup.com/api/abacus_dev/edi/claim?integ_app_code=JUBILEEECLAIMS&prov_code=SKSP_505&centralId=318554627
+2020-04-07 13:00:17.533  INFO 23971 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Response successful=false, status_msg=null
+2020-04-07 13:00:17.533  INFO 23971 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : processing row 4
+2020-04-07 13:00:17.533  INFO 23971 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Preparing request to ... https://data.smartapplicationsgroup.com/api/abacus_dev/edi/claim?integ_app_code=JUBILEEECLAIMS&prov_code=SKSP_125&centralId=318554698
+2020-04-07 13:00:17.919  INFO 23971 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Response successful=false, status_msg=null
+2020-04-07 13:00:17.919  INFO 23971 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : processing row 5
+2020-04-07 13:00:17.919  INFO 23971 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Preparing request to ... https://data.smartapplicationsgroup.com/api/abacus_dev/edi/claim?integ_app_code=JUBILEEECLAIMS&prov_code=SKSP_1618&centralId=318554742
+2020-04-07 13:00:18.243  INFO 23971 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Response successful=false, status_msg=null
+2020-04-07 13:00:18.243  INFO 23971 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : processing row 6
+2020-04-07 13:00:18.244  INFO 23971 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Preparing request to ... https://data.smartapplicationsgroup.com/api/abacus_dev/edi/claim?integ_app_code=JUBILEEECLAIMS&prov_code=SKSP_156&centralId=318554863
+2020-04-07 13:00:18.595  INFO 23971 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Response successful=false, status_msg=null
+2020-04-07 13:00:18.596  INFO 23971 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : processing row 7
+2020-04-07 13:00:18.596  INFO 23971 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Preparing request to ... https://data.smartapplicationsgroup.com/api/abacus_dev/edi/claim?integ_app_code=JUBILEEECLAIMS&prov_code=SKSP_505&centralId=318554905
+2020-04-07 13:00:18.943  INFO 23971 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Response successful=false, status_msg=null
+2020-04-07 13:00:18.944  INFO 23971 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : processing row 8
+2020-04-07 13:00:18.944  INFO 23971 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Preparing request to ... https://data.smartapplicationsgroup.com/api/abacus_dev/edi/claim?integ_app_code=JUBILEEECLAIMS&prov_code=SKSP_505&centralId=318555125
+2020-04-07 13:00:19.339  INFO 23971 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Response successful=false, status_msg=null
+2020-04-07 13:00:19.339  INFO 23971 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : processing row 9
+2020-04-07 13:00:19.339  INFO 23971 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Preparing request to ... https://data.smartapplicationsgroup.com/api/abacus_dev/edi/claim?integ_app_code=JUBILEEECLAIMS&prov_code=SKSP_1618&centralId=318555140
+2020-04-07 13:00:19.729  INFO 23971 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Response successful=false, status_msg=null
+2020-04-07 13:00:19.729  INFO 23971 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : processing row 10
+2020-04-07 13:00:19.729  INFO 23971 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Preparing request to ... https://data.smartapplicationsgroup.com/api/abacus_dev/edi/claim?integ_app_code=JUBILEEECLAIMS&prov_code=SKSP_505&centralId=318555164
+2020-04-07 13:00:20.067  INFO 23971 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Response successful=false, status_msg=null
+2020-04-07 13:00:20.130  INFO 23971 --- [scheduling-1] com.smart.integ.service.ClaimService     : TASK COMPLETED: SUCCEEDED = 0, FAILED = 10
+2020-04-07 13:00:20.433  WARN 23971 --- [scheduling-1] com.smart.integ.service.ClaimService     : Data Access Exception : PreparedStatementCallback; uncategorized SQLException for SQL [UPDATE stg_slink_claims SET is_edi=?, edi_status_msg=? WHERE central_id IN (?) ]; SQL state [99999]; error code [17059]; Fail to convert to internal representation: []; nested exception is java.sql.SQLException: Fail to convert to internal representation: []
+2020-04-07 13:01:13.913  INFO 23971 --- [SpringContextShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application JUBILEE-MICROSERVICE with eureka with status DOWN
+2020-04-07 13:01:13.929  WARN 23971 --- [SpringContextShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1586253673929, current=DOWN, previous=UP]
+2020-04-07 13:01:13.929  INFO 23971 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_JUBILEE-MICROSERVICE/10.0.2.15:jubilee-microservice:8090: registering service...
+2020-04-07 13:01:13.952  INFO 23971 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2020-04-07 13:01:13.955  INFO 23971 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-04-07 13:01:13.962  INFO 23971 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'abacus'
+2020-04-07 13:01:13.968  INFO 23971 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'integ'
+2020-04-07 13:01:13.978  INFO 23971 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2020-04-07 13:01:14.039  INFO 23971 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_JUBILEE-MICROSERVICE/10.0.2.15:jubilee-microservice:8090 - registration status: 204
+2020-04-07 13:01:14.663  INFO 23971 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2020-04-07 13:01:14.664  INFO 23971 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-04-07 13:01:15.557  INFO 23971 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-04-07 13:01:15.559  INFO 23971 --- [SpringContextShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2020-04-07 13:01:18.562  INFO 23971 --- [SpringContextShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2020-04-07 13:01:18.690  INFO 23971 --- [SpringContextShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_JUBILEE-MICROSERVICE/10.0.2.15:jubilee-microservice:8090 - deregister  status: 200
+2020-04-07 13:01:18.757  INFO 23971 --- [SpringContextShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2020-04-07 13:04:48.676  INFO 24412 --- [main] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://192.180.4.103:8888
+2020-04-07 13:04:49.715  INFO 24412 --- [main] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=jubilee-microservice, profiles=[default], label=null, version=c7066ba9d26ddbf909f51c3e7b4d9423dedbed70, state=null
+2020-04-07 13:04:49.716  INFO 24412 --- [main] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}, BootstrapPropertySource {name='bootstrapProperties-http://@192.180.3.23/microservices/microservice-configs.git/jubilee-microservice.properties'}]
+2020-04-07 13:04:49.940  INFO 24412 --- [main] com.smart.integ.Application              : The following profiles are active: default
+2020-04-07 13:04:50.774  INFO 24412 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-04-07 13:04:50.792  INFO 24412 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6ms. Found 0 JPA repository interfaces.
+2020-04-07 13:04:50.793  INFO 24412 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-04-07 13:04:50.795  INFO 24412 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1ms. Found 0 JPA repository interfaces.
+2020-04-07 13:04:51.401  WARN 24412 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2020-04-07 13:04:51.682  INFO 24412 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=e5a5b779-620e-3d76-9d40-96c36227fdc3
+2020-04-07 13:04:52.048  INFO 24412 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-07 13:04:52.659  INFO 24412 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8090 (http)
+2020-04-07 13:04:52.683  INFO 24412 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-04-07 13:04:52.683  INFO 24412 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-04-07 13:04:52.807  INFO 24412 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-04-07 13:04:52.808  INFO 24412 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2807 ms
+2020-04-07 13:04:52.994  WARN 24412 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-04-07 13:04:52.994  INFO 24412 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-04-07 13:04:53.015  INFO 24412 --- [main] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@17503f6b
+2020-04-07 13:04:54.055  INFO 24412 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: integ]
+2020-04-07 13:04:54.149  INFO 24412 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.9.Final}
+2020-04-07 13:04:54.313  INFO 24412 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-04-07 13:04:54.755  INFO 24412 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-04-07 13:04:54.763  WARN 24412 --- [main] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2020-04-07 13:04:55.715  INFO 24412 --- [main] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+2020-04-07 13:04:55.740  INFO 24412 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-04-07 13:04:55.768  INFO 24412 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2020-04-07 13:04:59.024  INFO 24412 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-04-07 13:04:59.036  INFO 24412 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'integ'
+2020-04-07 13:04:59.048  INFO 24412 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: abacus]
+2020-04-07 13:04:59.174  INFO 24412 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2020-04-07 13:04:59.174  WARN 24412 --- [main] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2020-04-07 13:04:59.693  INFO 24412 --- [main] com.zaxxer.hikari.pool.PoolBase          : HikariPool-2 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+2020-04-07 13:04:59.748  INFO 24412 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2020-04-07 13:04:59.749  INFO 24412 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2020-04-07 13:05:03.037  INFO 24412 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-04-07 13:05:03.037  INFO 24412 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'abacus'
+2020-04-07 13:05:03.233  WARN 24412 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-04-07 13:05:03.233  INFO 24412 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-04-07 13:05:03.349  WARN 24412 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-04-07 13:05:03.891  INFO 24412 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-07 13:05:04.489  INFO 24412 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-04-07 13:05:04.698  WARN 24412 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with default default cache. You can switch to using Caffeine cache, by adding it to the classpath.
+2020-04-07 13:05:04.730  INFO 24412 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 19 endpoint(s) beneath base path '/actuator'
+2020-04-07 13:05:04.791  INFO 24412 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2020-04-07 13:05:04.853  INFO 24412 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2020-04-07 13:05:05.243  INFO 24412 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2020-04-07 13:05:05.243  INFO 24412 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2020-04-07 13:05:05.627  INFO 24412 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2020-04-07 13:05:05.628  INFO 24412 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2020-04-07 13:05:06.160  INFO 24412 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-04-07 13:05:06.215  INFO 24412 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2020-04-07 13:05:06.215  INFO 24412 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2020-04-07 13:05:06.216  INFO 24412 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2020-04-07 13:05:06.219  INFO 24412 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2020-04-07 13:05:06.219  INFO 24412 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2020-04-07 13:05:06.219  INFO 24412 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2020-04-07 13:05:06.220  INFO 24412 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2020-04-07 13:05:06.721  INFO 24412 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2020-04-07 13:05:06.739  INFO 24412 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2020-04-07 13:05:06.748  INFO 24412 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2020-04-07 13:05:06.781  INFO 24412 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1586253906755 with initial instances count: 7
+2020-04-07 13:05:06.792  INFO 24412 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application JUBILEE-MICROSERVICE with eureka with status UP
+2020-04-07 13:05:06.795  INFO 24412 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1586253906794, current=UP, previous=STARTING]
+2020-04-07 13:05:06.809  INFO 24412 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_JUBILEE-MICROSERVICE/10.0.2.15:jubilee-microservice:8090: registering service...
+2020-04-07 13:05:06.988  INFO 24412 --- [scheduling-1] com.smart.integ.daemon.SLClaims          : Getting Smartlink Claims. STUB
+2020-04-07 13:05:06.988  INFO 24412 --- [scheduling-1] com.smart.integ.daemon.SLClaims          : claimSql = SELECT a.central_id, a.ip_address, a.edi_data FROM stg_slink_claims a INNER JOIN fin_client_details cl2 ON a.patient_medicalaid_code=cl2.smart_code INNER JOIN fin_providers pr ON a.ip_address=pr.provider_key INNER JOIN fin_providers pr2 ON pr.parent_provider=pr2.provider_key INNER JOIN fin_client_details cl ON pr2.prov_id=cl.prov_id and (cl.is_edi=0 or (cl.is_edi=1 and cl.is_edi_backend=0)) WHERE INSERT_DATE >= cl2.edi_start_date AND a.is_edi=0 AND a.edi_data is not null and a.patient_medicalaid_code IN ('JIC') ORDER BY a.central_id ASC  FETCH FIRST 10 ROWS ONLY 
+2020-04-07 13:05:07.029  INFO 24412 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_JUBILEE-MICROSERVICE/10.0.2.15:jubilee-microservice:8090 - registration status: 204
+2020-04-07 13:05:07.080  INFO 24412 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8090 (http) with context path ''
+2020-04-07 13:05:07.082  INFO 24412 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8090
+2020-04-07 13:05:07.120  INFO 24412 --- [main] com.smart.integ.Application              : Started Application in 20.682 seconds (JVM running for 23.641)
+2020-04-07 13:05:30.380  INFO 24412 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : processing row 1
+2020-04-07 13:05:30.391  INFO 24412 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Preparing request to ... https://data.smartapplicationsgroup.com/api/abacus_dev/edi/claim?integ_app_code=JUBILEEECLAIMS&prov_code=SKSP_1187&centralId=318554201
+2020-04-07 13:05:31.568  INFO 24412 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Response successful=false, status_msg=null
+2020-04-07 13:05:31.568  INFO 24412 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : processing row 2
+2020-04-07 13:05:31.569  INFO 24412 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Preparing request to ... https://data.smartapplicationsgroup.com/api/abacus_dev/edi/claim?integ_app_code=JUBILEEECLAIMS&prov_code=SKSP_446&centralId=318554408
+2020-04-07 13:05:31.894  INFO 24412 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Response successful=false, status_msg=null
+2020-04-07 13:05:31.894  INFO 24412 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : processing row 3
+2020-04-07 13:05:31.895  INFO 24412 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Preparing request to ... https://data.smartapplicationsgroup.com/api/abacus_dev/edi/claim?integ_app_code=JUBILEEECLAIMS&prov_code=SKSP_505&centralId=318554627
+2020-04-07 13:05:32.247  INFO 24412 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Response successful=false, status_msg=null
+2020-04-07 13:05:32.248  INFO 24412 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : processing row 4
+2020-04-07 13:05:32.248  INFO 24412 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Preparing request to ... https://data.smartapplicationsgroup.com/api/abacus_dev/edi/claim?integ_app_code=JUBILEEECLAIMS&prov_code=SKSP_125&centralId=318554698
+2020-04-07 13:05:32.577  INFO 24412 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Response successful=false, status_msg=null
+2020-04-07 13:05:32.578  INFO 24412 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : processing row 5
+2020-04-07 13:05:32.578  INFO 24412 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Preparing request to ... https://data.smartapplicationsgroup.com/api/abacus_dev/edi/claim?integ_app_code=JUBILEEECLAIMS&prov_code=SKSP_1618&centralId=318554742
+2020-04-07 13:05:32.920  INFO 24412 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Response successful=false, status_msg=null
+2020-04-07 13:05:32.920  INFO 24412 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : processing row 6
+2020-04-07 13:05:32.921  INFO 24412 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Preparing request to ... https://data.smartapplicationsgroup.com/api/abacus_dev/edi/claim?integ_app_code=JUBILEEECLAIMS&prov_code=SKSP_156&centralId=318554863
+2020-04-07 13:05:33.270  INFO 24412 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Response successful=false, status_msg=null
+2020-04-07 13:05:33.270  INFO 24412 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : processing row 7
+2020-04-07 13:05:33.270  INFO 24412 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Preparing request to ... https://data.smartapplicationsgroup.com/api/abacus_dev/edi/claim?integ_app_code=JUBILEEECLAIMS&prov_code=SKSP_505&centralId=318554905
+2020-04-07 13:05:33.621  INFO 24412 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Response successful=false, status_msg=null
+2020-04-07 13:05:33.622  INFO 24412 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : processing row 8
+2020-04-07 13:05:33.622  INFO 24412 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Preparing request to ... https://data.smartapplicationsgroup.com/api/abacus_dev/edi/claim?integ_app_code=JUBILEEECLAIMS&prov_code=SKSP_505&centralId=318555125
+2020-04-07 13:05:33.939  INFO 24412 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Response successful=false, status_msg=null
+2020-04-07 13:05:33.939  INFO 24412 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : processing row 9
+2020-04-07 13:05:33.939  INFO 24412 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Preparing request to ... https://data.smartapplicationsgroup.com/api/abacus_dev/edi/claim?integ_app_code=JUBILEEECLAIMS&prov_code=SKSP_1618&centralId=318555140
+2020-04-07 13:05:34.263  INFO 24412 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Response successful=false, status_msg=null
+2020-04-07 13:05:34.263  INFO 24412 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : processing row 10
+2020-04-07 13:05:34.263  INFO 24412 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Preparing request to ... https://data.smartapplicationsgroup.com/api/abacus_dev/edi/claim?integ_app_code=JUBILEEECLAIMS&prov_code=SKSP_505&centralId=318555164
+2020-04-07 13:05:34.579  INFO 24412 --- [scheduling-1] com.smart.integ.util.SLFetchHandler      : Response successful=false, status_msg=null
+2020-04-07 13:05:34.633  INFO 24412 --- [scheduling-1] com.smart.integ.service.ClaimService     : TASK COMPLETED: SUCCEEDED = 0, FAILED = 10
+2020-04-07 13:05:34.750  INFO 24412 --- [scheduling-1] com.smart.integ.service.ClaimService     : 0. Logging failed: central_id = 318554201
+2020-04-07 13:05:34.751  INFO 24412 --- [scheduling-1] com.smart.integ.service.ClaimService     : 1. Logging failed: central_id = 318554408
+2020-04-07 13:05:34.751  INFO 24412 --- [scheduling-1] com.smart.integ.service.ClaimService     : 2. Logging failed: central_id = 318554627
+2020-04-07 13:05:34.751  INFO 24412 --- [scheduling-1] com.smart.integ.service.ClaimService     : 3. Logging failed: central_id = 318554698
+2020-04-07 13:05:34.751  INFO 24412 --- [scheduling-1] com.smart.integ.service.ClaimService     : 4. Logging failed: central_id = 318554742
+2020-04-07 13:05:34.751  INFO 24412 --- [scheduling-1] com.smart.integ.service.ClaimService     : 5. Logging failed: central_id = 318554863
+2020-04-07 13:05:34.751  INFO 24412 --- [scheduling-1] com.smart.integ.service.ClaimService     : 6. Logging failed: central_id = 318554905
+2020-04-07 13:05:34.751  INFO 24412 --- [scheduling-1] com.smart.integ.service.ClaimService     : 7. Logging failed: central_id = 318555125
+2020-04-07 13:05:34.751  INFO 24412 --- [scheduling-1] com.smart.integ.service.ClaimService     : 8. Logging failed: central_id = 318555140
+2020-04-07 13:05:34.752  INFO 24412 --- [scheduling-1] com.smart.integ.service.ClaimService     : 9. Logging failed: central_id = 318555164
+2020-04-07 13:05:51.767  INFO 24412 --- [SpringContextShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application JUBILEE-MICROSERVICE with eureka with status DOWN
+2020-04-07 13:05:51.768  WARN 24412 --- [SpringContextShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1586253951768, current=DOWN, previous=UP]
+2020-04-07 13:05:51.769  INFO 24412 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_JUBILEE-MICROSERVICE/10.0.2.15:jubilee-microservice:8090: registering service...
+2020-04-07 13:05:51.812  INFO 24412 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2020-04-07 13:05:51.814  INFO 24412 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-04-07 13:05:51.820  INFO 24412 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'abacus'
+2020-04-07 13:05:51.824  INFO 24412 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'integ'
+2020-04-07 13:05:51.841  INFO 24412 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2020-04-07 13:05:51.864  INFO 24412 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_JUBILEE-MICROSERVICE/10.0.2.15:jubilee-microservice:8090 - registration status: 204
+2020-04-07 13:05:52.532  INFO 24412 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2020-04-07 13:05:52.533  INFO 24412 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-04-07 13:05:53.109  INFO 24412 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-04-07 13:05:53.113  INFO 24412 --- [SpringContextShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2020-04-07 13:05:56.114  INFO 24412 --- [SpringContextShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2020-04-07 13:05:56.134  INFO 24412 --- [SpringContextShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_JUBILEE-MICROSERVICE/10.0.2.15:jubilee-microservice:8090 - deregister  status: 200
+2020-04-07 13:05:56.150  INFO 24412 --- [SpringContextShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
