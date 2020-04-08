@@ -63,13 +63,8 @@ public class RenewToken{
     private Environment env;
 
     @Autowired
-    private TokenInterface tokenService;
-
-    //public String bearerToken = "";
-
-    //public static Map <String, String> cache = new HashMap <> (); // GLOBAL VARIABLE
+    private TokenInterface tokenService;   
     private String bearerToken = ""; // GLOBAL VARIABLE
-    //public static final int ID = 100; // GLOBAL VARIABLE
 
     Logger log = Logger.getLogger(RenewToken.class.getName());
 
@@ -78,8 +73,7 @@ public class RenewToken{
         }
 
     //https://examples.javacodegeeks.com/enterprise-java/spring/spring-data-redis-example-2/
-
-    //@Scheduled(fixedDelay=1000 * 60 * 60)        //every 60 minutes regardless of the completion of the previous
+    //@Scheduled(fixedDelay=1000 * 60 * 60)        //every 60 minutes after previous
     public void getNewToken() {
         log.info("GETTING NEW TOKEN");
         Application.BEARER_TOKEN = tokenService.getToken("RESOECLAIMS", "zDPxTn6V3fql3oh00xIKLbNgkj4");

@@ -1,6 +1,6 @@
 /**
-* Persist EDI Claims
-* Get claims from EDI endpoint into an intermediary table
+* Push claims to actisure
+* read from database
 **/
 package com.smart.integ.daemon;
 
@@ -57,14 +57,7 @@ import com.smart.integ.interfaces.FetchClaimInterface;
 @Component    
 @EnableScheduling
 //@Profile({"default", "dev", "lab"})
-@Profile({"edi"})
-public class SLClaims{
-
-   
-
-    //http://appsdeveloperblog.com/reading-application-properties-spring-boot/
-    @Autowired
-    private Environment env;
+public class ActisureJob{
 
     @Autowired
     @Qualifier("abacusJdbcTemplate")
@@ -73,14 +66,12 @@ public class SLClaims{
     @Autowired
     @Qualifier("integJdbcTemplate")
     private JdbcTemplate integJdbcTemplate;
-
-
     
     @Autowired
     private FetchClaimInterface claimService;
 
 
-    @Value("${claims.fetch.slink:SELECT 1 FROM DUAL}")
+    @Value("${claims.fetch.soap:SELECT 1 FROM DUAL}")
     String dynamicQuery;
 
     @Value("${claims.fetch.clients:JIC}")
@@ -89,23 +80,23 @@ public class SLClaims{
     @Value("${claims.fetch.providers:SKSP_505}")
     String dynamicProviderArray;
 
-    Logger log = Logger.getLogger(SLClaims.class.getName());
+    Logger log = Logger.getLogger(ActisureJob.class.getName());
 
     
-    public SLClaims(){
+    public ActisureJob(){
         }
 
 
     @Scheduled(fixedDelay=1000 * 60 * 5)        //every 5 minutes after previous run
-    public void fetchSLClaims() {
-        log.info("Getting Smartlink Claims. STUB");
+    public void fetchClaimSoap() {
+        log.info("Getting soap from db");
         
-        String claimSql = dynamicQuery             
-        + " ORDER BY a.central_id ASC "
-        + " FETCH FIRST 500 ROWS ONLY ";
+        String claimSoapSql = dynamicQuery             
+        + " ORDER BY edi_claim_cache_id ASC "
+        + " FETCH NEXT 50 ROWS ONLY";
 
-        log.info("claimSql = " + claimSql);
-        claimService.fetchSLClaims(claimSql);
+        log.info("claimSoapSql = " + claimSoapSql);
+        claimService.fetchClaimSoap(claimSoapSql);
 
         }
 

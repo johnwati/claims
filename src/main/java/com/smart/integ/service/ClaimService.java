@@ -46,7 +46,9 @@ import org.json.simple.JsonObject;
 import org.json.simple.Jsoner;
 
 import com.smart.integ.util.SLFetchHandler;
-import com.smart.integ.interfaces.FetchSLInterface;
+import com.smart.integ.util.ActisurePushHandler;
+
+import com.smart.integ.interfaces.FetchClaimInterface;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.logging.Logger;
@@ -54,7 +56,7 @@ import java.util.logging.Logger;
 //Ref: https://www.callicoder.com/spring-boot-file-upload-download-jpa-hibernate-mysql-database-example/
 
 @Service
-public class ClaimService implements FetchSLInterface{
+public class ClaimService implements FetchClaimInterface{
 
     Logger log = Logger.getLogger(ClaimService.class.getName());
        
@@ -73,8 +75,7 @@ public class ClaimService implements FetchSLInterface{
     @Async
     public void fetchSLClaims(String _sql){
    
-        String successSql = "UPDATE stg_slink_claims SET is_edi=?, edi_status_msg=? WHERE central_id IN (?) ";
-        String failedSql = "UPDATE stg_slink_claims SET is_edi=?, edi_status_msg=? WHERE central_id=? ";
+        String updateSql = "UPDATE stg_slink_claims SET is_edi=?, edi_status_msg=? WHERE central_id=? ";
 
         try {
 
@@ -82,27 +83,37 @@ public class ClaimService implements FetchSLInterface{
             
             abacusJdbcTemplate.query(_sql, handler);                     
 
-            List<Long> lsSuccess = handler.getLsSuccess();
+            //List<Long> lsSuccess = handler.getLsSuccess();
+            List<Map<String,String>> lsSuccess = handler.getLsSuccess(); 
             List<Map<String,String>> lsFailed = handler.getLsFailed(); 
 
             int countSuccess = lsSuccess.size();
             int countFailed = lsFailed.size();
 
-            log.info("TASK COMPLETED: SUCCEEDED = " + countSuccess + ", FAILED = " + countFailed);
+            log.info("TASK COMPLETED: SUCCEEDED = " + countSuccess + ", FAILED = " + countFailed);                                  
 
-            //A. UPDATE SUCCESSFULL
+            //A. SUCCESS            
+            abacusJdbcTemplate.batchUpdate(updateSql, new BatchPreparedStatementSetter() {
+                @Override              
+                public void setValues(PreparedStatement ps, int i) throws SQLException {              
+                    Map<String,String> err = lsSuccess.get(i);
+                    
+                    log.info(i + ". Logging Success: central_id = " + err.get("central_id"));
 
-            int[] types = {Types.SMALLINT, Types.VARCHAR, Types.ARRAY};      
-            
-            Object[] successParams = {1, "", lsSuccess};
-        
-            if(lsSuccess.size() > 0){
-                abacusJdbcTemplate.update(successSql, successParams, types);    
-                }
-            
+                    ps.setInt(1, 1);              
+                    ps.setString(2, "");              
+                    ps.setLong(3, Long.parseLong(err.get("central_id").toString()));
+                    }
+              
+                @Override              
+                public int getBatchSize() {              
+                    return lsSuccess.size();            
+                    }
+              
+               });
 
             //B. UPDATE FAILURES            
-            abacusJdbcTemplate.batchUpdate(failedSql, new BatchPreparedStatementSetter() {
+            abacusJdbcTemplate.batchUpdate(updateSql, new BatchPreparedStatementSetter() {
                 @Override              
                 public void setValues(PreparedStatement ps, int i) throws SQLException {              
                     Map<String,String> err = lsFailed.get(i);
@@ -122,40 +133,54 @@ public class ClaimService implements FetchSLInterface{
                });
             
 
-
+            log.info("DONE");
 
             } 
         catch (DataAccessException dae){
             log.warning("Data Access Exception : " + dae.getMessage());
-            //Object[] params = {2, dae.getMessage(), al.getId()};
-            //int[] types = {Types.SMALLINT, Types.VARCHAR, Types.BIGINT};            
-            //alertsJdbcTemplate.update(statusSql, params, types);
             
             }            
-        // catch (FileNotFoundException fne) {
-
-        //     log.warning("File Not Found Exception : " + fne.getMessage());
-        //     //Object[] params = {3, fne.getMessage(), al.getId()};
-        //     //int[] types = {Types.SMALLINT, Types.VARCHAR, Types.BIGINT};            
-        //     //alertsJdbcTemplate.update(statusSql, params, types);
-        
-        //     } 
-        // catch (IOException ioe) {
-        //     log.warning("IOException : " + ioe.getMessage());
-        //     //Object[] params = {3, ioe.getMessage(), al.getId()};
-        //     //int[] types = {Types.SMALLINT, Types.VARCHAR, Types.BIGINT};            
-        //     //alertsJdbcTemplate.update(statusSql, params, types);            
-            
-        //     }
-        
-        //log.info("Done Creating BIG Workbook");
-        //return success;
+       
         }
 
 
 
 
-
+        @Async
+        public void fetchClaimSoap(String _sql){
+       
+            //String updateSql = "UPDATE stg_slink_claims SET is_edi=?, edi_status_msg=? WHERE central_id=? ";
+    
+            try {
+    
+                ActisurePushHandler handler = new ActisurePushHandler(plainRestTemplate);
+                
+                integJdbcTemplate.query(_sql, handler);                     
+    
+                //List<Long> lsSuccess = handler.getLsSuccess();
+                List<Map<String,String>> lsSuccess = handler.getLsSuccess(); 
+                List<Map<String,String>> lsFailed = handler.getLsFailed(); 
+    
+                int countSuccess = lsSuccess.size();
+                int countFailed = lsFailed.size();
+    
+                log.info("TASK COMPLETED: SUCCEEDED = " + countSuccess + ", FAILED = " + countFailed);                                  
+    
+                
+                //log.info("DONE");
+    
+                } 
+            catch (DataAccessException dae){
+                log.warning("Data Access Exception : " + dae.getMessage());
+                
+                }            
+           
+            }
+    
+    
+    
+    
+    
     
     
 

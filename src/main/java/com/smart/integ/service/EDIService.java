@@ -74,8 +74,7 @@ public class EDIService implements EDIInterface {
         Map<String,String> props = new HashMap<String,String>();
         //props.put("hello","world");
         
-        now = LocalDate.now();
-        
+        now = LocalDate.now();        
          
         String url = "https://data.smartapplicationsgroup.com/api/v2/integqa/claims/edi?customerid=RESOECLAIMS&countrycode=KE&isUpdate=false";      
         

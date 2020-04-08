@@ -7,10 +7,15 @@ spring:
   profiles:
     active: default
   
+  #spring.jpa.properties.hibernate.jdbc.batch_size=5
+
   jpa:
     show-sql: true   
     hibernate:
       ddl-auto: none
+      jdbc:
+        batch_size: 50
+
     properties:
       hibernate:
         dialect: org.hibernate.dialect.Oracle10gDialect

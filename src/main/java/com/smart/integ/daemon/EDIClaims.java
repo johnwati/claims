@@ -53,14 +53,14 @@ import org.springframework.jdbc.core.JdbcTemplate;
 @EnableScheduling
 //@Profile({"onpremise"})       //smart, ril, jic, apa
 //@Profile({"default", "dev", "lab"})
-public class PersistEDIClaimsJob{
+public class EDIClaims{
 
     Map <String, String> payload;
     List<DataSource> dsList;
     HashMap <String, String> hitSource;
     HashMap<String, HashMap<String, String>> alerts = new HashMap<String, HashMap<String, String>>();
     
-    Logger log = Logger.getLogger(PersistEDIClaimsJob.class.getName());
+    Logger log = Logger.getLogger(EDIClaims.class.getName());
 
     //http://appsdeveloperblog.com/reading-application-properties-spring-boot/
     @Autowired
@@ -97,7 +97,7 @@ public class PersistEDIClaimsJob{
 
 
 
-    public PersistEDIClaimsJob(){
+    public EDIClaims(){
         }
 
 
@@ -116,44 +116,44 @@ public class PersistEDIClaimsJob{
             //2.Fetch EDI Claims:
             for(int j=0; j < smartProviderCodes[i].length; j++){
 
-                    log.info("\t\tPROVIDER: " + smartProviderCodes[i][j]);
+                log.info("\t\tPROVIDER: " + smartProviderCodes[i][j]);
+            
+                //1. Check the query offset (actualy iteration count) from cache. if none use zero
+                String cOffset = "integ:edi:claims:" + clients[i] + ":"  + smartProviderCodes[i][j] + ":offsets:fetch_id_to";
+                String claimsKey = "integ:edi:claims:outgoing:" + clients[i] + ":"  + smartProviderCodes[i][j] + ":json";
                 
-                    //1. Check the query offset (actualy iteration count) from cache. if none use zero
-                    String cOffset = "integ:edi:claims:" + clients[i] + ":"  + smartProviderCodes[i][j] + ":offsets:fetch_id_to";
-                    String claimsKey = "integ:edi:claims:outgoing:" + clients[i] + ":"  + smartProviderCodes[i][j] + ":json";
-                    
-                    int offset = getOffSet(cOffset);//global offset
-                    JsonObject ediClaimsObject = ediService.fetchEDIClaimsObjectJson(Integer.parseInt(clientIds[i]),smartProviderCodes[i][j],offset);
-                    JsonArray ediClaimsList = (JsonArray)ediClaimsObject.get("claims");
+                int offset = getOffSet(cOffset);//global offset
+                JsonObject ediClaimsObject = ediService.fetchEDIClaimsObjectJson(Integer.parseInt(clientIds[i]),smartProviderCodes[i][j],offset);
+                JsonArray ediClaimsList = (JsonArray)ediClaimsObject.get("claims");
 
-                    //3. Cache'em one by one
-                    String prov = smartProviderCodes[i][j];
-                    log.info("Provider = " + prov);
+                //3. Cache'em one by one
+                String prov = smartProviderCodes[i][j];
+                log.info("Provider = " + prov);
 
-                    if(ediClaimsList == null){
-                        log.warning("NO CLAIMS found... checking next provider");
-                        continue;
-                        }
+                if(ediClaimsList == null){
+                    log.warning("NO CLAIMS found... checking next provider");
+                    continue;
+                    }
+                
+                for(int k=0; k < ediClaimsList.size(); k++){
+                    JsonObject clm = (JsonObject)ediClaimsList.get(k);
                     
-                    for(int k=0; k < ediClaimsList.size(); k++){
-                        JsonObject clm = (JsonObject)ediClaimsList.get(k);
-                        
-                        log.info("FOUND Claim. code = " + clm.get("claim_code"));  
-                                                
-                        String cacheEdiSql = "INSERT INTO INTEG_API.edi_claim_cache(claims_key, claim_code, customer_id, smart_prov_code, request_url, claim_json) VALUES(?,?,?,?,?,?)"; 
-                        jdbcTemplate.update(cacheEdiSql, claimsKey, clm.get("claim_code").toString(),customerIds[i], prov, "", clm.toJson());    //toJSONString                    
-                        }  
-                    
-                    //4. Update offset....
-                    String fetch_id_to = ediClaimsObject.get("fetch_id_to").toString();
-                    if(fetch_id_to != null && !fetch_id_to.equals("0")){
-                        setOffSet(cOffset, fetch_id_to);
-                        }
-                    else{
-                        log.info("No new offset. Leaving the current one intact !!!");
-                        }
-                    
-                    }//end for each provider
+                    log.info("FOUND Claim. code = " + clm.get("claim_code"));  
+                                            
+                    String cacheEdiSql = "INSERT INTO INTEG_API.edi_claim_cache(claims_key, claim_code, customer_id, smart_prov_code, request_url, claim_json) VALUES(?,?,?,?,?,?)"; 
+                    jdbcTemplate.update(cacheEdiSql, claimsKey, clm.get("claim_code").toString(),customerIds[i], prov, "", clm.toJson());    //toJSONString                    
+                    }  
+                
+                //4. Update offset....
+                String fetch_id_to = ediClaimsObject.get("fetch_id_to").toString();
+                if(fetch_id_to != null && !fetch_id_to.equals("0")){
+                    setOffSet(cOffset, fetch_id_to);
+                    }
+                else{
+                    log.info("No new offset. Leaving the current one intact !!!");
+                    }
+                
+                }//end for each provider
 
             }//END FOR EACH CLIENT
 
