@@ -25,16 +25,16 @@ public class Application {
     SpringApplication.run(Application.class, args);
     }
 
-  @LoadBalanced
-  @Bean
-  RestTemplate restTemplate() {
-      return new RestTemplate();
-      }
-
-  
-  @Bean(name = "plainRestTemplate")
-  RestTemplate plainRestTemplate() {
-      return new RestTemplate();
-      }
+//  @LoadBalanced
+//  @Bean
+//  RestTemplate restTemplate() {
+//      return new RestTemplate();
+//      }
+//
+//  
+//  @Bean(name = "plainRestTemplate")
+//  RestTemplate plainRestTemplate() {
+//      return new RestTemplate();
+//      }
 
 }

@@ -1,7 +1,7 @@
 /**
-* Persist EDI Claims
-* Get claims from EDI endpoint into an intermediary table
-**/
+ * Persist EDI Claims
+ * Get claims from EDI endpoint into an intermediary table
+ * */
 package com.smart.integ.daemon;
 
 import java.lang.Runnable;
@@ -50,34 +50,31 @@ import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.stereotype.Component;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-@Component    
+@Component
 @EnableScheduling
 //@Profile({"onpremise"})       //smart, ril, jic, apa
 //@Profile({"default", "dev", "lab"})
-public class RenewToken{
-
-   
+public class RenewToken {
 
     //http://appsdeveloperblog.com/reading-application-properties-spring-boot/
     @Autowired
     private Environment env;
 
     @Autowired
-    private TokenInterface tokenService;   
+    private TokenInterface tokenService;
     private String bearerToken = ""; // GLOBAL VARIABLE
 
     Logger log = Logger.getLogger(RenewToken.class.getName());
 
-    
-    public RenewToken(){
-        }
+    public RenewToken() {
+    }
 
     //https://examples.javacodegeeks.com/enterprise-java/spring/spring-data-redis-example-2/
-    //@Scheduled(fixedDelay=1000 * 60 * 60)        //every 60 minutes after previous
+    @Scheduled(fixedDelay = 1000 * 60 * 60)        //every 60 minutes after previous
     public void getNewToken() {
         log.info("GETTING NEW TOKEN");
         Application.BEARER_TOKEN = tokenService.getToken("RESOECLAIMS", "zDPxTn6V3fql3oh00xIKLbNgkj4");
         log.info("UPDATING TOKEN : " + Application.BEARER_TOKEN);
-        }
+    }
 
 }
