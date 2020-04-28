@@ -4,7 +4,7 @@
 spring:
   cloud:
     config:
-      uri: http://192.180.4.103:8888
+      uri: http://192.180.4.106:8888 
       name: jubilee-microservice
       username: config
       password: config123   
@@ -16,5 +16,5 @@ spring:
       #   max-attempts: 5
       #   max-interval: 1500
       #   multiplier: 1.5
-
+      #http://192.180.4.103:8888
   
