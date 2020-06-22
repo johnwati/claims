@@ -95,18 +95,18 @@ public class SLClaims{
     public SLClaims(){
         }
 
-
-    @Scheduled(fixedDelay=1000 * 60 * 5)        //every 5 minutes after previous run
-    public void fetchSLClaims() {
-        log.info("Getting Smartlink Claims. STUB");
-        
-        String claimSql = dynamicQuery             
-        + " ORDER BY a.central_id ASC "
-        + " FETCH FIRST 500 ROWS ONLY ";
-
-        log.info("claimSql = " + claimSql);
-        claimService.fetchSLClaims(claimSql);
-
-        }
+//
+//    @Scheduled(fixedDelay=1000 * 60 * 5)        //every 5 minutes after previous run
+//    public void fetchSLClaims() {
+//        log.info("Getting Smartlink Claims. STUB");
+//        
+//        String claimSql = dynamicQuery             
+//        + " ORDER BY a.central_id ASC "
+//        + " FETCH FIRST 500 ROWS ONLY ";
+//
+//        log.info("claimSql = " + claimSql);
+//        claimService.fetchSLClaims(claimSql);
+//
+//        }
 
 }

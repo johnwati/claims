@@ -5,6 +5,9 @@
  */
 package com.smart.integ.interfaces;
 
+import com.smart.integ.model.stg_edi_claim.Claim;
+import java.util.List;
+
 /**
  *
  * @author John.Simiyu
@@ -12,4 +15,8 @@ package com.smart.integ.interfaces;
 public interface ClaimInterface {
 
     public Void fetchClaim();
+    public String  getClaimsToSwich(Claim ediClaim);
+    public List<Claim> getUnswitchedCalims();
+    public void PostClaimsToEdi(String claimJsonString,String Claim_code);
+    public void postclaimsToEdi2(String claimJsonString); 
 }

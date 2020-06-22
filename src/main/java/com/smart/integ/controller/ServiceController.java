@@ -34,7 +34,7 @@ public class ServiceController {
     @RequestMapping("/get-token")
     public String getNewToken() {
         log.info("GETTING NEW TOKEN");
-        Application.BEARER_TOKEN = tokenService.getToken("RESOECLAIMS", "zDPxTn6V3fql3oh00xIKLbNgkj4");
+        Application.BEARER_TOKEN = tokenService.getToken();
         log.info("UPDATING TOKEN : " + Application.BEARER_TOKEN);
         return Application.BEARER_TOKEN;
     }

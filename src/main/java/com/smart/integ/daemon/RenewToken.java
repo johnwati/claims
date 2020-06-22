@@ -73,7 +73,7 @@ public class RenewToken {
     @Scheduled(fixedDelay = 1000 * 60 * 60)        //every 60 minutes after previous
     public void getNewToken() {
         log.info("GETTING NEW TOKEN");
-        Application.BEARER_TOKEN = tokenService.getToken("RESOECLAIMS", "zDPxTn6V3fql3oh00xIKLbNgkj4");
+        Application.BEARER_TOKEN = tokenService.getToken();
         log.info("UPDATING TOKEN : " + Application.BEARER_TOKEN);
     }
 

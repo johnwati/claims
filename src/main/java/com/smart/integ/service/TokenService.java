@@ -4,6 +4,7 @@
 **/
 package com.smart.integ.service;
 
+import com.smart.integ.config.Constants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -18,6 +19,8 @@ import com.smart.integ.interfaces.TokenInterface;
 import com.smart.integ.model.AuthToken;
 
 import java.util.logging.Logger;
+import javax.accessibility.AccessibleAction;
+import org.springframework.beans.factory.annotation.Value;
 
 @Service("tokenservice")
 public class TokenService implements TokenInterface {
@@ -32,10 +35,18 @@ public class TokenService implements TokenInterface {
     @Autowired
     @Qualifier("plainRestTemplate")         //does not use ribbon
     private RestTemplate plainRestTemplate;
+    
+//    @Autowired
+    Constants constants = new Constants();
+    
+     @Value("${app.client_id:7a0ab650-f605-458c-b2bc-e8143140c122}")
+    private String CLIENT_ID;
+    @Value("${app.client_secrete:jCluqZsyGLaOzjpj_r3Cg89gyN8}")
+    private String CLIENT_SCRETE;
 
-    public String getToken(String clientId, String clientSecret){
+    public String getToken(){
 
-        String url = "https://data.smartapplicationsgroup.com/auth/integ-clients/oauth/token?client_id=" + clientId + "&client_secret=" + clientSecret + "&grant_type=client_credentials";      
+        String url = "https://data.smartapplicationsgroup.com/auth/integ-clients/oauth/token?client_id=" + CLIENT_ID + "&client_secret=" + CLIENT_SCRETE + "&grant_type=client_credentials";      
         
         log.info("Preparing request to ... " + url);
         

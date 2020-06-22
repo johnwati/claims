@@ -86,18 +86,18 @@ public class ActisureJob{
     public ActisureJob(){
         }
 
-
-    @Scheduled(fixedDelay=1000 * 60 * 5)        //every 5 minutes after previous run
-    public void fetchClaimSoap() {
-        log.info("Getting soap from db");
-        
-        String claimSoapSql = dynamicQuery             
-        + " ORDER BY edi_claim_cache_id ASC "
-        + " FETCH NEXT 50 ROWS ONLY";
-
-        log.info("claimSoapSql = " + claimSoapSql);
-        claimService.fetchClaimSoap(claimSoapSql);
-
-        }
+//
+//    @Scheduled(fixedDelay=1000 * 60 * 5)        //every 5 minutes after previous run
+//    public void fetchClaimSoap() {
+//        log.info("Getting soap from db");
+//        
+//        String claimSoapSql = dynamicQuery             
+//        + " ORDER BY edi_claim_cache_id ASC "
+//        + " FETCH NEXT 50 ROWS ONLY";
+//
+//        log.info("claimSoapSql = " + claimSoapSql);
+//        claimService.fetchClaimSoap(claimSoapSql);
+//
+//        }
 
 }

@@ -25,11 +25,11 @@ public class EDIClaimsDaemon {
      
     Logger log = Logger.getLogger(RenewToken.class.getName());
 
-    // @Scheduled(cron = "0 */5 * * * *")            //every 15 minutes between 1 and 3
-    @Scheduled(fixedDelay = 1000 * 60 * 5)          //every 5 minutes after previous
-    public void LoadClaims() {
-        log.info("FETCHING CLAIMS FROM EDI");
-        claimInterface.fetchClaim();
-    }
+//    // @Scheduled(cron = "0 */5 * * * *")            //every 15 minutes between 1 and 3
+//    @Scheduled(fixedDelay = 1000 * 60 * 5)          //every 5 minutes after previous
+//    public void LoadClaims() {
+//        log.info("FETCHING CLAIMS FROM EDI");
+//        claimInterface.fetchClaim();
+//    }
 
 }

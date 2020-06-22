@@ -54,6 +54,16 @@ abacus:
     username: ${abacus.datasource.username}
     password: ${abacus.datasource.password}
     driver-class-name: oracle.jdbc.driver.OracleDriver
+    
+aar:
+  datasource:
+    jdbc-url: ${aar.datasource.url}
+    username: ${aar.datasource.username}
+    password: ${aar.datasource.password}
+    datasource.member.driverClassName: ${aar.datasource.driverClassName}
+#    com.mysql.cj.jdbc.Driver
+#    driver-class-name: oracle.jdbc.driver.OracleDriver
+
 
 eureka:
   #registryFetchIntervalSeconds: 1 #COMMENT THIS IN PRODUCTION

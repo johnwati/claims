@@ -4,8 +4,9 @@
 spring:
   cloud:
     config:
-      uri: http://192.180.4.106:8888 
-      name: jubilee-microservice
+#      uri: http://192.180.4.106:8888 
+      uri: http://127.0.0.1:8888 
+      name: aar-provider
       username: config
       password: config123   
       fail-fast: true   
