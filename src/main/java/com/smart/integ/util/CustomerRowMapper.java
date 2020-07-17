@@ -71,7 +71,9 @@ public class CustomerRowMapper implements RowMapper<ClaimRequest> {
         claimRequest.setDiagnosis_code(rs.getString("diagnosis_code"));
         claimRequest.setDiagnosis_description(rs.getString("diagnosis_description"));
         claimRequest.setBatch_Date(rs.getDate("batch_Date"));
-        claimRequest.setBatch_dispatch_date(rs.getString("batch_dispatch_date"));
+//        batch_discharge_date
+//batch_dispatch_date
+        claimRequest.setBatch_dispatch_date(rs.getString("batch_discharge_date"));
         claimRequest.setAar_submitted_on(rs.getString("aar_submitted_on"));
         claimRequest.setSmart_pulled(rs.getInt("smart_pulled"));
         claimRequest.setSmart_pulled_on(rs.getString("smart_pulled_on"));

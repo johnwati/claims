@@ -25,7 +25,7 @@ import org.springframework.beans.factory.annotation.Value;
 @Service("tokenservice")
 public class TokenService implements TokenInterface {
 
-    Logger log = Logger.getLogger(EDIService.class.getName());
+    Logger log = Logger.getLogger(TokenService.class.getName());
 
     //http://appsdeveloperblog.com/reading-application-properties-spring-boot/
     @Autowired

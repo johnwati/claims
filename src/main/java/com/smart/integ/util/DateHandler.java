@@ -4,8 +4,7 @@
  * and open the template in the editor.
  */
 package com.smart.integ.util;
-
-import com.smart.integ.service.EDIService;
+ 
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -22,7 +21,7 @@ import org.springframework.util.StringUtils;
 public class DateHandler {
 
     Date date = new Date();
-    Logger log = Logger.getLogger(EDIService.class.getName());
+    Logger log = Logger.getLogger(DateHandler.class.getName());
 
     public String  dateFormatter(String inputDate) throws ParseException {
 

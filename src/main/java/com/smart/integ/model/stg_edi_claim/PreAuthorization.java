@@ -25,7 +25,7 @@ public class PreAuthorization implements Serializable
     @JsonProperty("code")
     private String code;
     @JsonProperty("amount")
-    private Integer amount;
+    private Float amount;
     @JsonProperty("authorized_by")
     private String authorizedBy;
     @JsonProperty("message")
@@ -48,7 +48,7 @@ public class PreAuthorization implements Serializable
      * @param authorizedBy
      * @param message
      */
-    public PreAuthorization(String code, Integer amount, String authorizedBy, String message) {
+    public PreAuthorization(String code, Float amount, String authorizedBy, String message) {
         super();
         this.code = code;
         this.amount = amount;
@@ -67,12 +67,12 @@ public class PreAuthorization implements Serializable
     }
 
     @JsonProperty("amount")
-    public Integer getAmount() {
+    public Float getAmount() {
         return amount;
     }
 
     @JsonProperty("amount")
-    public void setAmount(Integer amount) {
+    public void setAmount(Float amount) {
         this.amount = amount;
     }
 

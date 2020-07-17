@@ -57,21 +57,28 @@ public class ProviderClaimsService implements ProviderClaimsInterface {
     private JdbcTemplate integJdbcTemplate;
     private final ObjectMapper mapper = new ObjectMapper();
 
-    Logger log = Logger.getLogger(EDIService.class.getName());
+    Logger log = Logger.getLogger(ProviderClaimsService.class.getName());
 //    public List<ClaimRequest> getClaimsToSwitch() {
 //
 //    }
 
     public List<ClaimRequest> fetchProviderClaims() {
-
         String sql = "SELECT * FROM smart_eclaims.dbo.smart_eclaims_submitted where smart_pulled = 0";
+        List<ClaimRequest> requests = aarJdbcTemplate.query(sql, new CustomerRowMapper());
+//        requests.forEach((request) -> {
+//            List<Claim> claims = invoice_CLAIM_EXIST(request);
+//            if (claims.size() > 0) {
+//                provMarkBack(request);
+//            }
+//        });
+        return requests;
+    }
 
-        List<ClaimRequest> customers = aarJdbcTemplate.query(sql, new CustomerRowMapper());
-
-//String columnName = "COLUMN_3";
-//String counter = "COUNTER";
-//SELECT " + columnName + ", count(*) as " + counter + " FROM data GROUP BY " + columnName
-        return customers;
+    public void processProviderClaim(ClaimRequest request) {
+        List<Claim> claims = invoice_CLAIM_EXIST(request);
+        if (claims.size() > 0) {
+            provMarkBack(request);
+        }
     }
 
     public List<Claim> invoice_CLAIM_EXIST(ClaimRequest claimRequest) {

@@ -18,5 +18,6 @@ public interface ClaimInterface {
     public String  getClaimsToSwich(Claim ediClaim);
     public List<Claim> getUnswitchedCalims();
     public void PostClaimsToEdi(String claimJsonString,String Claim_code);
-    public void postclaimsToEdi2(String claimJsonString); 
+    public void postclaimsToEdi2(String claimJsonString);     
+    public void processClaimToEdi(Claim claim);
 }

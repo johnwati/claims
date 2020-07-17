@@ -1,4 +1,3 @@
-
 package com.smart.integ.model.stg_edi_claim;
 
 import java.io.Serializable;
@@ -13,7 +12,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.apache.commons.lang.builder.ToStringBuilder;
 
-
 @JsonInclude(JsonInclude.Include.ALWAYS)
 @JsonPropertyOrder({
     "amount",
@@ -24,13 +22,12 @@ import org.apache.commons.lang.builder.ToStringBuilder;
     "lines",
     "payment_modifiers"
 })
-public class Invoice implements Serializable
-{
+public class Invoice implements Serializable {
 
     @JsonProperty("amount")
-    private Integer amount;
+    private Float amount;
     @JsonProperty("gross_amount")
-    private Integer grossAmount;
+    private Float grossAmount;
     @JsonProperty("invoice_date")
     private String invoiceDate;
     @JsonProperty("invoice_number")
@@ -47,13 +44,13 @@ public class Invoice implements Serializable
 
     /**
      * No args constructor for use in serialization
-     * 
+     *
      */
     public Invoice() {
     }
 
     /**
-     * 
+     *
      * @param serviceType
      * @param paymentModifiers
      * @param amount
@@ -62,7 +59,7 @@ public class Invoice implements Serializable
      * @param invoiceDate
      * @param lines
      */
-    public Invoice(Integer amount, Integer grossAmount, String invoiceDate, String invoiceNumber, String serviceType, List<Line> lines, List<PaymentModifier> paymentModifiers) {
+    public Invoice(Float amount, Float grossAmount, String invoiceDate, String invoiceNumber, String serviceType, List<Line> lines, List<PaymentModifier> paymentModifiers) {
         super();
         this.amount = amount;
         this.grossAmount = grossAmount;
@@ -74,22 +71,36 @@ public class Invoice implements Serializable
     }
 
     @JsonProperty("amount")
-    public Integer getAmount() {
+    public Float getAmount() {
         return amount;
     }
 
     @JsonProperty("amount")
-    public void setAmount(Integer amount) {
+    public void setAmount(Float amount) {
         this.amount = amount;
     }
 
+    public float CalInvoiceAmount() {
+        float amt = 0;
+        try {
+            amt = getLines()
+                    .stream()
+                    .map((b) -> b.getGrossAmount())
+                    .reduce(amt, (accumulator, _item) -> accumulator + _item);
+            return amt;
+        } catch (Exception e) { 
+            System.out.println("exception cought:"+e.getLocalizedMessage());
+            return amt;
+        }
+    }
+
     @JsonProperty("gross_amount")
-    public Integer getGrossAmount() {
+    public Float getGrossAmount() {
         return grossAmount;
     }
 
     @JsonProperty("gross_amount")
-    public void setGrossAmount(Integer grossAmount) {
+    public void setGrossAmount(Float grossAmount) {
         this.grossAmount = grossAmount;
     }
 

@@ -46,11 +46,11 @@ public class Invoice implements Serializable
     @JsonProperty("invoice_number")
     private String invoiceNumber;
     @JsonProperty("amount")
-    private Integer amount;
+    private Float amount;
     @JsonProperty("invoice_id")
     private Integer invoiceId;
     @JsonProperty("gross_amount")
-    private Integer grossAmount;
+    private Float grossAmount;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
     private final static long serialVersionUID = -3332722495113620100L;
@@ -75,7 +75,7 @@ public class Invoice implements Serializable
      * @param grossAmount
      * @param payerBenefitDesc
      */
-    public Invoice(String payerBenefitCode, String payerBenefitDesc, List<LineItem> lineItems, String benefitDesc, Integer poolNumber, String serviceType, String invoiceNumber, Integer amount, Integer invoiceId, Integer grossAmount) {
+    public Invoice(String payerBenefitCode, String payerBenefitDesc, List<LineItem> lineItems, String benefitDesc, Integer poolNumber, String serviceType, String invoiceNumber, Float amount, Integer invoiceId, Float grossAmount) {
         super();
         this.payerBenefitCode = payerBenefitCode;
         this.payerBenefitDesc = payerBenefitDesc;
@@ -160,12 +160,12 @@ public class Invoice implements Serializable
     }
 
     @JsonProperty("amount")
-    public Integer getAmount() {
+    public Float getAmount() {
         return amount;
     }
 
     @JsonProperty("amount")
-    public void setAmount(Integer amount) {
+    public void setAmount(Float amount) {
         this.amount = amount;
     }
 
@@ -180,12 +180,12 @@ public class Invoice implements Serializable
     }
 
     @JsonProperty("gross_amount")
-    public Integer getGrossAmount() {
+    public Float getGrossAmount() {
         return grossAmount;
     }
 
     @JsonProperty("gross_amount")
-    public void setGrossAmount(Integer grossAmount) {
+    public void setGrossAmount(Float grossAmount) {
         this.grossAmount = grossAmount;
     }
 

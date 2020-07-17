@@ -5,44 +5,12 @@
  */
 package com.smart.integ.service;
 
-import java.io.IOException;
-import java.security.cert.CertificateException;
-import java.sql.Connection;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.net.ssl.HostnameVerifier;
-import javax.net.ssl.SSLContext;
-import javax.net.ssl.SSLSession;
-import javax.net.ssl.SSLSocketFactory;
-import javax.net.ssl.TrustManager;
-import javax.net.ssl.X509TrustManager;
-//import okhttp3.MediaType;
-//import okhttp3.OkHttpClient;
-//import okhttp3.Request;
-//import okhttp3.RequestBody;
-//import okhttp3.Response;
-//import static org.apache.http.conn.ssl.SSLConnectionSocketFactory.SSL;
-//import org.json.JSONArray;
-//import org.json.JSONObject;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
-
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.smart.integ.Application;
 import com.smart.integ.interfaces.ClaimInterface;
 import com.smart.integ.model.ClaimData;
-import com.smart.integ.model.ClaimRequest;
-import com.smart.integ.model.TokenModel;
 import com.smart.integ.model.stg_edi_claim.Claim;
 import com.smart.integ.repository.EdiClaimRepository;
 import java.util.List;
@@ -58,9 +26,6 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-
-import com.google.gson.Gson;
-import com.smart.integ.config.Constants;
 import com.smart.integ.interfaces.TokenInterface;
 import com.smart.integ.model.MapProvider;
 import com.smart.integ.model.PostEdiResponce;
@@ -70,15 +35,10 @@ import com.smart.integ.model.stg_edi_claim.Invoice;
 import com.smart.integ.model.stg_edi_claim.Line;
 import com.smart.integ.model.stg_edi_claim.PreAuthorization;
 import com.smart.integ.util.DateHandler;
-import com.sun.jdi.IntegerValue;
-import java.io.File;
 import java.io.IOException;
-import java.sql.Connection;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Collections;
 import java.util.Date;
-import org.codehaus.jackson.JsonGenerationException;
 import org.springframework.dao.DataAccessException;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.http.MediaType;
@@ -93,7 +53,7 @@ public class EDIClaimService implements ClaimInterface {
 
     DateHandler dateHandler = new DateHandler();
 
-    Logger log = Logger.getLogger(EDIService.class.getName());
+    Logger log = Logger.getLogger(EDIClaimService.class.getName());
 
     @Autowired
     @Qualifier("integJdbcTemplate")
@@ -108,8 +68,8 @@ public class EDIClaimService implements ClaimInterface {
     String url = "https://data.smartapplicationsgroup.com/api/v2/integqa/claims/edi?customerid=RESOECLAIMS&countrycode=KE&isUpdate=false";
 
     ObjectMapper mapper = new ObjectMapper();
-    private Double invoice_total = 0.00;
-    private Double InvoiceGrossAmount = 0.00;
+    private float invoice_total;
+    private float InvoiceGrossAmount;
 
     //    String clientId, String clientSecret
     @Value("${url.post.claim.edi:https://data.smartapplicationsgroup.com/api/v2/provider/integration?country_code=KE&integ_app_code=AAROWT6HFYUR7R3WGIYI6&prov_code=SKSP_301}")
@@ -147,13 +107,13 @@ public class EDIClaimService implements ClaimInterface {
         return null;
     }
 
-    public String getClaimsToSwich(Claim ediClaim ) {
+    public String getClaimsToSwich(Claim ediClaim) {
 //        Claim ediClaim = new Claim();
-        invoice_total = 0.00;
-        InvoiceGrossAmount = 0.00;
+        invoice_total = 0;
+        InvoiceGrossAmount = 0;
 
         try {
-            log.log(Level.INFO, "---------GETTING UNSWITCHED CLAIMS-------------------- {0} ",ediClaim.getClaimCode());
+            log.log(Level.INFO, "---------GETTING UNSWITCHED CLAIMS-------------------- {0} ", ediClaim.getClaimCode());
 //            String sql = "SELECT * FROM INTERACTIVE_EDI_CLAIMS.CLAIMS  WHERE PICK_STATUS = ?  AND CLAIM_CODE = ? FETCH FIRST 1 ROWS ONLY";
 //            Claim claims = integJdbcTemplate.queryForObject(sql, new Object[]{0, Claim_code}, BeanPropertyRowMapper.newInstance(Claim.class));
 ////            log.log(Level.INFO, "---------FOUND {0}  UNSWITCHED CLAIMS---------------", claims); 
@@ -209,9 +169,18 @@ public class EDIClaimService implements ClaimInterface {
                     Logger.getLogger(EDIClaimService.class.getName()).log(Level.SEVERE, null, ex);
                 }
             });
+//float total_line = INVOICE_lines.stream().map((b)->b.getGrossAmount()).reduce(invoice_total, (accumulator, a)->accumulator+a);
+            float ttl_line_Amount = 0;
+            ttl_line_Amount = INVOICE_lines.stream().map((b) -> b.getAmount()).reduce(ttl_line_Amount, (accumulator, _item) -> accumulator + _item);
+            float ttl_line_GrossAmount = 0;
+            ttl_line_GrossAmount = INVOICE_lines.stream().map((b) -> b.getAmount()).reduce(ttl_line_GrossAmount, (accumulator, _item) -> accumulator + _item);
 
-            invoices.get(0).setAmount(invoice_total.intValue());
-            invoices.get(0).setGrossAmount(InvoiceGrossAmount.intValue());
+            System.out.println(ttl_line_GrossAmount);
+            System.out.println(ttl_line_Amount);
+
+//        System.out.println(invoice_total);
+            invoices.get(0).setAmount(ttl_line_Amount);
+            invoices.get(0).setGrossAmount(ttl_line_GrossAmount);
             invoices.get(0).setLines(INVOICE_lines);
             ediClaim.setInvoices(invoices);
             String jsonInString = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(ediClaim);
@@ -241,9 +210,17 @@ public class EDIClaimService implements ClaimInterface {
     public List<Claim> getUnswitchedCalims() {
         log.log(Level.INFO, "---------GETTING UNSWITCHED CLAIMS---------------");
         String sql = "SELECT * FROM INTERACTIVE_EDI_CLAIMS.CLAIMS  WHERE PICK_STATUS = ?   ";
-        List<Claim> claims = integJdbcTemplate.query(sql, new Object[]{2}, BeanPropertyRowMapper.newInstance(Claim.class));
-//            log.log(Level.INFO, "---------FOUND {0}  UNSWITCHED CLAIMS---------------", claims); 
+        List<Claim> claims = integJdbcTemplate.query(sql, new Object[]{0}, BeanPropertyRowMapper.newInstance(Claim.class));
+//        claims.forEach((request) -> {
+//            String ClaimJsonString = getClaimsToSwich(request);
+//            PostClaimsToEdi(ClaimJsonString, request.getClaimCode());
+//        });
         return claims;
+    }
+
+    public void processClaimToEdi(Claim claim) {
+        String ClaimJsonString = getClaimsToSwich(claim);
+        PostClaimsToEdi(ClaimJsonString, claim.getClaimCode());
     }
 
     public MapProvider getProvider(String Branch_id) {
@@ -300,17 +277,16 @@ public class EDIClaimService implements ClaimInterface {
             SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             Date date = new Date();
             String DateTime = formatter.format(date);
-            
 
-            log.log(Level.INFO, "-------------------------MACKBACK {0} ------------------------------",Claim_code);
+            log.log(Level.INFO, "-------------------------MACKBACK {0} ------------------------------", Claim_code);
             String PICK_STATUS;
             if (ediResponce.getStatusCode().equals("2000")) {
                 PICK_STATUS = "1";
-            } else if (ediResponce.getStatusCodeMsg() == "Unknown backend payer code"){
+            } else if (ediResponce.getStatusCodeMsg() == "Unknown backend payer code") {
                 PICK_STATUS = "3";
-            }else{
-                
-               PICK_STATUS = "2";  
+            } else {
+
+                PICK_STATUS = "2";
             }
 
             String PICKED_DATE;

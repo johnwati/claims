@@ -45,17 +45,17 @@ public class LineItem implements Serializable
     @JsonProperty("payer_group_name")
     private String payerGroupName;
     @JsonProperty("quantity")
-    private Integer quantity;
+    private Float quantity;
     @JsonProperty("item_id")
     private Integer itemId;
     @JsonProperty("amount")
-    private Integer amount;
+    private Float amount;
     @JsonProperty("service_group")
     private String serviceGroup;
     @JsonProperty("charge_date")
     private String chargeDate;
     @JsonProperty("unit_price")
-    private Integer unitPrice;
+    private Float unitPrice;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
     private final static long serialVersionUID = -3155684202009225309L;
@@ -82,7 +82,7 @@ public class LineItem implements Serializable
      * @param chargeDate
      * @param payerGroupCode
      */
-    public LineItem(String provItemCode, String provItemName, String payerItemCode, String payerItemName, String payerGroupCode, String payerGroupName, Integer quantity, Integer itemId, Integer amount, String serviceGroup, String chargeDate, Integer unitPrice) {
+    public LineItem(String provItemCode, String provItemName, String payerItemCode, String payerItemName, String payerGroupCode, String payerGroupName, Float quantity, Integer itemId, Float amount, String serviceGroup, String chargeDate, Float unitPrice) {
         super();
         this.provItemCode = provItemCode;
         this.provItemName = provItemName;
@@ -159,12 +159,12 @@ public class LineItem implements Serializable
     }
 
     @JsonProperty("quantity")
-    public Integer getQuantity() {
+    public Float getQuantity() {
         return quantity;
     }
 
     @JsonProperty("quantity")
-    public void setQuantity(Integer quantity) {
+    public void setQuantity(Float quantity) {
         this.quantity = quantity;
     }
 
@@ -179,12 +179,12 @@ public class LineItem implements Serializable
     }
 
     @JsonProperty("amount")
-    public Integer getAmount() {
+    public Float getAmount() {
         return amount;
     }
 
     @JsonProperty("amount")
-    public void setAmount(Integer amount) {
+    public void setAmount(Float amount) {
         this.amount = amount;
     }
 
@@ -209,12 +209,12 @@ public class LineItem implements Serializable
     }
 
     @JsonProperty("unit_price")
-    public Integer getUnitPrice() {
+    public Float getUnitPrice() {
         return unitPrice;
     }
 
     @JsonProperty("unit_price")
-    public void setUnitPrice(Integer unitPrice) {
+    public void setUnitPrice(Float unitPrice) {
         this.unitPrice = unitPrice;
     }
 

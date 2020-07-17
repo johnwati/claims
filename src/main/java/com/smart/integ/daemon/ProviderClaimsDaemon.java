@@ -6,7 +6,8 @@
 //package com.smart.integ.daemon;
 //
 //import com.smart.integ.interfaces.ClaimInterface;
-//import com.smart.integ.model.stg_edi_claim.Claim;
+//import com.smart.integ.interfaces.ProviderClaimsInterface;
+//import com.smart.integ.model.ClaimRequest;
 //import java.util.List;
 //import java.util.logging.Level;
 //import java.util.logging.Logger;
@@ -21,19 +22,18 @@
 // */
 //@Component
 //@EnableScheduling
-//public class EDIClaimsDaemon {
+//public class ProviderClaimsDaemon {
 //
-//     @Autowired
-//    private ClaimInterface claimInterface; 
-//     
+//    @Autowired
+//    private ProviderClaimsInterface providerClaimsInterface;
 //    Logger log = Logger.getLogger(RenewToken.class.getName());
 //
 //    // @Scheduled(cron = "0 */5 * * * *")            //every 15 minutes between 1 and 3
-//    @Scheduled(fixedDelay = 1000 * 60 * 2)          //every 5 minutes after previous
-//    public void LoadClaims() {
-//        log.info("============================POSTING CLAIMS TO EDI=====================================");
-//        List<Claim> claims = claimInterface.getUnswitchedCalims();
-//        log.log(Level.INFO, "================ {0}  CLAIMS PROCESSED TO  EDI =======================", claims.size());
+//    @Scheduled(fixedDelay = 1000 * 60 * 5)          //every 5 minutes after previous
+//    public void fetchProviderClaims() {
+//        log.info("==========================FETCHING CLAIMS FROM THE PROVIDER=================================");
+//        List<ClaimRequest> requests = providerClaimsInterface.fetchProviderClaims();
+//        log.log(Level.INFO, "============= {0} CLAIMS PROCESSED FROM THE PROVIDER=========", requests.size());
 //    }
 //
 //}

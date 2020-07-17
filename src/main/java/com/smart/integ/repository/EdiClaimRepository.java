@@ -8,7 +8,6 @@ package com.smart.integ.repository;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.smart.integ.model.ClaimData;
-import com.smart.integ.service.EDIService;
 import com.fasterxml.jackson.databind.*;
 import java.util.logging.Logger;
 import javax.sql.DataSource;
@@ -29,9 +28,6 @@ public class EdiClaimRepository {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
-
-    @Autowired
-    QueryOffsetRepository queryOffsetRepository;
 
     DataSource ds = null;
 
@@ -54,21 +50,15 @@ public class EdiClaimRepository {
                 //3. Cache'em one by one
                 log.info("FOUND CLAIM WITH CLAIM CODE: " + claimData.getClaims().get(i).getClaimCode());
                 String prov = claimData.getClaims().get(i).getProviderCode();
-                String cOffset = "integ:edi:claims:" + clients + ":" + prov + ":offsets:fetch_id_to";
                 String claimsKey = "integ:edi:claims:outgoing:" + clients + ":" + prov + ":json";
-//                log.info("PROqueryOffsetRepositoryVIDER: " + cOffset);
-                int offset = queryOffsetRepository.getOffSet(cOffset);//global offset
-//                log.info("fetch offset: " + offset);
-//                log.info("Provider = " + prov); 
                 String claim_data = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(claimData.getClaims().get(i));
                 log.info("CLAIM DATA:  " + claim_data);
                 String cacheEdiSql = "INSERT INTO INTEG_API.edi_claim_cache(claims_key, claim_code, customer_id, smart_prov_code, request_url, claim_json) VALUES(?,?,?,?,?,?)";
-                jdbcTemplate.update(cacheEdiSql, claimsKey, claimData.getClaims().get(i).getClaimCode(), customerIds, prov, "",claim_data );    //toJSONString                    
+                jdbcTemplate.update(cacheEdiSql, claimsKey, claimData.getClaims().get(i).getClaimCode(), customerIds, prov, "", claim_data);    //toJSONString                    
 
                 //4. Update offset....
                 String fetch_id_to = claimData.getFetchIdTo().toString();
                 if (fetch_id_to != null && !fetch_id_to.equals("0")) {
-                    queryOffsetRepository.setOffSet(cOffset, fetch_id_to);
                 } else {
                     log.info("No new offset. Leaving the current one intact !!!");
                 }

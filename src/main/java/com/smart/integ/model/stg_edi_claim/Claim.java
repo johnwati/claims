@@ -51,9 +51,9 @@ public class Claim implements Serializable
     @JsonProperty("payer_name")
     private String payerName;
     @JsonProperty("amount")
-    private Integer amount;
+    private Float amount;
     @JsonProperty("gross_amount")
-    private Integer grossAmount;
+    private Float grossAmount;
     @JsonProperty("batch_number")
     private String batchNumber;
     @JsonProperty("dispatch_date")
@@ -130,7 +130,7 @@ public class Claim implements Serializable
      * @param fileVersion
      * @param batchNumber
      */
-    public Claim(String claimCode, String payerCode, String payerName, Integer amount, Integer grossAmount, String batchNumber, String dispatchDate, String patientNumber, String patientName, String locationCode, String locationName, String schemeCode, String schemeName, String memberNumber, String visitNumber, String visitStart, String visitEnd, String currency, String doctorName, String fileVersion, List<Diagnosi> diagnosis, List<PreAuthorization> preAuthorization, List<Admission> admission, List<Invoice> invoices) {
+    public Claim(String claimCode, String payerCode, String payerName, Float amount, Float grossAmount, String batchNumber, String dispatchDate, String patientNumber, String patientName, String locationCode, String locationName, String schemeCode, String schemeName, String memberNumber, String visitNumber, String visitStart, String visitEnd, String currency, String doctorName, String fileVersion, List<Diagnosi> diagnosis, List<PreAuthorization> preAuthorization, List<Admission> admission, List<Invoice> invoices) {
         super();
         this.claimCode = claimCode;
         this.payerCode = payerCode;
@@ -189,22 +189,22 @@ public class Claim implements Serializable
     }
 
     @JsonProperty("amount")
-    public Integer getAmount() {
+    public Float getAmount() {
         return amount;
     }
 
     @JsonProperty("amount")
-    public void setAmount(Integer amount) {
+    public void setAmount(Float amount) {
         this.amount = amount;
     }
 
     @JsonProperty("gross_amount")
-    public Integer getGrossAmount() {
+    public Float getGrossAmount() {
         return grossAmount;
     }
 
     @JsonProperty("gross_amount")
-    public void setGrossAmount(Integer grossAmount) {
+    public void setGrossAmount(Float grossAmount) {
         this.grossAmount = grossAmount;
     }
 

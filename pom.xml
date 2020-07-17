@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.smart</groupId>
-    <artifactId>jubilee-microservice</artifactId>
+    <artifactId>integ-ms-aarpro-edi</artifactId>
     <version>beta</version>
-    <name>AAR-PRO-EDI-SERVICE</name>
-    <description>Jubilee eClaims.</description>
+    <name>INTEG-MICROSERVICE-AARPRO-EDI</name>
+    <description>FECTH CLAIMS FROM AAR PROVIDER AND DELIVER TO EDI</description>
 
     <properties>
         <java.version>1.8</java.version>

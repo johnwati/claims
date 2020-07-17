@@ -19,5 +19,8 @@ public interface ProviderClaimsInterface {
 
     List<Claim> invoice_CLAIM_EXIST(ClaimRequest claimRequest);
 
+    public void processProviderClaim(ClaimRequest request);
+
     public void provMarkBack(ClaimRequest claimRequest);
+
 }

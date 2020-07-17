@@ -39,13 +39,13 @@ public class Line implements Serializable
     @JsonProperty("charge_date")
     private String chargeDate;
     @JsonProperty("unit_price")
-    private Integer unitPrice;
+    private Float unitPrice;
     @JsonProperty("quantity")
-    private Integer quantity;
+    private Float quantity;
     @JsonProperty("amount")
-    private Integer amount;
+    private Float amount;
     @JsonProperty("gross_amount")
-    private Integer grossAmount;
+    private Float grossAmount;
     @JsonProperty("pre_authorization_code")
     private String preAuthorizationCode;
     @JsonProperty("payment_reference")
@@ -74,7 +74,7 @@ public class Line implements Serializable
      * @param grossAmount
      * @param chargeDate
      */
-    public Line(String itemCode, String itemName, String serviceGroup, String chargeDate, Integer unitPrice, Integer quantity, Integer amount, Integer grossAmount, String preAuthorizationCode, List<PaymentReference> paymentReference) {
+    public Line(String itemCode, String itemName, String serviceGroup, String chargeDate, Float unitPrice, Float quantity, Float amount, Float grossAmount, String preAuthorizationCode, List<PaymentReference> paymentReference) {
         super();
         this.itemCode = itemCode;
         this.itemName = itemName;
@@ -129,42 +129,42 @@ public class Line implements Serializable
     }
 
     @JsonProperty("unit_price")
-    public Integer getUnitPrice() {
+    public Float getUnitPrice() {
         return unitPrice;
     }
 
     @JsonProperty("unit_price")
-    public void setUnitPrice(Integer unitPrice) {
+    public void setUnitPrice(Float unitPrice) {
         this.unitPrice = unitPrice;
     }
 
     @JsonProperty("quantity")
-    public Integer getQuantity() {
+    public Float getQuantity() {
         return quantity;
     }
 
     @JsonProperty("quantity")
-    public void setQuantity(Integer quantity) {
+    public void setQuantity(Float quantity) {
         this.quantity = quantity;
     }
 
     @JsonProperty("amount")
-    public Integer getAmount() {
+    public Float getAmount() {
         return amount;
     }
 
     @JsonProperty("amount")
-    public void setAmount(Integer amount) {
+    public void setAmount(Float amount) {
         this.amount = amount;
     }
 
     @JsonProperty("gross_amount")
-    public Integer getGrossAmount() {
+    public Float getGrossAmount() {
         return grossAmount;
     }
 
     @JsonProperty("gross_amount")
-    public void setGrossAmount(Integer grossAmount) {
+    public void setGrossAmount(Float grossAmount) {
         this.grossAmount = grossAmount;
     }
 
