@@ -39,6 +39,7 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Optional;
 import org.springframework.dao.DataAccessException;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.http.MediaType;
@@ -50,6 +51,8 @@ import org.springframework.web.client.HttpClientErrorException;
  */
 @Service
 public class EDIClaimService implements ClaimInterface {
+
+    ObjectMapper mapper = new ObjectMapper();
 
     DateHandler dateHandler = new DateHandler();
 
@@ -65,46 +68,26 @@ public class EDIClaimService implements ClaimInterface {
 
     @Autowired
     EdiClaimRepository ediClaimRepository;
-    String url = "https://data.smartapplicationsgroup.com/api/v2/integqa/claims/edi?customerid=RESOECLAIMS&countrycode=KE&isUpdate=false";
 
-    ObjectMapper mapper = new ObjectMapper();
     private float invoice_total;
     private float InvoiceGrossAmount;
 
     //    String clientId, String clientSecret
-    @Value("${url.post.claim.edi:https://data.smartapplicationsgroup.com/api/v2/provider/integration?country_code=KE&integ_app_code=AAROWT6HFYUR7R3WGIYI6&prov_code=SKSP_301}")
+    @Value("${url.post.claim.edi}")
     private String PostClaimToEdi_url;
 
     @Autowired
     private TokenInterface tokenService;
 
-    public Void fetchClaim() {
-        ObjectMapper mapper = new ObjectMapper();
-        log.info("Preparing request to ... " + url);
-        //Set the headers you need send
-        HttpHeaders headers = new HttpHeaders();
-        headers.set("Accept", "application/json");
-        headers.set("userId", "35906");     //INTEGEDI @ production/qa 
-        headers.set("Authorization", "Bearer " + Application.BEARER_TOKEN);
-        //Create a new HttpEntity
-        final HttpEntity<String> entity = new HttpEntity<String>(headers);
-        ResponseEntity<ClaimData> resp = plainRestTemplate.exchange(url, HttpMethod.GET, entity, ClaimData.class);
-        try {
-            //   log.info("resp = " + resp.getBody());
-            // Object to JSON in String
-            String jsonInString = mapper.writeValueAsString(resp.getBody().getClaims());
-
-        } catch (JsonProcessingException ex) {
-            Logger.getLogger(EDIClaimService.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        log.info("No of claims fetched:  " + resp.getBody().getClaims().size());
-        try {
-            ediClaimRepository.PersistClaims(resp.getBody());
-        } catch (JsonProcessingException ex) {
-            Logger.getLogger(EDIClaimService.class.getName()).log(Level.SEVERE, null, ex);
-        }
-//        log.info("CLAIM LIST :  " + jsonInString);
-        return null;
+    public List<Claim> getUnswitchedCalims() {
+        log.log(Level.INFO, "---------GETTING UNSWITCHED CLAIMS---------------\n"+PostClaimToEdi_url);
+        String sql = "SELECT * FROM INTERACTIVE_EDI_CLAIMS.CLAIMS  WHERE PICK_STATUS = ?   ";
+        List<Claim> claims = integJdbcTemplate.query(sql, new Object[]{0}, BeanPropertyRowMapper.newInstance(Claim.class));
+//        claims.forEach((request) -> {
+//            String ClaimJsonString = getClaimsToSwich(request);
+//            PostClaimsToEdi(ClaimJsonString, request.getClaimCode());
+//        });
+        return claims;
     }
 
     public String getClaimsToSwich(Claim ediClaim) {
@@ -139,15 +122,30 @@ public class EDIClaimService implements ClaimInterface {
                     + " WHERE CLAIM_CODE = ?  ";
             List<Admission> admission = integJdbcTemplate.query(sql_ADMISSION, new Object[]{ediClaim.getClaimCode()},
                     BeanPropertyRowMapper.newInstance(Admission.class));
-            admission.get(0).setAdmitDate(dateHandler.dateFormatter(admission.get(0).getAdmitDate()));
-            admission.get(0).setDischargeDate(dateHandler.dateFormatter(admission.get(0).getDischargeDate()));
+//            admission.get(0).setAdmitDate(dateHandler.dateFormatter(admission.get(0).getAdmitDate()));
+//            admission.get(0).setDischargeDate(dateHandler.dateFormatter(admission.get(0).getDischargeDate()));
+            admission.forEach((adm) -> {
+                try {
+                    adm.setAdmitDate(dateHandler.dateFormatter(adm.getAdmitDate()));
+                    adm.setDischargeDate(dateHandler.dateFormatter(adm.getDischargeDate()));
+                } catch (ParseException ex) {
+                    Logger.getLogger(EDIClaimService.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            });
             ediClaim.setAdmission(admission);
             log.log(Level.INFO, "---------GETTING UNSWITCHED CLAIMS INVOICES---------------{0}", ediClaim.getClaimCode());
             String sql_INVOICES = "SELECT  AMOUNT,GROSS_AMOUNT,INVOICE_DATE,INVOICE_NUMBER,SERVICE_TYPE FROM INTERACTIVE_EDI_CLAIMS.INVOICES "
                     + " WHERE CLAIM_CODE = ?  ";
             List<Invoice> invoices = integJdbcTemplate.query(sql_INVOICES, new Object[]{ediClaim.getClaimCode()},
                     BeanPropertyRowMapper.newInstance(Invoice.class));
-            invoices.get(0).setInvoiceDate(dateHandler.dateFormatter(invoices.get(0).getInvoiceDate()));
+            invoices.forEach((invoice) -> {
+                try {
+                    invoice.setInvoiceDate(dateHandler.dateFormatter(invoice.getInvoiceDate()));
+                } catch (ParseException ex) {
+                    Logger.getLogger(EDIClaimService.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            });
+
             log.log(Level.INFO, "---------GETTING UNSWITCHED CLAIMS INVOICES LINES---------------{0}", ediClaim.getClaimCode());
             String sql_INVOICES_LINES = "SELECT  ITEM_CODE,ITEM_NAME,SERVICE_GROUP,CHARGE_DATE,UNIT_PRICE,QUANTITY,AMOUNT,"
                     + "GROSS_AMOUNT,PRE_AUTHORIZATION_CODE"
@@ -207,17 +205,6 @@ public class EDIClaimService implements ClaimInterface {
 //        return ediClaim;
     }
 
-    public List<Claim> getUnswitchedCalims() {
-        log.log(Level.INFO, "---------GETTING UNSWITCHED CLAIMS---------------");
-        String sql = "SELECT * FROM INTERACTIVE_EDI_CLAIMS.CLAIMS  WHERE PICK_STATUS = ?   ";
-        List<Claim> claims = integJdbcTemplate.query(sql, new Object[]{0}, BeanPropertyRowMapper.newInstance(Claim.class));
-//        claims.forEach((request) -> {
-//            String ClaimJsonString = getClaimsToSwich(request);
-//            PostClaimsToEdi(ClaimJsonString, request.getClaimCode());
-//        });
-        return claims;
-    }
-
     public void processClaimToEdi(Claim claim) {
         String ClaimJsonString = getClaimsToSwich(claim);
         PostClaimsToEdi(ClaimJsonString, claim.getClaimCode());
@@ -247,6 +234,12 @@ public class EDIClaimService implements ClaimInterface {
     }
 
     public void PostClaimsToEdi(String claimJsonString, String Claim_code) {
+        log.log(Level.INFO, "-------------------------SENDING CLAIMS TO EDI WITH CLAIM CODE : {0} ------------------------------", Claim_code);
+        if (Checkifnull(Application.BEARER_TOKEN)) {
+            tokenService.getToken();
+        }
+        System.out.println("TOKEN " + Application.BEARER_TOKEN);
+        System.out.println("EDI LINK " + PostClaimToEdi_url);
         try {
             HttpHeaders headers = new HttpHeaders();
             headers.set("Accept", "application/json");
@@ -262,7 +255,11 @@ public class EDIClaimService implements ClaimInterface {
             ResponseEntity<PostEdiResponce> resp = plainRestTemplate.exchange(PostClaimToEdi_url, HttpMethod.POST, entity, PostEdiResponce.class);
 
             String jsonInString = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(resp.getBody());
-            System.out.println(jsonInString);
+            System.out.println("TOKEN " + Application.BEARER_TOKEN);
+            System.out.println("EDI LINK " + PostClaimToEdi_url);
+            System.out.println("BODY "+jsonInString);
+             System.out.println("EDI RESPONCE  "+resp);
+             
             MackBackService(resp.getBody(), claimJsonString, Claim_code);
         } catch (HttpClientErrorException ex) {
             Logger.getLogger(EDIClaimService.class.getName()).log(Level.SEVERE, null, ex);
@@ -307,5 +304,18 @@ public class EDIClaimService implements ClaimInterface {
             Logger.getLogger(EDIClaimService.class.getName()).log(Level.SEVERE, null, ex);
         }
 
+    }
+
+    private boolean Checkifnull(String x) {
+        // for Null value 
+        Optional<String> check = Optional.ofNullable(x);
+        // If the value in the current instance is null, 
+        // it will return false, else true 
+        if (check.isPresent()) {
+            return false;
+        } else // As the current value is null 
+        {
+            return true;
+        }
     }
 }

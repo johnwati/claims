@@ -39,9 +39,5 @@ public class ServiceController {
         return Application.BEARER_TOKEN;
     }
     
-    @RequestMapping("/get-claims")
-    public String getEDIClaims() {
-        claimInterface.fetchClaim();
-        return Application.BEARER_TOKEN;
-    }
+     
 }

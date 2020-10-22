@@ -9,6 +9,7 @@ package com.smart.integ.controller;
  *
  * @author John.Simiyu
  */
+import com.smart.integ.Application;
 import com.smart.integ.interfaces.ClaimInterface;
 import com.smart.integ.interfaces.ProviderClaimsInterface;
 import com.smart.integ.interfaces.TokenInterface;
@@ -38,20 +39,27 @@ public class StartupRunner implements ApplicationRunner {
 
     @Autowired
     private RestTemplate restTemplate;
-    String url = "https://data.smartapplicationsgroup.com/auth/integ-clients/oauth/token?client_id=RESOECLAIMS&client_secret=zDPxTn6V3fql3oh00xIKLbNgkj4&grant_type=client_credentials";
     Logger log = Logger.getLogger(StartupRunner.class.getName());
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-//        ThreadInterface threadInterface = new ThreadInterface(providerClaimsInterface,claimInterface); 
-//        log.log(Level.INFO, "PROVIDER CLAIMS SERVICE ACTIVATED");
-//        threadInterface.getProviderClaims();
+         log.info("GETTING NEW TOKEN");
+        Application.BEARER_TOKEN = tokenService.getToken();
+        log.info("UPDATING TOKEN : " + Application.BEARER_TOKEN); 
+        log.log(Level.INFO, "*****************************PROVIDER CLAIMS SERVICE ACTIVATED********************************");
+        ThreadInterface threadInterface = new ThreadInterface(providerClaimsInterface, claimInterface);
+        threadInterface.getProviderClaims();
         
         
-        ThreadInterface PostEdiThread = new ThreadInterface(providerClaimsInterface,claimInterface); 
-        log.log(Level.INFO, "POST CLAIM TO EDI  SERVICE ACTIVATED");
+        log.log(Level.INFO, "**************************POST CLAIM TO EDI  SERVICE ACTIVATED***********************");
+        ThreadInterface PostEdiThread = new ThreadInterface(providerClaimsInterface, claimInterface); 
         PostEdiThread.postToEdiClaims();
-        
+       
+
+////        
+//        ThreadInterface PostEdiThread = new ThreadInterface(providerClaimsInterface,claimInterface); 
+//        log.log(Level.INFO, "**************************POST CLAIM TO EDI  SERVICE ACTIVATED***********************");
+//        PostEdiThread.postToEdiClaims();
 //        log.info("============================POSTING CLAIMS TO EDI=====================================");
 //        List<Claim> claims = claimInterface.getUnswitchedCalims();
 //        log.log(Level.INFO, "================ {0}  CLAIMS PROCESSED TO  EDI =======================", claims.size());
@@ -61,7 +69,6 @@ public class StartupRunner implements ApplicationRunner {
 //         List<Claim> claims = claimInterface.getUnswitchedCalims();
 //        log.log(Level.INFO, "================ {0}  CLAIMS PROCESSED FROM THE PROVIDER =======================", claims.size());
 //        
-
         //        log.info("resp = " + constants.getAuth_link());
         //        log.info("Preparing request to ... " + url);
         //        //Set the headers you need send

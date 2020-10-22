@@ -1,5 +1,5 @@
 server:
-  port: 8090
+  port: 7001
 
 spring:
   application:
@@ -57,7 +57,8 @@ abacus:
     
 aar:
   datasource:
-    jdbc-url: ${aar.datasource.url}
+    jdbc-url: jdbc:sqlserver://192.180.3.14:7004 
+    #${aar.datasource.url}
     username: ${aar.datasource.username}
     password: ${aar.datasource.password}
     datasource.member.driverClassName: ${aar.datasource.driverClassName}
@@ -71,7 +72,8 @@ eureka:
       register-with-eureka: true
       fetch-registry: true
       serviceUrl:
-         defaultZone:  http://localhost:8761/eureka
+         defaultZone: http://192.180.4.15:8889/eureka
+#         defaultZone: http://127.0.0.1:8889/eureka
       instance:
         preferIpAddress: true        
         #hostname: localhost
@@ -99,7 +101,7 @@ management:
 
 
 logging:
-  file: jubilee-microservice.log
+  file: integ-ms-aarpro-edi.log
   pattern:
     console: '%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n'
   level:

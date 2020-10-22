@@ -34,7 +34,7 @@ public class PostEdiThread extends Thread {
             });
         } catch (Exception e) {
             // Throwing an exception 
-            System.out.println("Exception is caught");
+            System.out.println("Exception is caught"+e.toString());
         }
 
     }
