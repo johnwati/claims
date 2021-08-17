@@ -75,14 +75,18 @@ public class EDIClaimService implements ClaimInterface {
     //    String clientId, String clientSecret
     @Value("${url.post.claim.edi}")
     private String PostClaimToEdi_url;
+    
+    
+       @Value("${app.prov_code}")
+    private String prov_code;
 
     @Autowired
     private TokenInterface tokenService;
 
     public List<Claim> getUnswitchedCalims() {
         log.log(Level.INFO, "---------GETTING UNSWITCHED CLAIMS---------------\n"+PostClaimToEdi_url);
-        String sql = "SELECT * FROM INTERACTIVE_EDI_CLAIMS.CLAIMS  WHERE PICK_STATUS = ?   ";
-        List<Claim> claims = integJdbcTemplate.query(sql, new Object[]{0}, BeanPropertyRowMapper.newInstance(Claim.class));
+        String sql = "SELECT * FROM INTERACTIVE_PROV_CLAIMS.CLAIMS  WHERE PICK_STATUS = ?   AND PROV_CODE  =  ?   ";
+        List<Claim> claims = integJdbcTemplate.query(sql, new Object[]{0,prov_code}, BeanPropertyRowMapper.newInstance(Claim.class));
 //        claims.forEach((request) -> {
 //            String ClaimJsonString = getClaimsToSwich(request);
 //            PostClaimsToEdi(ClaimJsonString, request.getClaimCode());
@@ -97,7 +101,7 @@ public class EDIClaimService implements ClaimInterface {
 
         try {
             log.log(Level.INFO, "---------GETTING UNSWITCHED CLAIMS-------------------- {0} ", ediClaim.getClaimCode());
-//            String sql = "SELECT * FROM INTERACTIVE_EDI_CLAIMS.CLAIMS  WHERE PICK_STATUS = ?  AND CLAIM_CODE = ? FETCH FIRST 1 ROWS ONLY";
+//            String sql = "SELECT * FROM INTERACTIVE_PROV_CLAIMS.CLAIMS  WHERE PICK_STATUS = ?  AND CLAIM_CODE = ? FETCH FIRST 1 ROWS ONLY";
 //            Claim claims = integJdbcTemplate.queryForObject(sql, new Object[]{0, Claim_code}, BeanPropertyRowMapper.newInstance(Claim.class));
 ////            log.log(Level.INFO, "---------FOUND {0}  UNSWITCHED CLAIMS---------------", claims); 
 //            ediClaim = claims;
@@ -107,18 +111,18 @@ public class EDIClaimService implements ClaimInterface {
 //           MapProvider mapProvider = getProvider(ediClaim.getLocationCode());
             log.log(Level.INFO, "---------GETTING UNSWITCHED CLAIMS Diagnosi---------------{0}", ediClaim.getClaimCode());
             String sql_diagnosis = "SELECT  CLAIM_CODE,CODING_STANDARD,CODE,NAME, CASE WHEN IS_PRIMARY = 'primary'"
-                    + "THEN 'true' ELSE 'false' END AS IS_PRIMARY FROM INTERACTIVE_EDI_CLAIMS.DIAGNOSIS  WHERE CLAIM_CODE = ?  ";
+                    + "THEN 'true' ELSE 'false' END AS IS_PRIMARY FROM INTERACTIVE_PROV_CLAIMS.DIAGNOSIS  WHERE CLAIM_CODE = ?  ";
             List<Diagnosi> diagnosis = integJdbcTemplate.query(sql_diagnosis, new Object[]{ediClaim.getClaimCode()},
                     BeanPropertyRowMapper.newInstance(Diagnosi.class));
             ediClaim.setDiagnosis(diagnosis);
             log.log(Level.INFO, "---------GETTING UNSWITCHED CLAIMS PRE_AUTHORIZATION---------------{0}", ediClaim.getClaimCode());
-            String sql_pre_authorization = "SELECT  CODE,AMOUNT,AUTHORIZED_BY,MESSAGE FROM INTERACTIVE_EDI_CLAIMS.PRE_AUTHORIZATION "
+            String sql_pre_authorization = "SELECT  CODE,AMOUNT,AUTHORIZED_BY,MESSAGE FROM INTERACTIVE_PROV_CLAIMS.PRE_AUTHORIZATION "
                     + " WHERE CLAIM_CODE = ?  ";
             List<PreAuthorization> preAuthorization = integJdbcTemplate.query(sql_pre_authorization, new Object[]{ediClaim.getClaimCode()},
                     BeanPropertyRowMapper.newInstance(PreAuthorization.class));
             ediClaim.setPreAuthorization(preAuthorization);
             log.log(Level.INFO, "---------GETTING UNSWITCHED CLAIMS ADMISSION---------------{0}", ediClaim.getClaimCode());
-            String sql_ADMISSION = "SELECT  ADMIT_DATE,DISCHARGE_DATE,DISCHARGE_SUMMARY FROM INTERACTIVE_EDI_CLAIMS.ADMISSION "
+            String sql_ADMISSION = "SELECT  ADMIT_DATE,DISCHARGE_DATE,DISCHARGE_SUMMARY FROM INTERACTIVE_PROV_CLAIMS.ADMISSION "
                     + " WHERE CLAIM_CODE = ?  ";
             List<Admission> admission = integJdbcTemplate.query(sql_ADMISSION, new Object[]{ediClaim.getClaimCode()},
                     BeanPropertyRowMapper.newInstance(Admission.class));
@@ -134,7 +138,7 @@ public class EDIClaimService implements ClaimInterface {
             });
             ediClaim.setAdmission(admission);
             log.log(Level.INFO, "---------GETTING UNSWITCHED CLAIMS INVOICES---------------{0}", ediClaim.getClaimCode());
-            String sql_INVOICES = "SELECT  AMOUNT,GROSS_AMOUNT,INVOICE_DATE,INVOICE_NUMBER,SERVICE_TYPE FROM INTERACTIVE_EDI_CLAIMS.INVOICES "
+            String sql_INVOICES = "SELECT  AMOUNT,GROSS_AMOUNT,INVOICE_DATE,INVOICE_NUMBER,SERVICE_TYPE FROM INTERACTIVE_PROV_CLAIMS.INVOICES "
                     + " WHERE CLAIM_CODE = ?  ";
             List<Invoice> invoices = integJdbcTemplate.query(sql_INVOICES, new Object[]{ediClaim.getClaimCode()},
                     BeanPropertyRowMapper.newInstance(Invoice.class));
@@ -149,11 +153,11 @@ public class EDIClaimService implements ClaimInterface {
             log.log(Level.INFO, "---------GETTING UNSWITCHED CLAIMS INVOICES LINES---------------{0}", ediClaim.getClaimCode());
             String sql_INVOICES_LINES = "SELECT  ITEM_CODE,ITEM_NAME,SERVICE_GROUP,CHARGE_DATE,UNIT_PRICE,QUANTITY,AMOUNT,"
                     + "GROSS_AMOUNT,PRE_AUTHORIZATION_CODE"
-                    + " FROM INTERACTIVE_EDI_CLAIMS.LINES   WHERE CLAIM_CODE = ?  ";
+                    + " FROM INTERACTIVE_PROV_CLAIMS.LINES   WHERE CLAIM_CODE = ?  ";
             List<Line> INVOICE_lines = integJdbcTemplate.query(sql_INVOICES_LINES, new Object[]{ediClaim.getClaimCode()},
                     BeanPropertyRowMapper.newInstance(Line.class));
             log.log(Level.INFO, "---------GETTING UNSWITCHED CLAIMS INVOICES LINES---------------{0}", ediClaim.getClaimCode());
-//            String sql_INVOICES_LINES = "SELECT  ITEM_CODE,REF_NUMBER  FROM INTERACTIVE_EDI_CLAIMS.LINES   WHERE CLAIM_CODE = ?  ";
+//            String sql_INVOICES_LINES = "SELECT  ITEM_CODE,REF_NUMBER  FROM INTERACTIVE_PROV_CLAIMS.LINES   WHERE CLAIM_CODE = ?  ";
 //            List<Line> INVOICE_line = integJdbcTemplate.query(sql_INVOICES_LINES, new Object[]{claims.getClaimCode()},
 //                    BeanPropertyRowMapper.newInstance(Line.class));
 //            INVOICE_line.get(0).setPaymentReference(paymentReference);
@@ -214,7 +218,7 @@ public class EDIClaimService implements ClaimInterface {
 
         log.log(Level.INFO, "---------GETTING Provider Mapping ---------------");
         String sql = "SELECT PROV_NAME AS Provider_name, PROV_KEY AS Provider_code FROM "
-                + "INTERACTIVE_EDI_CLAIMS.MAP_PROVIDERS mb  "
+                + "INTERACTIVE_PROV_CLAIMS.MAP_PROVIDERS mb  "
                 + "WHERE   json_value(EXTRA_FIELDS_JSON , '$.branch_id')  = ?  ORDER BY PROV_KEY  DESC FETCH  FIRST  1 ROWS ONLY ";
         MapProvider mapProvider = integJdbcTemplate.queryForObject(sql, new Object[]{Branch_id}, BeanPropertyRowMapper.newInstance(MapProvider.class));
 //            log.log(Level.INFO, "---------FOUND {0}  UNSWITCHED CLAIMS---------------", claims); 
@@ -258,7 +262,7 @@ public class EDIClaimService implements ClaimInterface {
             System.out.println("TOKEN " + Application.BEARER_TOKEN);
             System.out.println("EDI LINK " + PostClaimToEdi_url);
             System.out.println("BODY "+jsonInString);
-             System.out.println("EDI RESPONCE  "+resp);
+            System.out.println("EDI RESPONCE  "+resp);
              
             MackBackService(resp.getBody(), claimJsonString, Claim_code);
         } catch (HttpClientErrorException ex) {
@@ -277,7 +281,7 @@ public class EDIClaimService implements ClaimInterface {
 
             log.log(Level.INFO, "-------------------------MACKBACK {0} ------------------------------", Claim_code);
             String PICK_STATUS;
-            if (ediResponce.getStatusCode().equals("2000")) {
+            if (ediResponce.getSuccessful()) {
                 PICK_STATUS = "1";
             } else if (ediResponce.getStatusCodeMsg() == "Unknown backend payer code") {
                 PICK_STATUS = "3";
@@ -293,7 +297,7 @@ public class EDIClaimService implements ClaimInterface {
             EDI_RESPONCE = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(ediResponce);
 
             String CLAIM_CODE = Claim_code;
-            String sqlInsert = "UPDATE   INTERACTIVE_EDI_CLAIMS.CLAIMS  SET  PICK_STATUS = ?"
+            String sqlInsert = "UPDATE   INTERACTIVE_PROV_CLAIMS.CLAIMS  SET  PICK_STATUS = ?"
                     + ",PICKED_DATE = current_timestamp ,JSON_CLAIM = ?,EDI_RESPONCE =? WHERE CLAIM_CODE = ? ";
             integJdbcTemplate.update(sqlInsert, PICK_STATUS, JSON_CLAIM, EDI_RESPONCE, CLAIM_CODE);
         } catch (JsonProcessingException ex) {
@@ -318,4 +322,14 @@ public class EDIClaimService implements ClaimInterface {
             return true;
         }
     }
+    
+    
+//    public void clai
 }
+
+
+
+
+
+
+

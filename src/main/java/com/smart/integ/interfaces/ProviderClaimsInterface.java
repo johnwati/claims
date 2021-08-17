@@ -6,6 +6,7 @@
 package com.smart.integ.interfaces;
 
 import com.smart.integ.model.ClaimRequest;
+import com.smart.integ.model.EdiSlClaims;
 import com.smart.integ.model.stg_edi_claim.Claim;
 import java.util.List;
 
@@ -23,4 +24,10 @@ public interface ProviderClaimsInterface {
 
     public void provMarkBack(ClaimRequest claimRequest);
 
+    public void  logProviderUnsubmittedInvoices(EdiSlClaims ediSlClaims);
+
 }
+
+
+
+

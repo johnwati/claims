@@ -1,13 +1,13 @@
 server:
-  port: 7001
+  port: 8301
 
 spring:
   application:
     name: integ-ms-aarpro-edi
   profiles:
     active: default
-  
-  #spring.jpa.properties.hibernate.jdbc.batch_size=5
+    
+#spring.jpa.properties.hibernate.jdbc.batch_size=5
 
   jpa:
     show-sql: true   
@@ -72,8 +72,9 @@ eureka:
       register-with-eureka: true
       fetch-registry: true
       serviceUrl:
-         defaultZone: http://192.180.4.15:8889/eureka
+        #  defaultZone: http://192.180.4.15:8889/eureka
 #         defaultZone: http://127.0.0.1:8889/eureka
+        defaultZone: http://smart:smart123@192.180.4.22:8103/eureka/
       instance:
         preferIpAddress: true        
         #hostname: localhost
@@ -115,3 +116,9 @@ logging:
     com:
       netflix:
         loadbalancer: info   
+
+
+
+
+
+

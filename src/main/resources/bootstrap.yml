@@ -4,11 +4,12 @@
 spring:
   cloud:
     config:
-      uri: http://192.180.4.15:8888 
-#      uri: http://127.0.0.1:8888 
+      uri: http://192.180.4.22:8101 
+#      uri: http://192.180.3.15:8888
+#      uri: http://127.0.0.1:8101       
       name: aarprov-edi-microservice-production
-      username: config
-      password: config123   
+      username: smart
+      password: smart123   
       fail-fast: true   
       #label: master    
       # discovery:
@@ -19,3 +20,6 @@ spring:
       #   multiplier: 1.5
       #http://192.180.4.103:8888
   
+
+
+

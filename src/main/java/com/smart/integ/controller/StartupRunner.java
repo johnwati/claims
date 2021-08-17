@@ -15,6 +15,7 @@ import com.smart.integ.interfaces.ProviderClaimsInterface;
 import com.smart.integ.interfaces.TokenInterface;
 import com.smart.integ.model.ClaimRequest;
 import com.smart.integ.model.stg_edi_claim.Claim;
+import com.smart.integ.repository.AbacusRepository;
 import com.smart.integ.threads.ThreadInterface;
 import java.util.List;
 import java.util.logging.Level;
@@ -38,26 +39,33 @@ public class StartupRunner implements ApplicationRunner {
     private ProviderClaimsInterface providerClaimsInterface;
 
     @Autowired
+    AbacusRepository abacusRepository;
+
+    @Autowired
     private RestTemplate restTemplate;
     Logger log = Logger.getLogger(StartupRunner.class.getName());
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-         log.info("GETTING NEW TOKEN");
+        log.info("*****************************GETTING NEW TOKEN*****************************");
         Application.BEARER_TOKEN = tokenService.getToken();
-        log.info("UPDATING TOKEN : " + Application.BEARER_TOKEN); 
+        log.info("*****************************UPDATING TOKEN : " + Application.BEARER_TOKEN+"*****************************");
+        ThreadInterface threadInterface = new ThreadInterface(providerClaimsInterface, claimInterface, abacusRepository);
         log.log(Level.INFO, "*****************************PROVIDER CLAIMS SERVICE ACTIVATED********************************");
-        ThreadInterface threadInterface = new ThreadInterface(providerClaimsInterface, claimInterface);
         threadInterface.getProviderClaims();
-        
-        
         log.log(Level.INFO, "**************************POST CLAIM TO EDI  SERVICE ACTIVATED***********************");
-        ThreadInterface PostEdiThread = new ThreadInterface(providerClaimsInterface, claimInterface); 
-        PostEdiThread.postToEdiClaims();
-       
+        threadInterface.postToEdiClaims();
+        log.log(Level.INFO, "**************************LOG PROVIDER UNSUBMITTED CLAIMS SERVICE ACTIVATED***********************");
+        threadInterface.logProviderUnsubmittedInvoices();
 
+//        log.log(Level.INFO, "*****************************PROVIDER CLAIMS SERVICE ACTIVATED********************************");
+//        ThreadInterface threadInterface = new ThreadInterface(providerClaimsInterface, claimInterface, abacusRepository);
+//        threadInterface.getProviderClaims();
+//        
+//        
+//        providerClaimsInterface.ProviderLogUnsubmittedInvoices();
 ////        
-//        ThreadInterface PostEdiThread = new ThreadInterface(providerClaimsInterface,claimInterface); 
+////        ThreadInterface PostEdiThread = new ThreadInterface(providerClaimsInterface, claimInterface);
 //        log.log(Level.INFO, "**************************POST CLAIM TO EDI  SERVICE ACTIVATED***********************");
 //        PostEdiThread.postToEdiClaims();
 //        log.info("============================POSTING CLAIMS TO EDI=====================================");
@@ -105,3 +113,5 @@ public class StartupRunner implements ApplicationRunner {
 //        dateHandler.dateConvserter("Jun 15 2020 11:24AM");
     }
 }
+
+

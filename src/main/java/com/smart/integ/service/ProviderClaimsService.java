@@ -10,9 +10,14 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.smart.integ.interfaces.ProviderClaimsInterface;
 import com.smart.integ.model.ClaimRequest;
 import com.smart.integ.model.Diagnosi;
+import com.smart.integ.model.EdiSlClaims;
 import com.smart.integ.model.MapProvider;
+import com.smart.integ.model.UnsubmitedInvoicesModel;
 import com.smart.integ.model.stg_edi_claim.Claim;
+import com.smart.integ.repository.AbacusRepository;
+import com.smart.integ.repository.ProviderRepository;
 import com.smart.integ.util.CustomerRowMapper;
+import com.smart.integ.util.DateHandler;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -31,6 +36,7 @@ import java.util.logging.Logger;
 import org.apache.http.HttpStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.dao.DataAccessException;
 import org.springframework.dao.DuplicateKeyException;
 //import org.springframework.http.HttpStatus;
@@ -58,10 +64,19 @@ public class ProviderClaimsService implements ProviderClaimsInterface {
     private final ObjectMapper mapper = new ObjectMapper();
 
     Logger log = Logger.getLogger(ProviderClaimsService.class.getName());
+
+    @Autowired
+    AbacusRepository abacusRepository;
+
+    @Autowired
+    ProviderRepository providerRepository;
+
+    @Value("${app.prov_code}")
+    private String prov_code;
+
 //    public List<ClaimRequest> getClaimsToSwitch() {
 //
 //    }
-
     public List<ClaimRequest> fetchProviderClaims() {
         String sql = "SELECT * FROM smart_eclaims.dbo.smart_eclaims_submitted where smart_pulled = 0";
         List<ClaimRequest> requests = aarJdbcTemplate.query(sql, new CustomerRowMapper());
@@ -83,7 +98,7 @@ public class ProviderClaimsService implements ProviderClaimsInterface {
 
     public List<Claim> invoice_CLAIM_EXIST(ClaimRequest claimRequest) {
 
-        String sql = "SELECT * FROM INTERACTIVE_EDI_CLAIMS.CLAIMS  WHERE CLAIM_CODE = ?";
+        String sql = "SELECT * FROM INTERACTIVE_PROV_CLAIMS.CLAIMS  WHERE CLAIM_CODE = ?";
         log.log(Level.INFO, "---------CHECKING IF CLAIM EXIST---------------{0}", claimRequest.invoice_number);
         List<Claim> claims = integJdbcTemplate.query(sql, new Object[]{claimRequest.invoice_number}, BeanPropertyRowMapper.newInstance(Claim.class));
         if (claims.size() > 0) {
@@ -98,7 +113,7 @@ public class ProviderClaimsService implements ProviderClaimsInterface {
 //            if (checkProviderMapping(claimRequest.branch_id) > 0) {
 //            MapProvider mapProvider = getProvider(claimRequest.branch_id);
             log.log(Level.INFO, "SAVING NEW CLAIM CODE: {0}", claimRequest.invoice_number);
-            String sqlInsert = "INSERT INTO INTERACTIVE_EDI_CLAIMS.CLAIMS "
+            String sqlInsert = "INSERT INTO INTERACTIVE_PROV_CLAIMS.CLAIMS "
                     + "(CLAIM_CODE,"
                     + "PAYER_CODE,"
                     + "PAYER_NAME,"
@@ -118,8 +133,8 @@ public class ProviderClaimsService implements ProviderClaimsInterface {
                     + "VISIT_END,"
                     + "CURRENCY,"
                     + "DOCTOR_NAME,"
-                    + "FILE_VERSION)"
-                    + " VALUES (?, ?, ?,?, ?, ?, ?,?,?, ?, ?, ?,?,?, ?, ?, ?,?)";
+                    + "FILE_VERSION,PROV_CODE)"
+                    + " VALUES (?, ?, ?,?, ?, ?, ?,?,?, ?, ?, ?,?,?, ?, ?, ?,?,?)";
             integJdbcTemplate.update(sqlInsert,
                     claimRequest.claim_code,
                     claimRequest.payer_code,
@@ -140,7 +155,8 @@ public class ProviderClaimsService implements ProviderClaimsInterface {
                     claimRequest.admission_date,
                     "KES",
                     claimRequest.doctor_name,
-                    claimRequest.file_version);
+                    claimRequest.file_version,
+                    prov_code);
 
             createDiagnosis(claimRequest);
             createAdmission(claimRequest);
@@ -149,7 +165,7 @@ public class ProviderClaimsService implements ProviderClaimsInterface {
             createInvoiceLines(claimRequest);
             createPaymentRefrence(claimRequest);
 
-            String sql2 = "SELECT * FROM INTERACTIVE_EDI_CLAIMS.CLAIMS  WHERE CLAIM_CODE = ?";
+            String sql2 = "SELECT * FROM INTERACTIVE_PROV_CLAIMS.CLAIMS  WHERE CLAIM_CODE = ?";
             log.log(Level.INFO, "---------CHECKING IF CLAIM EXIST---------------{0}", claimRequest.invoice_number);
             List<Claim> claims2 = integJdbcTemplate.query(sql2, new Object[]{claimRequest.invoice_number}, BeanPropertyRowMapper.newInstance(Claim.class));
             claims = claims2;
@@ -161,7 +177,7 @@ public class ProviderClaimsService implements ProviderClaimsInterface {
 
     private boolean isUserExists(ClaimRequest claimRequest) {
 
-        String sql = "SELECT count(*) FROM COUNT(*) FROM INTERACTIVE_EDI_CLAIMS.DIAGNOSIS WHERE PROVIDER_CLAIM_ID = ?";
+        String sql = "SELECT count(*) FROM COUNT(*) FROM INTERACTIVE_PROV_CLAIMS.DIAGNOSIS WHERE PROVIDER_CLAIM_ID = ?";
         boolean result = false;
 
         int count = integJdbcTemplate.queryForObject(
@@ -175,7 +191,7 @@ public class ProviderClaimsService implements ProviderClaimsInterface {
     }
 
     public void createDiagnosis(ClaimRequest claimRequest) {
-        String sql = "SELECT COUNT(*) FROM INTERACTIVE_EDI_CLAIMS.DIAGNOSIS "
+        String sql = "SELECT COUNT(*) FROM INTERACTIVE_PROV_CLAIMS.DIAGNOSIS "
                 + " WHERE CLAIM_CODE = ? AND CODING_STANDARD = ? AND CODE = ? AND  NAME = ? AND IS_PRIMARY = ?";
         log.info("---------CHECKING IF DIAGNOSIS EXIST---------------");
         int count = integJdbcTemplate.queryForObject(
@@ -186,15 +202,15 @@ public class ProviderClaimsService implements ProviderClaimsInterface {
             log.log(Level.INFO, "DIAGNOSIS EXIST FOR CLAIMS: {0}", claimRequest.invoice_number);
         } else {
             log.log(Level.INFO, "SAVING DIAGNOSIS FOR CLAIM CODE: {0}", claimRequest.invoice_number);
-            String sqlInsert = "INSERT INTO INTERACTIVE_EDI_CLAIMS.DIAGNOSIS "
+            String sqlInsert = "INSERT INTO INTERACTIVE_PROV_CLAIMS.DIAGNOSIS "
                     + "(CLAIM_CODE,"
                     + "CODING_STANDARD,"
                     + "CODE,"
                     + "NAME,"
                     + "IS_PRIMARY,"
                     + "PROVIDER_CLAIM_ID,"
-                    + "PRO_CLAIM_UNIQUE_IDENTIFIER"
-                    + ") VALUES (?,?,?,?,?,?,?)";
+                    + "PRO_CLAIM_UNIQUE_IDENTIFIER , PROV_CODE"
+                    + ") VALUES (?,?,?,?,?,?,?,?)";
             integJdbcTemplate.update(sqlInsert,
                     claimRequest.claim_code,
                     claimRequest.diagnosis_standard,
@@ -202,14 +218,14 @@ public class ProviderClaimsService implements ProviderClaimsInterface {
                     claimRequest.diagnosis_description,
                     claimRequest.Diagnosis_type,
                     claimRequest.claim_id,
-                    claimRequest.claim_unique_identifier
+                    claimRequest.claim_unique_identifier,prov_code
             );
 
         };
     }
 
     public void createAdmission(ClaimRequest claimRequest) {
-        String sql = "SELECT COUNT(*) FROM INTERACTIVE_EDI_CLAIMS.ADMISSION "
+        String sql = "SELECT COUNT(*) FROM INTERACTIVE_PROV_CLAIMS.ADMISSION "
                 + " WHERE CLAIM_CODE = ? AND ADMIT_DATE = ?";
         log.info("---------CHECKING IF ADMISSION EXIST---------------");
         int count = integJdbcTemplate.queryForObject(
@@ -219,28 +235,28 @@ public class ProviderClaimsService implements ProviderClaimsInterface {
             log.log(Level.INFO, "ADMISSION EXIST FOR CLAIMS: {0}", claimRequest.invoice_number);
         } else {
             log.log(Level.INFO, "SAVING ADMISSION FOR CLAIM CODE: {0}", claimRequest.invoice_number);
-            String sqlInsert = "INSERT INTO INTERACTIVE_EDI_CLAIMS.ADMISSION ("
+            String sqlInsert = "INSERT INTO INTERACTIVE_PROV_CLAIMS.ADMISSION ("
                     + "CLAIM_CODE,"
                     + "ADMIT_DATE,"
                     + "DISCHARGE_DATE,"
                     + "DISCHARGE_SUMMARY,"
                     + "PROVIDER_CLAIM_ID,"
-                    + "PRO_CLAIM_UNIQUE_IDENTIFIER)"
-                    + "values(?,?,?,?,?,?)";
+                    + "PRO_CLAIM_UNIQUE_IDENTIFIER,PROV_CODE)"
+                    + "values(?,?,?,?,?,?,?)";
             integJdbcTemplate.update(sqlInsert,
                     claimRequest.claim_code,
                     claimRequest.admission_date,
                     claimRequest.admission_date,
                     claimRequest.discharge_summary,
                     claimRequest.claim_id,
-                    claimRequest.claim_unique_identifier
+                    claimRequest.claim_unique_identifier,prov_code
             );
 
         };
     }
 
     public void CreatePreAuthorization(ClaimRequest claimRequest) {
-        String sql = "SELECT COUNT(*) FROM INTERACTIVE_EDI_CLAIMS.PRE_AUTHORIZATION "
+        String sql = "SELECT COUNT(*) FROM INTERACTIVE_PROV_CLAIMS.PRE_AUTHORIZATION "
                 + " WHERE (CLAIM_CODE = ? AND CODE = ?)  OR (PROVIDER_CLAIM_ID = ? AND PRO_CLAIM_UNIQUE_IDENTIFIER = ?)";
         log.info("---------CHECKING IF CLAIMS PRE_AUTHORIZATION EXIST---------------");
         int count = integJdbcTemplate.queryForObject(
@@ -253,15 +269,15 @@ public class ProviderClaimsService implements ProviderClaimsInterface {
             if (!StringUtils.isEmpty(claimRequest.preauthorisation_code)
                     || !StringUtils.isEmpty(claimRequest.preauthorisation_amount)
                     || !StringUtils.isEmpty(claimRequest.preauthorisation_athourised_by)) {
-                String sqlInsert = "INSERT INTO INTERACTIVE_EDI_CLAIMS.PRE_AUTHORIZATION ("
+                String sqlInsert = "INSERT INTO INTERACTIVE_PROV_CLAIMS.PRE_AUTHORIZATION ("
                         + "CLAIM_CODE,"
                         + "CODE,"
                         + "AMOUNT,"
                         + "AUTHORIZED_BY,"
                         + "MESSAGE ,"
                         + "PROVIDER_CLAIM_ID,"
-                        + "PRO_CLAIM_UNIQUE_IDENTIFIER)"
-                        + "VALUES (?,?,?,?,?,?,?)";
+                        + "PRO_CLAIM_UNIQUE_IDENTIFIER,PROV_CODE)"
+                        + "VALUES (?,?,?,?,?,?,?,?)";
                 integJdbcTemplate.update(sqlInsert,
                         claimRequest.claim_code,
                         claimRequest.preauthorisation_code,
@@ -269,7 +285,7 @@ public class ProviderClaimsService implements ProviderClaimsInterface {
                         claimRequest.preauthorisation_athourised_by,
                         "",
                         claimRequest.claim_id,
-                        claimRequest.claim_unique_identifier
+                        claimRequest.claim_unique_identifier,prov_code
                 );
             } else {
                 log.log(Level.INFO, " PRE_AUTHORIZATION  N/A FOR CLAIM CODE: {0}", claimRequest.invoice_number);
@@ -279,7 +295,7 @@ public class ProviderClaimsService implements ProviderClaimsInterface {
     }
 
     public void createInvoice(ClaimRequest claimRequest) {
-        String sql = "SELECT COUNT(*) FROM INTERACTIVE_EDI_CLAIMS.INVOICES "
+        String sql = "SELECT COUNT(*) FROM INTERACTIVE_PROV_CLAIMS.INVOICES "
                 + " WHERE CLAIM_CODE = ?  ";
         log.info("---------CHECKING IF INVOICES EXIST---------------");
         int count = integJdbcTemplate.queryForObject(
@@ -290,16 +306,16 @@ public class ProviderClaimsService implements ProviderClaimsInterface {
         } else {
             log.log(Level.INFO, "SAVING INVOICE FOR CLAIM CODE: {0}", claimRequest.invoice_number);
 
-            String sqlInsert = "INSERT INTO INTERACTIVE_EDI_CLAIMS.INVOICES ("
+            String sqlInsert = "INSERT INTO INTERACTIVE_PROV_CLAIMS.INVOICES ("
                     + "CLAIM_CODE,"
                     + "INVOICE_DATE,"
                     + "INVOICE_NUMBER,"
-                    + "SERVICE_TYPE ) VALUES (?,?,?,?)";
+                    + "SERVICE_TYPE,prov_code ) VALUES (?,?,?,?,?)";
             integJdbcTemplate.update(sqlInsert,
                     claimRequest.claim_code,
                     claimRequest.invoice_date,
                     claimRequest.invoice_number,
-                    claimRequest.service_type
+                    claimRequest.service_type,prov_code
             );
 
         };
@@ -307,7 +323,7 @@ public class ProviderClaimsService implements ProviderClaimsInterface {
     }
 
     public void createInvoiceLines(ClaimRequest claimRequest) {
-        String sql = "SELECT COUNT(*) FROM INTERACTIVE_EDI_CLAIMS.LINES "
+        String sql = "SELECT COUNT(*) FROM INTERACTIVE_PROV_CLAIMS.LINES "
                 + " WHERE PROVIDER_CLAIM_ID = ? AND PRO_CLAIM_UNIQUE_IDENTIFIER = ?";
         log.info("---------CHECKING IF INVOICES LINE EXIST---------------");
         int count = integJdbcTemplate.queryForObject(
@@ -318,7 +334,7 @@ public class ProviderClaimsService implements ProviderClaimsInterface {
         } else {
             log.log(Level.INFO, "SAVING INVOICE LINE FOR CLAIM CODE: {0}", claimRequest.invoice_number);
 
-            String sqlInsert = "INSERT INTO INTERACTIVE_EDI_CLAIMS.LINES ("
+            String sqlInsert = "INSERT INTO INTERACTIVE_PROV_CLAIMS.LINES ("
                     + "ITEM_CODE,"
                     + "ITEM_NAME,"
                     + "SERVICE_GROUP,"
@@ -330,8 +346,8 @@ public class ProviderClaimsService implements ProviderClaimsInterface {
                     + "PRE_AUTHORIZATION_CODE,"
                     + "CLAIM_CODE,"
                     + "PROVIDER_CLAIM_ID,"
-                    + "PRO_CLAIM_UNIQUE_IDENTIFIER"
-                    + ")VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
+                    + "PRO_CLAIM_UNIQUE_IDENTIFIER,prov_code"
+                    + ")VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)";
             integJdbcTemplate.update(sqlInsert,
                     claimRequest.service_code,
                     claimRequest.description,
@@ -344,7 +360,7 @@ public class ProviderClaimsService implements ProviderClaimsInterface {
                     claimRequest.preauthorisation_code,
                     claimRequest.invoice_number,
                     claimRequest.claim_id,
-                    claimRequest.claim_unique_identifier
+                    claimRequest.claim_unique_identifier,prov_code
             );
 
         };
@@ -356,7 +372,7 @@ public class ProviderClaimsService implements ProviderClaimsInterface {
     }
 
     public void createPaymentRefrence(ClaimRequest claimRequest) {
-        String sql = "SELECT COUNT(*) FROM INTERACTIVE_EDI_CLAIMS.PAYMENT_REFERENCE "
+        String sql = "SELECT COUNT(*) FROM INTERACTIVE_PROV_CLAIMS.PAYMENT_REFERENCE "
                 + " WHERE PROVIDER_CLAIM_ID = ? AND PRO_CLAIM_UNIQUE_IDENTIFIER = ?";
         log.info("---------CHECKING IF INVOICES LINE PAYMENT_REFERENCE EXIST---------------");
         int count = integJdbcTemplate.queryForObject(
@@ -367,16 +383,16 @@ public class ProviderClaimsService implements ProviderClaimsInterface {
         } else {
             log.log(Level.INFO, "SAVING INVOICE LINE PAYMENT_REFERENCE FOR CLAIM CODE: {0}", claimRequest.invoice_number);
 
-            String sqlInsert = "INSERT INTO INTERACTIVE_EDI_CLAIMS.PAYMENT_REFERENCE ("
+            String sqlInsert = "INSERT INTO INTERACTIVE_PROV_CLAIMS.PAYMENT_REFERENCE ("
                     + "ITEM_CODE,"
                     + "REF_NUMBER,"
                     + "PROVIDER_CLAIM_ID,"
-                    + "PRO_CLAIM_UNIQUE_IDENTIFIER)VALUES (?,?,?,?)";
+                    + "PRO_CLAIM_UNIQUE_IDENTIFIER,prov_code)VALUES (?,?,?,?,?)";
             integJdbcTemplate.update(sqlInsert,
                     claimRequest.service_code,
                     claimRequest.transation_reference_number,
                     claimRequest.claim_id,
-                    claimRequest.claim_unique_identifier
+                    claimRequest.claim_unique_identifier,prov_code
             );
 
         };
@@ -409,7 +425,7 @@ public class ProviderClaimsService implements ProviderClaimsInterface {
 
         log.log(Level.INFO, "---------GETTING Provider Mapping ---------------");
         String sql = "SELECT PROV_NAME AS Provider_name, PROV_KEY AS Provider_code FROM "
-                + "INTERACTIVE_EDI_CLAIMS.MAP_PROVIDERS mb  "
+                + "INTERACTIVE_PROV_CLAIMS.MAP_PROVIDERS mb  "
                 + "WHERE   json_value(EXTRA_FIELDS_JSON , '$.branch_id')  = ?  ORDER BY PROV_KEY  DESC FETCH  FIRST  1 ROWS ONLY ";
         MapProvider mapProvider = integJdbcTemplate.queryForObject(sql, new Object[]{Branch_id}, BeanPropertyRowMapper.newInstance(MapProvider.class));
 //            log.log(Level.INFO, "---------FOUND {0}  UNSWITCHED CLAIMS---------------", claims); 
@@ -418,7 +434,7 @@ public class ProviderClaimsService implements ProviderClaimsInterface {
     }
 
     public int checkProviderMapping(int Branch_id) {
-        String sql = "SELECT count(*) FROM  INTERACTIVE_EDI_CLAIMS.MAP_PROVIDERS mb  "
+        String sql = "SELECT count(*) FROM  INTERACTIVE_PROV_CLAIMS.MAP_PROVIDERS mb  "
                 + "WHERE   json_value(EXTRA_FIELDS_JSON , '$.branch_id')  = ?  ";
 
         log.info("---------CHECKING IF PROVIDER BRANCH MAPPING ---------------");
@@ -449,4 +465,45 @@ public class ProviderClaimsService implements ProviderClaimsInterface {
 
     }
 
+    public void logProviderUnsubmittedInvoices(EdiSlClaims ediSlClaims) {
+        log.log(Level.INFO, "================= CHECKING INVOICE : {0} ====================", ediSlClaims.getINVOICE_NUMBER().toString());
+//        System.out.println(ediSlClaims.getINVOICE_NUMBER().toString());
+        Integer ClaimCount = providerRepository.fetchProviderClaims(ediSlClaims.getINVOICE_NUMBER().toString());
+        System.out.println(ClaimCount);
+        if (ClaimCount <= 0) {
+            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+            LocalDateTime now = LocalDateTime.now();
+//            System.out.println(dtf.format(now));
+            String start_date = ediSlClaims.getINSERT_TIME().toString();// "2021-01-12 14:43:04"; 
+            if (start_date.length() > 19) {
+                start_date = start_date.substring(0, 19);
+            } else {
+                start_date = start_date;
+            }
+//            System.out.println(start_date);
+//            String end_date = dtf.format(now); 
+            DateHandler datehandler = new DateHandler();
+            long no_of_delayed_days = datehandler.findDifference(ediSlClaims.getINSERT_TIME(), dtf.format(now));
+            UnsubmitedInvoicesModel unsubmitedInvoice = new UnsubmitedInvoicesModel();
+            unsubmitedInvoice.setClaim_datetime(start_date);
+            unsubmitedInvoice.setInvoice_number(ediSlClaims.getINVOICE_NUMBER().toString());
+            unsubmitedInvoice.setPayer_name(ediSlClaims.getPAYER_NAME().toString());
+            unsubmitedInvoice.setClinic_name(ediSlClaims.getLOCATION_NAME().toString());
+            unsubmitedInvoice.setNo_of_delayed_days(no_of_delayed_days);
+            unsubmitedInvoice.setScheme_name(ediSlClaims.getSCHEME_NAME());
+            providerRepository.logUnsubmittedInvoices(unsubmitedInvoice);
+        }
+
+    }
+
 }
+
+
+
+
+
+
+
+
+
+
