@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.smart</groupId>
-    <artifactId>integ-ms-aarprov-edi</artifactId>
+    <artifactId>abacus-ms-edi-invoice-claims</artifactId>
     <version>beta</version>
-    <name>INTEG-MS-AARPROV-EDI</name>
+    <name>ABACUS-MS-EDI-IVOICE-CLAIMS</name>
     <description>deliver claims from aar provider kenya to EDI.</description>
 
     <properties>
