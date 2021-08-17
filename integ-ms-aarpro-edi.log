@@ -425,3 +425,1593 @@ Caused by: java.sql.SQLRecoverableException: ORA-01033: ORACLE initialization or
 2021-08-17 03:24:58.660  INFO 10800 --- [main] c.smart.integ.controller.StartupRunner   : *****************************UPDATING TOKEN : eyJraWQiOiJkZWZhdWx0LWdyYXZpdGVlLUFNLWtleSIsImFsZyI6IkhTMjU2In0.eyJzdWIiOiJhNzYwYzUyYy05N2VlLTRmMzEtYTViZi1mMGM0M2U0ZTg3MjUiLCJhdWQiOiJhNzYwYzUyYy05N2VlLTRmMzEtYTViZi1mMGM0M2U0ZTg3MjUiLCJkb21haW4iOiJpbnRlZy1jbGllbnRzIiwiaXNzIjoiaHR0cDovL2RhdGEuc21hcnRhcHBsaWNhdGlvbnNncm91cC5jb20vaW50ZWctY2xpZW50cy9vaWRjIiwiZXhwIjoxNjI5MTY3MDk4LCJpYXQiOjE2MjkxNTk4OTgsImp0aSI6IjVYRk84RlVRM2ZDTTRvWGFsOGE2Q1NJc1JzYyJ9.dGYJEPEcM_FWLs1f7wDUanWRgx2U9n1A07NIBw9r-y8*****************************
 2021-08-17 03:24:58.661  INFO 10800 --- [main] c.smart.integ.controller.StartupRunner   : *****************************PROVIDER CLAIMS SERVICE ACTIVATED********************************
 2021-08-17 03:24:58.662  INFO 10800 --- [main] com.smart.integ.threads.ThreadInterface  : ==========================FETCHING CLAIMS FROM THE PROVIDER=================================
+2021-08-17 03:52:23.429  INFO 26552 --- [main] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://192.180.4.22:8101
+2021-08-17 03:52:24.622  INFO 26552 --- [main] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=aarprov-edi-microservice-production, profiles=[default], label=null, version=98ec564b04ec2031d1e6ba852cfa4297f9ed6cf3, state=null
+2021-08-17 03:52:24.626  INFO 26552 --- [main] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}, BootstrapPropertySource {name='bootstrapProperties-http://192.180.3.23/integ-microservices/microservice-cofigurations.git/aarprov-edi-microservice-production.properties'}]
+2021-08-17 03:52:24.792  INFO 26552 --- [main] com.smart.integ.Application              : The following profiles are active: default
+2021-08-17 03:52:27.324  INFO 26552 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-08-17 03:52:27.368  INFO 26552 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15ms. Found 0 JPA repository interfaces.
+2021-08-17 03:52:27.370  INFO 26552 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-08-17 03:52:27.372  INFO 26552 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1ms. Found 0 JPA repository interfaces.
+2021-08-17 03:52:27.378  INFO 26552 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-08-17 03:52:27.381  INFO 26552 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1ms. Found 0 JPA repository interfaces.
+2021-08-17 03:52:28.697  WARN 26552 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2021-08-17 03:52:29.230  INFO 26552 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=496e062e-3b43-32da-9247-7b6ddc66361a
+2021-08-17 03:52:29.700  INFO 26552 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-08-17 03:52:30.957  INFO 26552 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8301 (http)
+2021-08-17 03:52:30.977  INFO 26552 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-17 03:52:30.978  INFO 26552 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2021-08-17 03:52:31.733  INFO 26552 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-08-17 03:52:31.734  INFO 26552 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 6867 ms
+2021-08-17 03:52:31.994  WARN 26552 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2021-08-17 03:52:31.995  INFO 26552 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2021-08-17 03:52:32.020  INFO 26552 --- [main] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@4eb9ae4d
+2021-08-17 03:52:34.574  INFO 26552 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2021-08-17 03:52:35.105  INFO 26552 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: aar]
+2021-08-17 03:52:35.246  INFO 26552 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.9.Final}
+2021-08-17 03:52:35.498  INFO 26552 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2021-08-17 03:52:35.929  INFO 26552 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-08-17 03:52:36.973  INFO 26552 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-08-17 03:52:37.033  INFO 26552 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2021-08-17 03:52:37.874 ERROR 26552 --- [main] o.h.e.j.e.internal.JdbcEnvironmentImpl   : Could not fetch the SequenceInformation from the database
+
+com.microsoft.sqlserver.jdbc.SQLServerException: Invalid object name 'all_sequences'.
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:259) ~[mssql-jdbc-6.4.0.jre8.jar:na]
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1547) ~[mssql-jdbc-6.4.0.jre8.jar:na]
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.doExecuteStatement(SQLServerStatement.java:857) ~[mssql-jdbc-6.4.0.jre8.jar:na]
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement$StmtExecCmd.doExecute(SQLServerStatement.java:757) ~[mssql-jdbc-6.4.0.jre8.jar:na]
+	at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7344) ~[mssql-jdbc-6.4.0.jre8.jar:na]
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:2713) ~[mssql-jdbc-6.4.0.jre8.jar:na]
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:224) ~[mssql-jdbc-6.4.0.jre8.jar:na]
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:204) ~[mssql-jdbc-6.4.0.jre8.jar:na]
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeQuery(SQLServerStatement.java:659) ~[mssql-jdbc-6.4.0.jre8.jar:na]
+	at com.zaxxer.hikari.pool.ProxyStatement.executeQuery(ProxyStatement.java:111) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.executeQuery(HikariProxyStatement.java) ~[HikariCP-3.4.1.jar:na]
+	at org.hibernate.tool.schema.extract.internal.SequenceInformationExtractorLegacyImpl.extractMetadata(SequenceInformationExtractorLegacyImpl.java:42) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentImpl.sequenceInformationList(JdbcEnvironmentImpl.java:403) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentImpl.<init>(JdbcEnvironmentImpl.java:268) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:114) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:152) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:175) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:118) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1202) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1233) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391) ~[spring-orm-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:378) ~[spring-orm-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1855) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1792) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1108) ~[spring-context-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:868) ~[spring-context-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550) ~[spring-context-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141) ~[spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747) ~[spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) ~[spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) ~[spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) ~[spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215) ~[spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at com.smart.integ.Application.main(Application.java:25) ~[classes/:na]
+
+2021-08-17 03:52:38.324  INFO 26552 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-08-17 03:52:38.352  INFO 26552 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'aar'
+2021-08-17 03:52:38.367  INFO 26552 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: abacus]
+2021-08-17 03:52:38.551  INFO 26552 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2021-08-17 03:52:38.552  WARN 26552 --- [main] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2021-08-17 03:52:39.971  INFO 26552 --- [main] com.zaxxer.hikari.pool.PoolBase          : HikariPool-2 - Driver does not support get/set network timeout for connections. (Receiver class oracle.jdbc.driver.T4CConnection does not define or inherit an implementation of the resolved method 'abstract int getNetworkTimeout()' of interface java.sql.Connection.)
+2021-08-17 03:52:40.050  INFO 26552 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2021-08-17 03:52:40.052  INFO 26552 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2021-08-17 03:52:44.628  INFO 26552 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-08-17 03:52:44.630  INFO 26552 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'abacus'
+2021-08-17 03:52:44.630  INFO 26552 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: integ]
+2021-08-17 03:52:44.802  INFO 26552 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2021-08-17 03:52:44.805  WARN 26552 --- [main] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2021-08-17 03:52:45.407 ERROR 26552 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Exception during pool initialization.
+
+java.sql.SQLRecoverableException: ORA-01033: ORACLE initialization or shutdown in progress
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:389) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:382) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.processError(T4CTTIoauthenticate.java:444) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.doOSESSKEY(T4CTTIoauthenticate.java:407) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:416) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.PhysicalConnection.<init>(PhysicalConnection.java:553) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CConnection.<init>(T4CConnection.java:254) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:32) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:528) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:353) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:473) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:562) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-3.4.1.jar:na]
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:180) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:152) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:175) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:118) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1202) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1233) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391) ~[spring-orm-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:378) ~[spring-orm-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1855) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1792) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1108) ~[spring-context-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:868) ~[spring-context-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550) ~[spring-context-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141) ~[spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747) ~[spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) ~[spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) ~[spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) ~[spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215) ~[spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at com.smart.integ.Application.main(Application.java:25) ~[classes/:na]
+
+2021-08-17 03:52:45.409  WARN 26552 --- [main] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000342: Could not obtain connection to query metadata : ORA-01033: ORACLE initialization or shutdown in progress
+
+2021-08-17 03:52:45.410  INFO 26552 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2021-08-17 03:52:45.432  INFO 26552 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2021-08-17 03:52:45.437  WARN 26552 --- [main] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2021-08-17 03:52:46.027 ERROR 26552 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Exception during pool initialization.
+
+java.sql.SQLRecoverableException: ORA-01033: ORACLE initialization or shutdown in progress
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:389) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:382) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.processError(T4CTTIoauthenticate.java:444) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.doOSESSKEY(T4CTTIoauthenticate.java:407) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:416) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.PhysicalConnection.<init>(PhysicalConnection.java:553) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CConnection.<init>(T4CConnection.java:254) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:32) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:528) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:353) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:473) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:562) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-3.4.1.jar:na]
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:180) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.hibernate.hql.spi.id.IdTableHelper.executeIdTableCreationStatements(IdTableHelper.java:67) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.hibernate.hql.spi.id.global.GlobalTemporaryTableBulkIdStrategy.finishPreparation(GlobalTemporaryTableBulkIdStrategy.java:125) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.hibernate.hql.spi.id.global.GlobalTemporaryTableBulkIdStrategy.finishPreparation(GlobalTemporaryTableBulkIdStrategy.java:42) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.hibernate.hql.spi.id.AbstractMultiTableBulkIdStrategyImpl.prepare(AbstractMultiTableBulkIdStrategyImpl.java:88) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:313) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:462) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1237) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391) ~[spring-orm-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:378) ~[spring-orm-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1855) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1792) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1108) ~[spring-context-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:868) ~[spring-context-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550) ~[spring-context-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141) ~[spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747) ~[spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) ~[spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) ~[spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) ~[spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215) ~[spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at com.smart.integ.Application.main(Application.java:25) ~[classes/:na]
+
+2021-08-17 03:52:46.029 ERROR 26552 --- [main] org.hibernate.hql.spi.id.IdTableHelper   : Unable obtain JDBC Connection
+
+java.sql.SQLRecoverableException: ORA-01033: ORACLE initialization or shutdown in progress
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:389) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:382) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.processError(T4CTTIoauthenticate.java:444) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.doOSESSKEY(T4CTTIoauthenticate.java:407) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:416) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.PhysicalConnection.<init>(PhysicalConnection.java:553) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CConnection.<init>(T4CConnection.java:254) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:32) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:528) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:353) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:473) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:562) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-3.4.1.jar:na]
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:180) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.hibernate.hql.spi.id.IdTableHelper.executeIdTableCreationStatements(IdTableHelper.java:67) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.hibernate.hql.spi.id.global.GlobalTemporaryTableBulkIdStrategy.finishPreparation(GlobalTemporaryTableBulkIdStrategy.java:125) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.hibernate.hql.spi.id.global.GlobalTemporaryTableBulkIdStrategy.finishPreparation(GlobalTemporaryTableBulkIdStrategy.java:42) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.hibernate.hql.spi.id.AbstractMultiTableBulkIdStrategyImpl.prepare(AbstractMultiTableBulkIdStrategyImpl.java:88) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:313) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:462) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1237) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391) ~[spring-orm-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:378) ~[spring-orm-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1855) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1792) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1108) ~[spring-context-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:868) ~[spring-context-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550) ~[spring-context-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141) ~[spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747) ~[spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) ~[spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) ~[spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) ~[spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215) ~[spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at com.smart.integ.Application.main(Application.java:25) ~[classes/:na]
+
+2021-08-17 03:52:46.046  INFO 26552 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-08-17 03:52:46.047  INFO 26552 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'integ'
+2021-08-17 03:52:48.290  INFO 26552 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2021-08-17 03:52:48.374  WARN 26552 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2021-08-17 03:52:48.374  INFO 26552 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2021-08-17 03:52:48.444  WARN 26552 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-08-17 03:52:48.565  INFO 26552 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-08-17 03:52:49.069  INFO 26552 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2021-08-17 03:52:50.867  INFO 26552 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2021-08-17 03:52:51.011  WARN 26552 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with default default cache. You can switch to using Caffeine cache, by adding it to the classpath.
+2021-08-17 03:52:51.038  INFO 26552 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 19 endpoint(s) beneath base path '/actuator'
+2021-08-17 03:52:51.118  INFO 26552 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2021-08-17 03:52:51.212  INFO 26552 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2021-08-17 03:52:51.328  INFO 26552 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2021-08-17 03:52:51.329  INFO 26552 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2021-08-17 03:52:51.674  INFO 26552 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2021-08-17 03:52:51.676  INFO 26552 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2021-08-17 03:52:52.021  INFO 26552 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2021-08-17 03:52:52.092  INFO 26552 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2021-08-17 03:52:52.093  INFO 26552 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2021-08-17 03:52:52.093  INFO 26552 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2021-08-17 03:52:52.094  INFO 26552 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2021-08-17 03:52:52.094  INFO 26552 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2021-08-17 03:52:52.095  INFO 26552 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2021-08-17 03:52:52.095  INFO 26552 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2021-08-17 03:52:52.554  INFO 26552 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2021-08-17 03:52:52.559  INFO 26552 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2021-08-17 03:52:52.573  INFO 26552 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2021-08-17 03:52:52.579  INFO 26552 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1629161572577 with initial instances count: 3
+2021-08-17 03:52:52.583  INFO 26552 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application INTEG-MS-AARPRO-EDI with eureka with status UP
+2021-08-17 03:52:52.585  INFO 26552 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1629161572585, current=UP, previous=STARTING]
+2021-08-17 03:52:52.587  INFO 26552 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_INTEG-MS-AARPRO-EDI/localhost:integ-ms-aarpro-edi:8301: registering service...
+2021-08-17 03:52:52.649  INFO 26552 --- [scheduling-1] com.smart.integ.daemon.RenewToken        : **************************POST CLAIM TO EDI  SERVICE ACTIVATED***********************
+2021-08-17 03:52:52.653  INFO 26552 --- [scheduling-1] com.smart.integ.threads.ThreadInterface  : ============================POSTING CLAIMS TO EDI=====================================
+2021-08-17 03:52:52.663  INFO 26552 --- [scheduling-1] com.smart.integ.service.EDIClaimService  : ---------GETTING UNSWITCHED CLAIMS---------------
+https://data.smartapplicationsgroup.com/api/v2/prod/provider/integration?country_code=KE&integ_app_code=AARPRODT6HFYU25YT3WGIYI6&prov_code=SKSP_301
+2021-08-17 03:52:52.743  INFO 26552 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8301 (http) with context path ''
+2021-08-17 03:52:52.744  INFO 26552 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8301
+2021-08-17 03:52:52.746  INFO 26552 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_INTEG-MS-AARPRO-EDI/localhost:integ-ms-aarpro-edi:8301 - registration status: 204
+2021-08-17 03:52:52.753  INFO 26552 --- [scheduling-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2021-08-17 03:52:52.753  WARN 26552 --- [scheduling-1] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2021-08-17 03:52:53.370 ERROR 26552 --- [scheduling-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Exception during pool initialization.
+
+java.sql.SQLRecoverableException: ORA-01033: ORACLE initialization or shutdown in progress
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:389) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:382) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.processError(T4CTTIoauthenticate.java:444) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.doOSESSKEY(T4CTTIoauthenticate.java:407) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:416) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.PhysicalConnection.<init>(PhysicalConnection.java:553) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CConnection.<init>(T4CConnection.java:254) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:32) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:528) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:353) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:473) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:562) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-3.4.1.jar:na]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:158) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:116) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:79) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:612) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:669) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:700) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:712) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:763) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at com.smart.integ.service.EDIClaimService.getUnswitchedCalims(EDIClaimService.java:89) ~[classes/:na]
+	at com.smart.integ.threads.ThreadInterface.postToEdiClaims(ThreadInterface.java:73) ~[classes/:na]
+	at com.smart.integ.daemon.EDIClaimsDaemon.LoadClaims(EDIClaimsDaemon.java:44) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) ~[spring-context-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:832) ~[na:na]
+
+2021-08-17 03:52:53.372 ERROR 26552 --- [scheduling-1] o.s.s.s.TaskUtils$LoggingErrorHandler    : Unexpected error occurred in scheduled task
+
+org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLRecoverableException: ORA-01033: ORACLE initialization or shutdown in progress
+
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:82) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:612) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:669) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:700) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:712) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:763) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at com.smart.integ.service.EDIClaimService.getUnswitchedCalims(EDIClaimService.java:89) ~[classes/:na]
+	at com.smart.integ.threads.ThreadInterface.postToEdiClaims(ThreadInterface.java:73) ~[classes/:na]
+	at com.smart.integ.daemon.EDIClaimsDaemon.LoadClaims(EDIClaimsDaemon.java:44) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) ~[spring-context-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:832) ~[na:na]
+Caused by: java.sql.SQLRecoverableException: ORA-01033: ORACLE initialization or shutdown in progress
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:389) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:382) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.processError(T4CTTIoauthenticate.java:444) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.doOSESSKEY(T4CTTIoauthenticate.java:407) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:416) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.PhysicalConnection.<init>(PhysicalConnection.java:553) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CConnection.<init>(T4CConnection.java:254) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:32) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:528) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:353) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:473) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:562) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-3.4.1.jar:na]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:158) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:116) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:79) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	... 20 common frames omitted
+
+2021-08-17 03:52:53.373  INFO 26552 --- [scheduling-1] com.smart.integ.daemon.RenewToken        : *****************************PROVIDER CLAIMS SERVICE ACTIVATED********************************
+2021-08-17 03:52:53.374  INFO 26552 --- [scheduling-1] com.smart.integ.threads.ThreadInterface  : ==========================FETCHING CLAIMS FROM THE PROVIDER=================================
+2021-08-17 03:52:54.529  INFO 26552 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2021-08-17 03:52:54.534  INFO 26552 --- [main] com.smart.integ.Application              : Started Application in 36.788 seconds (JVM running for 38.268)
+2021-08-17 03:52:54.552  INFO 26552 --- [main] c.smart.integ.controller.StartupRunner   : *****************************GETTING NEW TOKEN*****************************
+2021-08-17 03:52:54.554  INFO 26552 --- [main] com.smart.integ.service.TokenService     : ====================PREPARING TO GET AUTH TOKEN FROM AUTHER SERVER USING THE LINK: ======================
+ https://data.smartapplicationsgroup.com/auth/integ-clients/oauth/token?client_id=a760c52c-97ee-4f31-a5bf-f0c43e4e8725&client_secret=KszCjWj8DcXTzJGKQPk_jJ-ujiw&grant_type=client_credentials 
+
+2021-08-17 03:52:55.043  INFO 26552 --- [main] com.smart.integ.service.TokenService     : resp token = eyJraWQiOiJkZWZhdWx0LWdyYXZpdGVlLUFNLWtleSIsImFsZyI6IkhTMjU2In0.eyJzdWIiOiJhNzYwYzUyYy05N2VlLTRmMzEtYTViZi1mMGM0M2U0ZTg3MjUiLCJhdWQiOiJhNzYwYzUyYy05N2VlLTRmMzEtYTViZi1mMGM0M2U0ZTg3MjUiLCJkb21haW4iOiJpbnRlZy1jbGllbnRzIiwiaXNzIjoiaHR0cDovL2RhdGEuc21hcnRhcHBsaWNhdGlvbnNncm91cC5jb20vaW50ZWctY2xpZW50cy9vaWRjIiwiZXhwIjoxNjI5MTY4Nzc1LCJpYXQiOjE2MjkxNjE1NzUsImp0aSI6IklOaEIyem5DRUNwdlc4aWQ4SnVuUXJxTVdvOCJ9.xSIBROvAxOOaV1eRDKnmD1D45AMzdCfirnHH3xB9FJ4
+2021-08-17 03:52:55.043  INFO 26552 --- [main] c.smart.integ.controller.StartupRunner   : *****************************UPDATING TOKEN : eyJraWQiOiJkZWZhdWx0LWdyYXZpdGVlLUFNLWtleSIsImFsZyI6IkhTMjU2In0.eyJzdWIiOiJhNzYwYzUyYy05N2VlLTRmMzEtYTViZi1mMGM0M2U0ZTg3MjUiLCJhdWQiOiJhNzYwYzUyYy05N2VlLTRmMzEtYTViZi1mMGM0M2U0ZTg3MjUiLCJkb21haW4iOiJpbnRlZy1jbGllbnRzIiwiaXNzIjoiaHR0cDovL2RhdGEuc21hcnRhcHBsaWNhdGlvbnNncm91cC5jb20vaW50ZWctY2xpZW50cy9vaWRjIiwiZXhwIjoxNjI5MTY4Nzc1LCJpYXQiOjE2MjkxNjE1NzUsImp0aSI6IklOaEIyem5DRUNwdlc4aWQ4SnVuUXJxTVdvOCJ9.xSIBROvAxOOaV1eRDKnmD1D45AMzdCfirnHH3xB9FJ4*****************************
+2021-08-17 03:52:55.044  INFO 26552 --- [main] c.smart.integ.controller.StartupRunner   : *****************************PROVIDER CLAIMS SERVICE ACTIVATED********************************
+2021-08-17 03:52:55.044  INFO 26552 --- [main] com.smart.integ.threads.ThreadInterface  : ==========================FETCHING CLAIMS FROM THE PROVIDER=================================
+2021-08-17 03:53:50.415  INFO 26552 --- [main] com.smart.integ.threads.ThreadInterface  : =============== 14,789 CLAIMS FETCHED FROM THE PROVIDER READY TO BE DELIVERED TO SMART=========
+2021-08-17 03:53:51.460  INFO 26552 --- [Thread-6] c.s.integ.service.ProviderClaimsService  : ---------CHECKING IF CLAIM EXIST---------------AAR210511136
+2021-08-17 03:53:51.465  INFO 26552 --- [Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2021-08-17 03:53:51.465  WARN 26552 --- [Thread-6] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2021-08-17 03:53:51.577  INFO 26552 --- [scheduling-1] com.smart.integ.threads.ThreadInterface  : =============== 14,789 CLAIMS FETCHED FROM THE PROVIDER READY TO BE DELIVERED TO SMART=========
+2021-08-17 03:53:52.129  INFO 26552 --- [Thread-7] c.s.integ.service.ProviderClaimsService  : ---------CHECKING IF CLAIM EXIST---------------AAR210511136
+2021-08-17 03:53:52.211 ERROR 26552 --- [Thread-6] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Exception during pool initialization.
+
+java.sql.SQLRecoverableException: ORA-01033: ORACLE initialization or shutdown in progress
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:389) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:382) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.processError(T4CTTIoauthenticate.java:444) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.doOSESSKEY(T4CTTIoauthenticate.java:407) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:416) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.PhysicalConnection.<init>(PhysicalConnection.java:553) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CConnection.<init>(T4CConnection.java:254) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:32) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:528) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:353) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:473) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:562) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-3.4.1.jar:na]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:158) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:116) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:79) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:612) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:669) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:700) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:712) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:763) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at com.smart.integ.service.ProviderClaimsService.invoice_CLAIM_EXIST(ProviderClaimsService.java:103) ~[classes/:na]
+	at com.smart.integ.service.ProviderClaimsService.processProviderClaim(ProviderClaimsService.java:93) ~[classes/:na]
+	at com.smart.integ.threads.ProvClaimsThread.lambda$run$0(ProvClaimsThread.java:30) ~[classes/:na]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at com.smart.integ.threads.ProvClaimsThread.run(ProvClaimsThread.java:29) ~[classes/:na]
+
+2021-08-17 03:53:52.214  INFO 26552 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2021-08-17 03:53:52.216  WARN 26552 --- [Thread-7] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2021-08-17 03:53:52.804 ERROR 26552 --- [Thread-7] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Exception during pool initialization.
+
+java.sql.SQLRecoverableException: ORA-01033: ORACLE initialization or shutdown in progress
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:389) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:382) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.processError(T4CTTIoauthenticate.java:444) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.doOSESSKEY(T4CTTIoauthenticate.java:407) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:416) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.PhysicalConnection.<init>(PhysicalConnection.java:553) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CConnection.<init>(T4CConnection.java:254) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:32) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:528) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:353) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:473) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:562) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-3.4.1.jar:na]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:158) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:116) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:79) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:612) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:669) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:700) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:712) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:763) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at com.smart.integ.service.ProviderClaimsService.invoice_CLAIM_EXIST(ProviderClaimsService.java:103) ~[classes/:na]
+	at com.smart.integ.service.ProviderClaimsService.processProviderClaim(ProviderClaimsService.java:93) ~[classes/:na]
+	at com.smart.integ.threads.ProvClaimsThread.lambda$run$0(ProvClaimsThread.java:30) ~[classes/:na]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at com.smart.integ.threads.ProvClaimsThread.run(ProvClaimsThread.java:29) ~[classes/:na]
+
+2021-08-17 03:53:53.453  INFO 26552 --- [Thread-8] c.s.integ.service.ProviderClaimsService  : ---------CHECKING IF CLAIM EXIST---------------AAR210511264
+2021-08-17 03:53:53.454  INFO 26552 --- [Thread-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2021-08-17 03:53:53.454  WARN 26552 --- [Thread-8] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2021-08-17 03:53:54.037 ERROR 26552 --- [Thread-8] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Exception during pool initialization.
+
+java.sql.SQLRecoverableException: ORA-01033: ORACLE initialization or shutdown in progress
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:389) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:382) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.processError(T4CTTIoauthenticate.java:444) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.doOSESSKEY(T4CTTIoauthenticate.java:407) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:416) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.PhysicalConnection.<init>(PhysicalConnection.java:553) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CConnection.<init>(T4CConnection.java:254) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:32) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:528) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:353) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:473) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:562) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-3.4.1.jar:na]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:158) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:116) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:79) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:612) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:669) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:700) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:712) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:763) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at com.smart.integ.service.ProviderClaimsService.invoice_CLAIM_EXIST(ProviderClaimsService.java:103) ~[classes/:na]
+	at com.smart.integ.service.ProviderClaimsService.processProviderClaim(ProviderClaimsService.java:93) ~[classes/:na]
+	at com.smart.integ.threads.ProvClaimsThread.lambda$run$0(ProvClaimsThread.java:30) ~[classes/:na]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at com.smart.integ.threads.ProvClaimsThread.run(ProvClaimsThread.java:29) ~[classes/:na]
+
+2021-08-17 03:53:54.624  INFO 26552 --- [Thread-9] c.s.integ.service.ProviderClaimsService  : ---------CHECKING IF CLAIM EXIST---------------AAR210511264
+2021-08-17 03:53:54.626  INFO 26552 --- [Thread-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2021-08-17 03:53:54.627  WARN 26552 --- [Thread-9] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2021-08-17 03:53:55.225 ERROR 26552 --- [Thread-9] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Exception during pool initialization.
+
+java.sql.SQLRecoverableException: ORA-01033: ORACLE initialization or shutdown in progress
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:389) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:382) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.processError(T4CTTIoauthenticate.java:444) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.doOSESSKEY(T4CTTIoauthenticate.java:407) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:416) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.PhysicalConnection.<init>(PhysicalConnection.java:553) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CConnection.<init>(T4CConnection.java:254) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:32) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:528) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:353) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:473) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:562) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-3.4.1.jar:na]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:158) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:116) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:79) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:612) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:669) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:700) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:712) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:763) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at com.smart.integ.service.ProviderClaimsService.invoice_CLAIM_EXIST(ProviderClaimsService.java:103) ~[classes/:na]
+	at com.smart.integ.service.ProviderClaimsService.processProviderClaim(ProviderClaimsService.java:93) ~[classes/:na]
+	at com.smart.integ.threads.ProvClaimsThread.lambda$run$0(ProvClaimsThread.java:30) ~[classes/:na]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at com.smart.integ.threads.ProvClaimsThread.run(ProvClaimsThread.java:29) ~[classes/:na]
+
+2021-08-17 03:53:56.486  INFO 26552 --- [Thread-10] c.s.integ.service.ProviderClaimsService  : ---------CHECKING IF CLAIM EXIST---------------AAR211310141
+2021-08-17 03:53:56.487  INFO 26552 --- [Thread-10] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2021-08-17 03:53:56.489  WARN 26552 --- [Thread-10] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2021-08-17 03:53:57.114 ERROR 26552 --- [Thread-10] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Exception during pool initialization.
+
+java.sql.SQLRecoverableException: ORA-01033: ORACLE initialization or shutdown in progress
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:389) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:382) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.processError(T4CTTIoauthenticate.java:444) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.doOSESSKEY(T4CTTIoauthenticate.java:407) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:416) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.PhysicalConnection.<init>(PhysicalConnection.java:553) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CConnection.<init>(T4CConnection.java:254) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:32) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:528) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:353) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:473) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:562) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-3.4.1.jar:na]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:158) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:116) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:79) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:612) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:669) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:700) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:712) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:763) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at com.smart.integ.service.ProviderClaimsService.invoice_CLAIM_EXIST(ProviderClaimsService.java:103) ~[classes/:na]
+	at com.smart.integ.service.ProviderClaimsService.processProviderClaim(ProviderClaimsService.java:93) ~[classes/:na]
+	at com.smart.integ.threads.ProvClaimsThread.lambda$run$0(ProvClaimsThread.java:30) ~[classes/:na]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at com.smart.integ.threads.ProvClaimsThread.run(ProvClaimsThread.java:29) ~[classes/:na]
+
+2021-08-17 03:53:57.652  INFO 26552 --- [Thread-11] c.s.integ.service.ProviderClaimsService  : ---------CHECKING IF CLAIM EXIST---------------AAR211310141
+2021-08-17 03:53:57.654  INFO 26552 --- [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2021-08-17 03:53:57.655  WARN 26552 --- [Thread-11] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2021-08-17 03:53:58.254 ERROR 26552 --- [Thread-11] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Exception during pool initialization.
+
+java.sql.SQLRecoverableException: ORA-01033: ORACLE initialization or shutdown in progress
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:389) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:382) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.processError(T4CTTIoauthenticate.java:444) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.doOSESSKEY(T4CTTIoauthenticate.java:407) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:416) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.PhysicalConnection.<init>(PhysicalConnection.java:553) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CConnection.<init>(T4CConnection.java:254) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:32) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:528) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:353) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:473) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:562) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-3.4.1.jar:na]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:158) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:116) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:79) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:612) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:669) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:700) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:712) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:763) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at com.smart.integ.service.ProviderClaimsService.invoice_CLAIM_EXIST(ProviderClaimsService.java:103) ~[classes/:na]
+	at com.smart.integ.service.ProviderClaimsService.processProviderClaim(ProviderClaimsService.java:93) ~[classes/:na]
+	at com.smart.integ.threads.ProvClaimsThread.lambda$run$0(ProvClaimsThread.java:30) ~[classes/:na]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at com.smart.integ.threads.ProvClaimsThread.run(ProvClaimsThread.java:29) ~[classes/:na]
+
+2021-08-17 03:53:59.494  INFO 26552 --- [Thread-12] c.s.integ.service.ProviderClaimsService  : ---------CHECKING IF CLAIM EXIST---------------AAR210606869
+2021-08-17 03:53:59.496  INFO 26552 --- [Thread-12] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2021-08-17 03:53:59.498  WARN 26552 --- [Thread-12] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2021-08-17 03:54:00.115 ERROR 26552 --- [Thread-12] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Exception during pool initialization.
+
+java.sql.SQLRecoverableException: ORA-01033: ORACLE initialization or shutdown in progress
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:389) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:382) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.processError(T4CTTIoauthenticate.java:444) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.doOSESSKEY(T4CTTIoauthenticate.java:407) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:416) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.PhysicalConnection.<init>(PhysicalConnection.java:553) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CConnection.<init>(T4CConnection.java:254) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:32) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:528) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:353) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:473) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:562) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-3.4.1.jar:na]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:158) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:116) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:79) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:612) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:669) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:700) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:712) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:763) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at com.smart.integ.service.ProviderClaimsService.invoice_CLAIM_EXIST(ProviderClaimsService.java:103) ~[classes/:na]
+	at com.smart.integ.service.ProviderClaimsService.processProviderClaim(ProviderClaimsService.java:93) ~[classes/:na]
+	at com.smart.integ.threads.ProvClaimsThread.lambda$run$0(ProvClaimsThread.java:30) ~[classes/:na]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at com.smart.integ.threads.ProvClaimsThread.run(ProvClaimsThread.java:29) ~[classes/:na]
+
+2021-08-17 03:54:00.668  INFO 26552 --- [Thread-13] c.s.integ.service.ProviderClaimsService  : ---------CHECKING IF CLAIM EXIST---------------AAR210606869
+2021-08-17 03:54:00.669  INFO 26552 --- [Thread-13] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2021-08-17 03:54:00.671  WARN 26552 --- [Thread-13] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2021-08-17 03:54:01.307 ERROR 26552 --- [Thread-13] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Exception during pool initialization.
+
+java.sql.SQLRecoverableException: ORA-01033: ORACLE initialization or shutdown in progress
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:389) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:382) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.processError(T4CTTIoauthenticate.java:444) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.doOSESSKEY(T4CTTIoauthenticate.java:407) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:416) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.PhysicalConnection.<init>(PhysicalConnection.java:553) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CConnection.<init>(T4CConnection.java:254) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:32) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:528) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:353) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:473) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:562) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-3.4.1.jar:na]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:158) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:116) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:79) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:612) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:669) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:700) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:712) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:763) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at com.smart.integ.service.ProviderClaimsService.invoice_CLAIM_EXIST(ProviderClaimsService.java:103) ~[classes/:na]
+	at com.smart.integ.service.ProviderClaimsService.processProviderClaim(ProviderClaimsService.java:93) ~[classes/:na]
+	at com.smart.integ.threads.ProvClaimsThread.lambda$run$0(ProvClaimsThread.java:30) ~[classes/:na]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at com.smart.integ.threads.ProvClaimsThread.run(ProvClaimsThread.java:29) ~[classes/:na]
+
+2021-08-17 03:54:02.487  INFO 26552 --- [Thread-14] c.s.integ.service.ProviderClaimsService  : ---------CHECKING IF CLAIM EXIST---------------AAR211409099
+2021-08-17 03:54:02.488  INFO 26552 --- [Thread-14] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2021-08-17 03:54:02.489  WARN 26552 --- [Thread-14] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2021-08-17 03:54:03.076 ERROR 26552 --- [Thread-14] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Exception during pool initialization.
+
+java.sql.SQLRecoverableException: ORA-01033: ORACLE initialization or shutdown in progress
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:389) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:382) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.processError(T4CTTIoauthenticate.java:444) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.doOSESSKEY(T4CTTIoauthenticate.java:407) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:416) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.PhysicalConnection.<init>(PhysicalConnection.java:553) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CConnection.<init>(T4CConnection.java:254) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:32) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:528) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:353) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:473) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:562) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-3.4.1.jar:na]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:158) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:116) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:79) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:612) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:669) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:700) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:712) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:763) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at com.smart.integ.service.ProviderClaimsService.invoice_CLAIM_EXIST(ProviderClaimsService.java:103) ~[classes/:na]
+	at com.smart.integ.service.ProviderClaimsService.processProviderClaim(ProviderClaimsService.java:93) ~[classes/:na]
+	at com.smart.integ.threads.ProvClaimsThread.lambda$run$0(ProvClaimsThread.java:30) ~[classes/:na]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at com.smart.integ.threads.ProvClaimsThread.run(ProvClaimsThread.java:29) ~[classes/:na]
+
+2021-08-17 03:54:03.646  INFO 26552 --- [Thread-15] c.s.integ.service.ProviderClaimsService  : ---------CHECKING IF CLAIM EXIST---------------AAR211409099
+2021-08-17 03:54:03.647  INFO 26552 --- [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2021-08-17 03:54:03.647  WARN 26552 --- [Thread-15] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2021-08-17 03:54:04.272 ERROR 26552 --- [Thread-15] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Exception during pool initialization.
+
+java.sql.SQLRecoverableException: ORA-01033: ORACLE initialization or shutdown in progress
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:389) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:382) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.processError(T4CTTIoauthenticate.java:444) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.doOSESSKEY(T4CTTIoauthenticate.java:407) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:416) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.PhysicalConnection.<init>(PhysicalConnection.java:553) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CConnection.<init>(T4CConnection.java:254) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:32) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:528) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:353) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:473) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:562) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-3.4.1.jar:na]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:158) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:116) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:79) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:612) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:669) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:700) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:712) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:763) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at com.smart.integ.service.ProviderClaimsService.invoice_CLAIM_EXIST(ProviderClaimsService.java:103) ~[classes/:na]
+	at com.smart.integ.service.ProviderClaimsService.processProviderClaim(ProviderClaimsService.java:93) ~[classes/:na]
+	at com.smart.integ.threads.ProvClaimsThread.lambda$run$0(ProvClaimsThread.java:30) ~[classes/:na]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at com.smart.integ.threads.ProvClaimsThread.run(ProvClaimsThread.java:29) ~[classes/:na]
+
+2021-08-17 03:54:05.495  INFO 26552 --- [Thread-16] c.s.integ.service.ProviderClaimsService  : ---------CHECKING IF CLAIM EXIST---------------AAR210114450
+2021-08-17 03:54:05.496  INFO 26552 --- [Thread-16] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2021-08-17 03:54:05.497  WARN 26552 --- [Thread-16] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2021-08-17 03:54:06.123 ERROR 26552 --- [Thread-16] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Exception during pool initialization.
+
+java.sql.SQLRecoverableException: ORA-01033: ORACLE initialization or shutdown in progress
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:389) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:382) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.processError(T4CTTIoauthenticate.java:444) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.doOSESSKEY(T4CTTIoauthenticate.java:407) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:416) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.PhysicalConnection.<init>(PhysicalConnection.java:553) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CConnection.<init>(T4CConnection.java:254) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:32) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:528) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:353) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:473) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:562) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-3.4.1.jar:na]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:158) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:116) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:79) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:612) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:669) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:700) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:712) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:763) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at com.smart.integ.service.ProviderClaimsService.invoice_CLAIM_EXIST(ProviderClaimsService.java:103) ~[classes/:na]
+	at com.smart.integ.service.ProviderClaimsService.processProviderClaim(ProviderClaimsService.java:93) ~[classes/:na]
+	at com.smart.integ.threads.ProvClaimsThread.lambda$run$0(ProvClaimsThread.java:30) ~[classes/:na]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at com.smart.integ.threads.ProvClaimsThread.run(ProvClaimsThread.java:29) ~[classes/:na]
+
+2021-08-17 03:54:06.656  INFO 26552 --- [Thread-17] c.s.integ.service.ProviderClaimsService  : ---------CHECKING IF CLAIM EXIST---------------AAR210114450
+2021-08-17 03:54:06.657  INFO 26552 --- [Thread-17] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2021-08-17 03:54:06.658  WARN 26552 --- [Thread-17] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2021-08-17 03:54:07.248 ERROR 26552 --- [Thread-17] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Exception during pool initialization.
+
+java.sql.SQLRecoverableException: ORA-01033: ORACLE initialization or shutdown in progress
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:389) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:382) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.processError(T4CTTIoauthenticate.java:444) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.doOSESSKEY(T4CTTIoauthenticate.java:407) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:416) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.PhysicalConnection.<init>(PhysicalConnection.java:553) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CConnection.<init>(T4CConnection.java:254) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:32) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:528) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:353) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:473) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:562) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-3.4.1.jar:na]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:158) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:116) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:79) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:612) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:669) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:700) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:712) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:763) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at com.smart.integ.service.ProviderClaimsService.invoice_CLAIM_EXIST(ProviderClaimsService.java:103) ~[classes/:na]
+	at com.smart.integ.service.ProviderClaimsService.processProviderClaim(ProviderClaimsService.java:93) ~[classes/:na]
+	at com.smart.integ.threads.ProvClaimsThread.lambda$run$0(ProvClaimsThread.java:30) ~[classes/:na]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at com.smart.integ.threads.ProvClaimsThread.run(ProvClaimsThread.java:29) ~[classes/:na]
+
+2021-08-17 03:54:08.504  INFO 26552 --- [Thread-18] c.s.integ.service.ProviderClaimsService  : ---------CHECKING IF CLAIM EXIST---------------AAR211019194
+2021-08-17 03:54:08.505  INFO 26552 --- [Thread-18] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2021-08-17 03:54:08.506  WARN 26552 --- [Thread-18] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2021-08-17 03:54:09.076 ERROR 26552 --- [Thread-18] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Exception during pool initialization.
+
+java.sql.SQLRecoverableException: ORA-01033: ORACLE initialization or shutdown in progress
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:389) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:382) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.processError(T4CTTIoauthenticate.java:444) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.doOSESSKEY(T4CTTIoauthenticate.java:407) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:416) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.PhysicalConnection.<init>(PhysicalConnection.java:553) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CConnection.<init>(T4CConnection.java:254) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:32) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:528) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:353) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:473) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:562) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-3.4.1.jar:na]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:158) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:116) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:79) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:612) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:669) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:700) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:712) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:763) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at com.smart.integ.service.ProviderClaimsService.invoice_CLAIM_EXIST(ProviderClaimsService.java:103) ~[classes/:na]
+	at com.smart.integ.service.ProviderClaimsService.processProviderClaim(ProviderClaimsService.java:93) ~[classes/:na]
+	at com.smart.integ.threads.ProvClaimsThread.lambda$run$0(ProvClaimsThread.java:30) ~[classes/:na]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at com.smart.integ.threads.ProvClaimsThread.run(ProvClaimsThread.java:29) ~[classes/:na]
+
+2021-08-17 03:54:09.662  INFO 26552 --- [Thread-19] c.s.integ.service.ProviderClaimsService  : ---------CHECKING IF CLAIM EXIST---------------AAR211019194
+2021-08-17 03:54:09.662  INFO 26552 --- [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2021-08-17 03:54:09.662  WARN 26552 --- [Thread-19] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2021-08-17 03:54:10.248 ERROR 26552 --- [Thread-19] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Exception during pool initialization.
+
+java.sql.SQLRecoverableException: ORA-01033: ORACLE initialization or shutdown in progress
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:389) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:382) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.processError(T4CTTIoauthenticate.java:444) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.doOSESSKEY(T4CTTIoauthenticate.java:407) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:416) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.PhysicalConnection.<init>(PhysicalConnection.java:553) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CConnection.<init>(T4CConnection.java:254) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:32) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:528) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:353) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:473) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:562) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-3.4.1.jar:na]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:158) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:116) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:79) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:612) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:669) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:700) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:712) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:763) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at com.smart.integ.service.ProviderClaimsService.invoice_CLAIM_EXIST(ProviderClaimsService.java:103) ~[classes/:na]
+	at com.smart.integ.service.ProviderClaimsService.processProviderClaim(ProviderClaimsService.java:93) ~[classes/:na]
+	at com.smart.integ.threads.ProvClaimsThread.lambda$run$0(ProvClaimsThread.java:30) ~[classes/:na]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at com.smart.integ.threads.ProvClaimsThread.run(ProvClaimsThread.java:29) ~[classes/:na]
+
+2021-08-17 03:54:11.520  INFO 26552 --- [Thread-20] c.s.integ.service.ProviderClaimsService  : ---------CHECKING IF CLAIM EXIST---------------AAR210511335
+2021-08-17 03:54:11.521  INFO 26552 --- [Thread-20] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2021-08-17 03:54:11.522  WARN 26552 --- [Thread-20] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2021-08-17 03:54:12.120 ERROR 26552 --- [Thread-20] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Exception during pool initialization.
+
+java.sql.SQLRecoverableException: ORA-01033: ORACLE initialization or shutdown in progress
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:389) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:382) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.processError(T4CTTIoauthenticate.java:444) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.doOSESSKEY(T4CTTIoauthenticate.java:407) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:416) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.PhysicalConnection.<init>(PhysicalConnection.java:553) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CConnection.<init>(T4CConnection.java:254) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:32) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:528) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:353) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:473) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:562) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-3.4.1.jar:na]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:158) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:116) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:79) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:612) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:669) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:700) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:712) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:763) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at com.smart.integ.service.ProviderClaimsService.invoice_CLAIM_EXIST(ProviderClaimsService.java:103) ~[classes/:na]
+	at com.smart.integ.service.ProviderClaimsService.processProviderClaim(ProviderClaimsService.java:93) ~[classes/:na]
+	at com.smart.integ.threads.ProvClaimsThread.lambda$run$0(ProvClaimsThread.java:30) ~[classes/:na]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at com.smart.integ.threads.ProvClaimsThread.run(ProvClaimsThread.java:29) ~[classes/:na]
+
+2021-08-17 03:54:12.667  INFO 26552 --- [Thread-21] c.s.integ.service.ProviderClaimsService  : ---------CHECKING IF CLAIM EXIST---------------AAR210511335
+2021-08-17 03:54:12.668  INFO 26552 --- [Thread-21] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2021-08-17 03:54:12.668  WARN 26552 --- [Thread-21] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2021-08-17 03:54:13.267 ERROR 26552 --- [Thread-21] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Exception during pool initialization.
+
+java.sql.SQLRecoverableException: ORA-01033: ORACLE initialization or shutdown in progress
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:389) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:382) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.processError(T4CTTIoauthenticate.java:444) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.doOSESSKEY(T4CTTIoauthenticate.java:407) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:416) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.PhysicalConnection.<init>(PhysicalConnection.java:553) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CConnection.<init>(T4CConnection.java:254) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:32) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:528) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:353) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:473) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:562) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-3.4.1.jar:na]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:158) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:116) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:79) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:612) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:669) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:700) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:712) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:763) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at com.smart.integ.service.ProviderClaimsService.invoice_CLAIM_EXIST(ProviderClaimsService.java:103) ~[classes/:na]
+	at com.smart.integ.service.ProviderClaimsService.processProviderClaim(ProviderClaimsService.java:93) ~[classes/:na]
+	at com.smart.integ.threads.ProvClaimsThread.lambda$run$0(ProvClaimsThread.java:30) ~[classes/:na]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at com.smart.integ.threads.ProvClaimsThread.run(ProvClaimsThread.java:29) ~[classes/:na]
+
+2021-08-17 03:54:14.527  INFO 26552 --- [Thread-22] c.s.integ.service.ProviderClaimsService  : ---------CHECKING IF CLAIM EXIST---------------AAR211219005
+2021-08-17 03:54:14.527  INFO 26552 --- [Thread-22] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2021-08-17 03:54:14.528  WARN 26552 --- [Thread-22] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2021-08-17 03:54:15.151 ERROR 26552 --- [Thread-22] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Exception during pool initialization.
+
+java.sql.SQLRecoverableException: ORA-01033: ORACLE initialization or shutdown in progress
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:389) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:382) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.processError(T4CTTIoauthenticate.java:444) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.doOSESSKEY(T4CTTIoauthenticate.java:407) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:416) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.PhysicalConnection.<init>(PhysicalConnection.java:553) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CConnection.<init>(T4CConnection.java:254) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:32) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:528) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:353) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:473) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:562) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-3.4.1.jar:na]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:158) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:116) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:79) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:612) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:669) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:700) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:712) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:763) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at com.smart.integ.service.ProviderClaimsService.invoice_CLAIM_EXIST(ProviderClaimsService.java:103) ~[classes/:na]
+	at com.smart.integ.service.ProviderClaimsService.processProviderClaim(ProviderClaimsService.java:93) ~[classes/:na]
+	at com.smart.integ.threads.ProvClaimsThread.lambda$run$0(ProvClaimsThread.java:30) ~[classes/:na]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at com.smart.integ.threads.ProvClaimsThread.run(ProvClaimsThread.java:29) ~[classes/:na]
+
+2021-08-17 03:54:15.679  INFO 26552 --- [Thread-23] c.s.integ.service.ProviderClaimsService  : ---------CHECKING IF CLAIM EXIST---------------AAR211219005
+2021-08-17 03:54:15.679  INFO 26552 --- [Thread-23] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2021-08-17 03:54:15.680  WARN 26552 --- [Thread-23] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2021-08-17 03:54:16.287 ERROR 26552 --- [Thread-23] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Exception during pool initialization.
+
+java.sql.SQLRecoverableException: ORA-01033: ORACLE initialization or shutdown in progress
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:389) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:382) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.processError(T4CTTIoauthenticate.java:444) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.doOSESSKEY(T4CTTIoauthenticate.java:407) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:416) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.PhysicalConnection.<init>(PhysicalConnection.java:553) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CConnection.<init>(T4CConnection.java:254) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:32) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:528) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:353) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:473) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:562) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-3.4.1.jar:na]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:158) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:116) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:79) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:612) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:669) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:700) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:712) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:763) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at com.smart.integ.service.ProviderClaimsService.invoice_CLAIM_EXIST(ProviderClaimsService.java:103) ~[classes/:na]
+	at com.smart.integ.service.ProviderClaimsService.processProviderClaim(ProviderClaimsService.java:93) ~[classes/:na]
+	at com.smart.integ.threads.ProvClaimsThread.lambda$run$0(ProvClaimsThread.java:30) ~[classes/:na]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at com.smart.integ.threads.ProvClaimsThread.run(ProvClaimsThread.java:29) ~[classes/:na]
+
+2021-08-17 03:54:17.532  INFO 26552 --- [Thread-24] c.s.integ.service.ProviderClaimsService  : ---------CHECKING IF CLAIM EXIST---------------AAR211219284
+2021-08-17 03:54:17.533  INFO 26552 --- [Thread-24] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2021-08-17 03:54:17.534  WARN 26552 --- [Thread-24] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2021-08-17 03:54:18.135 ERROR 26552 --- [Thread-24] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Exception during pool initialization.
+
+java.sql.SQLRecoverableException: ORA-01033: ORACLE initialization or shutdown in progress
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:389) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:382) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.processError(T4CTTIoauthenticate.java:444) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.doOSESSKEY(T4CTTIoauthenticate.java:407) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:416) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.PhysicalConnection.<init>(PhysicalConnection.java:553) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CConnection.<init>(T4CConnection.java:254) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:32) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:528) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:353) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:473) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:562) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-3.4.1.jar:na]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:158) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:116) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:79) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:612) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:669) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:700) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:712) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:763) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at com.smart.integ.service.ProviderClaimsService.invoice_CLAIM_EXIST(ProviderClaimsService.java:103) ~[classes/:na]
+	at com.smart.integ.service.ProviderClaimsService.processProviderClaim(ProviderClaimsService.java:93) ~[classes/:na]
+	at com.smart.integ.threads.ProvClaimsThread.lambda$run$0(ProvClaimsThread.java:30) ~[classes/:na]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at com.smart.integ.threads.ProvClaimsThread.run(ProvClaimsThread.java:29) ~[classes/:na]
+
+2021-08-17 03:54:18.683  INFO 26552 --- [Thread-25] c.s.integ.service.ProviderClaimsService  : ---------CHECKING IF CLAIM EXIST---------------AAR211219284
+2021-08-17 03:54:18.683  INFO 26552 --- [Thread-25] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2021-08-17 03:54:18.684  WARN 26552 --- [Thread-25] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2021-08-17 03:54:19.259 ERROR 26552 --- [Thread-25] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Exception during pool initialization.
+
+java.sql.SQLRecoverableException: ORA-01033: ORACLE initialization or shutdown in progress
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:389) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:382) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.processError(T4CTTIoauthenticate.java:444) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.doOSESSKEY(T4CTTIoauthenticate.java:407) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:416) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.PhysicalConnection.<init>(PhysicalConnection.java:553) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CConnection.<init>(T4CConnection.java:254) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:32) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:528) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:353) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:473) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:562) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-3.4.1.jar:na]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:158) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:116) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:79) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:612) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:669) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:700) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:712) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:763) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at com.smart.integ.service.ProviderClaimsService.invoice_CLAIM_EXIST(ProviderClaimsService.java:103) ~[classes/:na]
+	at com.smart.integ.service.ProviderClaimsService.processProviderClaim(ProviderClaimsService.java:93) ~[classes/:na]
+	at com.smart.integ.threads.ProvClaimsThread.lambda$run$0(ProvClaimsThread.java:30) ~[classes/:na]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at com.smart.integ.threads.ProvClaimsThread.run(ProvClaimsThread.java:29) ~[classes/:na]
+
+2021-08-17 03:54:20.548  INFO 26552 --- [Thread-26] c.s.integ.service.ProviderClaimsService  : ---------CHECKING IF CLAIM EXIST---------------AAR211409143
+2021-08-17 03:54:20.548  INFO 26552 --- [Thread-26] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2021-08-17 03:54:20.549  WARN 26552 --- [Thread-26] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2021-08-17 03:54:21.134 ERROR 26552 --- [Thread-26] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Exception during pool initialization.
+
+java.sql.SQLRecoverableException: ORA-01033: ORACLE initialization or shutdown in progress
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:389) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:382) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.processError(T4CTTIoauthenticate.java:444) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.doOSESSKEY(T4CTTIoauthenticate.java:407) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:416) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.PhysicalConnection.<init>(PhysicalConnection.java:553) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CConnection.<init>(T4CConnection.java:254) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:32) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:528) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:353) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:473) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:562) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-3.4.1.jar:na]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:158) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:116) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:79) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:612) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:669) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:700) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:712) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:763) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at com.smart.integ.service.ProviderClaimsService.invoice_CLAIM_EXIST(ProviderClaimsService.java:103) ~[classes/:na]
+	at com.smart.integ.service.ProviderClaimsService.processProviderClaim(ProviderClaimsService.java:93) ~[classes/:na]
+	at com.smart.integ.threads.ProvClaimsThread.lambda$run$0(ProvClaimsThread.java:30) ~[classes/:na]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at com.smart.integ.threads.ProvClaimsThread.run(ProvClaimsThread.java:29) ~[classes/:na]
+
+2021-08-17 03:54:21.688  INFO 26552 --- [Thread-27] c.s.integ.service.ProviderClaimsService  : ---------CHECKING IF CLAIM EXIST---------------AAR211409143
+2021-08-17 03:54:21.689  INFO 26552 --- [Thread-27] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2021-08-17 03:54:21.690  WARN 26552 --- [Thread-27] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2021-08-17 03:54:22.271 ERROR 26552 --- [Thread-27] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Exception during pool initialization.
+
+java.sql.SQLRecoverableException: ORA-01033: ORACLE initialization or shutdown in progress
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:389) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:382) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.processError(T4CTTIoauthenticate.java:444) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.doOSESSKEY(T4CTTIoauthenticate.java:407) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:416) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.PhysicalConnection.<init>(PhysicalConnection.java:553) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CConnection.<init>(T4CConnection.java:254) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:32) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:528) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:353) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:473) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:562) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-3.4.1.jar:na]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:158) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:116) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:79) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:612) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:669) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:700) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:712) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:763) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at com.smart.integ.service.ProviderClaimsService.invoice_CLAIM_EXIST(ProviderClaimsService.java:103) ~[classes/:na]
+	at com.smart.integ.service.ProviderClaimsService.processProviderClaim(ProviderClaimsService.java:93) ~[classes/:na]
+	at com.smart.integ.threads.ProvClaimsThread.lambda$run$0(ProvClaimsThread.java:30) ~[classes/:na]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at com.smart.integ.threads.ProvClaimsThread.run(ProvClaimsThread.java:29) ~[classes/:na]
+
+2021-08-17 03:54:23.558  INFO 26552 --- [Thread-28] c.s.integ.service.ProviderClaimsService  : ---------CHECKING IF CLAIM EXIST---------------AAR211610661
+2021-08-17 03:54:23.560  INFO 26552 --- [Thread-28] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2021-08-17 03:54:23.560  WARN 26552 --- [Thread-28] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2021-08-17 03:54:24.152 ERROR 26552 --- [Thread-28] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Exception during pool initialization.
+
+java.sql.SQLRecoverableException: ORA-01033: ORACLE initialization or shutdown in progress
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:389) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:382) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.processError(T4CTTIoauthenticate.java:444) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.doOSESSKEY(T4CTTIoauthenticate.java:407) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:416) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.PhysicalConnection.<init>(PhysicalConnection.java:553) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CConnection.<init>(T4CConnection.java:254) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:32) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:528) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:353) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:473) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:562) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-3.4.1.jar:na]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:158) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:116) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:79) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:612) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:669) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:700) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:712) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:763) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at com.smart.integ.service.ProviderClaimsService.invoice_CLAIM_EXIST(ProviderClaimsService.java:103) ~[classes/:na]
+	at com.smart.integ.service.ProviderClaimsService.processProviderClaim(ProviderClaimsService.java:93) ~[classes/:na]
+	at com.smart.integ.threads.ProvClaimsThread.lambda$run$0(ProvClaimsThread.java:30) ~[classes/:na]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at com.smart.integ.threads.ProvClaimsThread.run(ProvClaimsThread.java:29) ~[classes/:na]
+
+2021-08-17 03:54:24.697  INFO 26552 --- [Thread-29] c.s.integ.service.ProviderClaimsService  : ---------CHECKING IF CLAIM EXIST---------------AAR211610661
+2021-08-17 03:54:24.698  INFO 26552 --- [Thread-29] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2021-08-17 03:54:24.699  WARN 26552 --- [Thread-29] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2021-08-17 03:54:25.290 ERROR 26552 --- [Thread-29] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Exception during pool initialization.
+
+java.sql.SQLRecoverableException: ORA-01033: ORACLE initialization or shutdown in progress
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:389) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:382) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.processError(T4CTTIoauthenticate.java:444) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.doOSESSKEY(T4CTTIoauthenticate.java:407) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:416) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.PhysicalConnection.<init>(PhysicalConnection.java:553) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CConnection.<init>(T4CConnection.java:254) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:32) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:528) ~[ojdbc6-11.2.0.jar:11.2.0.4.0]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:353) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:473) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:562) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-3.4.1.jar:na]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:158) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:116) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:79) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:612) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:669) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:700) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:712) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:763) ~[spring-jdbc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at com.smart.integ.service.ProviderClaimsService.invoice_CLAIM_EXIST(ProviderClaimsService.java:103) ~[classes/:na]
+	at com.smart.integ.service.ProviderClaimsService.processProviderClaim(ProviderClaimsService.java:93) ~[classes/:na]
+	at com.smart.integ.threads.ProvClaimsThread.lambda$run$0(ProvClaimsThread.java:30) ~[classes/:na]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at com.smart.integ.threads.ProvClaimsThread.run(ProvClaimsThread.java:29) ~[classes/:na]
+
+2021-08-17 04:00:54.387  INFO 27492 --- [main] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://192.180.4.22:8101
+2021-08-17 04:01:04.678  INFO 27492 --- [main] c.c.c.ConfigServicePropertySourceLocator : Connect Timeout Exception on Url - http://192.180.4.22:8101. Will be trying the next url if available
+2021-08-17 04:01:04.685 ERROR 27492 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalStateException: Could not locate PropertySource and the fail fast property is set, failing
+	at org.springframework.cloud.config.client.ConfigServicePropertySourceLocator.locate(ConfigServicePropertySourceLocator.java:147) ~[spring-cloud-config-client-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.bootstrap.config.PropertySourceLocator.locateCollection(PropertySourceLocator.java:52) ~[spring-cloud-context-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.config.client.ConfigServicePropertySourceLocator.locateCollection(ConfigServicePropertySourceLocator.java:162) ~[spring-cloud-config-client-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.initialize(PropertySourceBootstrapConfiguration.java:101) ~[spring-cloud-context-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.boot.SpringApplication.applyInitializers(SpringApplication.java:626) ~[spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.boot.SpringApplication.prepareContext(SpringApplication.java:370) ~[spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314) ~[spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) ~[spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215) ~[spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at com.smart.integ.Application.main(Application.java:25) ~[classes/:na]
+Caused by: org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://192.180.4.22:8101/aarprov-edi-microservice-production/default": Connect timed out; nested exception is java.net.SocketTimeoutException: Connect timed out
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:751) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:677) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:586) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.cloud.config.client.ConfigServicePropertySourceLocator.getRemoteEnvironment(ConfigServicePropertySourceLocator.java:264) ~[spring-cloud-config-client-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.config.client.ConfigServicePropertySourceLocator.locate(ConfigServicePropertySourceLocator.java:106) ~[spring-cloud-config-client-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	... 9 common frames omitted
+Caused by: java.net.SocketTimeoutException: Connect timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:546) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:648) ~[na:na]
+	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:177) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:474) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:569) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.<init>(HttpClient.java:242) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:341) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:362) ~[na:na]
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1261) ~[na:na]
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1194) ~[na:na]
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1082) ~[na:na]
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:1016) ~[na:na]
+	at org.springframework.http.client.SimpleBufferingClientHttpRequest.executeInternal(SimpleBufferingClientHttpRequest.java:76) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:53) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:742) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	... 13 common frames omitted
+
+2021-08-17 08:58:14.112  INFO 26872 --- [main] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://192.180.4.22:8101
+2021-08-17 08:58:15.484  INFO 26872 --- [main] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=aarprov-edi-microservice-production, profiles=[default], label=null, version=98ec564b04ec2031d1e6ba852cfa4297f9ed6cf3, state=null
+2021-08-17 08:58:15.487  INFO 26872 --- [main] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}, BootstrapPropertySource {name='bootstrapProperties-http://192.180.3.23/integ-microservices/microservice-cofigurations.git/aarprov-edi-microservice-production.properties'}]
+2021-08-17 08:58:15.598  INFO 26872 --- [main] com.smart.integ.Application              : The following profiles are active: default
+2021-08-17 08:58:17.783  INFO 26872 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-08-17 08:58:17.831  INFO 26872 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13ms. Found 0 JPA repository interfaces.
+2021-08-17 08:58:17.833  INFO 26872 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-08-17 08:58:17.835  INFO 26872 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1ms. Found 0 JPA repository interfaces.
+2021-08-17 08:58:17.837  INFO 26872 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-08-17 08:58:17.839  INFO 26872 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1ms. Found 0 JPA repository interfaces.
+2021-08-17 08:58:19.027  WARN 26872 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2021-08-17 08:58:19.481  INFO 26872 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=496e062e-3b43-32da-9247-7b6ddc66361a
+2021-08-17 08:58:20.012  INFO 26872 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-08-17 08:58:21.216  INFO 26872 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8301 (http)
+2021-08-17 08:58:21.240  INFO 26872 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-17 08:58:21.241  INFO 26872 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2021-08-17 08:58:22.030  INFO 26872 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-08-17 08:58:22.031  INFO 26872 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 6387 ms
+2021-08-17 08:58:22.338  WARN 26872 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2021-08-17 08:58:22.340  INFO 26872 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2021-08-17 08:58:22.376  INFO 26872 --- [main] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@2bf2d6eb
+2021-08-17 08:58:25.023  INFO 26872 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2021-08-17 08:58:25.666  INFO 26872 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: aar]
+2021-08-17 08:58:25.831  INFO 26872 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.9.Final}
+2021-08-17 08:58:26.160  INFO 26872 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2021-08-17 08:58:26.743  INFO 26872 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-08-17 08:58:27.437  INFO 26872 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-08-17 08:58:27.476  INFO 26872 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2021-08-17 08:58:27.645 ERROR 26872 --- [main] o.h.e.j.e.internal.JdbcEnvironmentImpl   : Could not fetch the SequenceInformation from the database
+
+com.microsoft.sqlserver.jdbc.SQLServerException: Invalid object name 'all_sequences'.
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:259) ~[mssql-jdbc-6.4.0.jre8.jar:na]
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1547) ~[mssql-jdbc-6.4.0.jre8.jar:na]
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.doExecuteStatement(SQLServerStatement.java:857) ~[mssql-jdbc-6.4.0.jre8.jar:na]
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement$StmtExecCmd.doExecute(SQLServerStatement.java:757) ~[mssql-jdbc-6.4.0.jre8.jar:na]
+	at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7344) ~[mssql-jdbc-6.4.0.jre8.jar:na]
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:2713) ~[mssql-jdbc-6.4.0.jre8.jar:na]
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:224) ~[mssql-jdbc-6.4.0.jre8.jar:na]
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:204) ~[mssql-jdbc-6.4.0.jre8.jar:na]
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeQuery(SQLServerStatement.java:659) ~[mssql-jdbc-6.4.0.jre8.jar:na]
+	at com.zaxxer.hikari.pool.ProxyStatement.executeQuery(ProxyStatement.java:111) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.executeQuery(HikariProxyStatement.java) ~[HikariCP-3.4.1.jar:na]
+	at org.hibernate.tool.schema.extract.internal.SequenceInformationExtractorLegacyImpl.extractMetadata(SequenceInformationExtractorLegacyImpl.java:42) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentImpl.sequenceInformationList(JdbcEnvironmentImpl.java:403) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentImpl.<init>(JdbcEnvironmentImpl.java:268) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:114) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:152) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:175) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:118) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1202) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1233) ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391) ~[spring-orm-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:378) ~[spring-orm-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1855) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1792) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1108) ~[spring-context-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:868) ~[spring-context-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550) ~[spring-context-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141) ~[spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747) ~[spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) ~[spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) ~[spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) ~[spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215) ~[spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at com.smart.integ.Application.main(Application.java:25) ~[classes/:na]
+
+2021-08-17 08:58:28.192  INFO 26872 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-08-17 08:58:28.209  INFO 26872 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'aar'
+2021-08-17 08:58:28.226  INFO 26872 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: abacus]
+2021-08-17 08:58:28.414  INFO 26872 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2021-08-17 08:58:28.415  WARN 26872 --- [main] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2021-08-17 08:58:29.173  INFO 26872 --- [main] com.zaxxer.hikari.pool.PoolBase          : HikariPool-2 - Driver does not support get/set network timeout for connections. (Receiver class oracle.jdbc.driver.T4CConnection does not define or inherit an implementation of the resolved method 'abstract int getNetworkTimeout()' of interface java.sql.Connection.)
+2021-08-17 08:58:29.179  INFO 26872 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2021-08-17 08:58:29.180  INFO 26872 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2021-08-17 08:58:29.705  INFO 26872 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-08-17 08:58:29.707  INFO 26872 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'abacus'
+2021-08-17 08:58:29.711  INFO 26872 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: integ]
+2021-08-17 08:58:29.948  INFO 26872 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2021-08-17 08:58:29.950  WARN 26872 --- [main] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2021-08-17 08:58:30.969  INFO 26872 --- [main] com.zaxxer.hikari.pool.PoolBase          : HikariPool-3 - Driver does not support get/set network timeout for connections. (Receiver class oracle.jdbc.driver.T4CConnection does not define or inherit an implementation of the resolved method 'abstract int getNetworkTimeout()' of interface java.sql.Connection.)
+2021-08-17 08:58:30.976  INFO 26872 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2021-08-17 08:58:30.977  INFO 26872 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2021-08-17 08:58:48.711  INFO 26872 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-08-17 08:58:48.712  INFO 26872 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'integ'
+2021-08-17 08:58:50.965  INFO 26872 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2021-08-17 08:58:51.052  WARN 26872 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2021-08-17 08:58:51.057  INFO 26872 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2021-08-17 08:58:51.222  WARN 26872 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-08-17 08:58:51.336  INFO 26872 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-08-17 08:58:51.945  INFO 26872 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2021-08-17 08:58:54.011  INFO 26872 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2021-08-17 08:58:54.286  WARN 26872 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with default default cache. You can switch to using Caffeine cache, by adding it to the classpath.
+2021-08-17 08:58:54.376  INFO 26872 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 19 endpoint(s) beneath base path '/actuator'
+2021-08-17 08:58:54.484  INFO 26872 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2021-08-17 08:58:54.610  INFO 26872 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2021-08-17 08:58:54.738  INFO 26872 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2021-08-17 08:58:54.739  INFO 26872 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2021-08-17 08:58:55.123  INFO 26872 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2021-08-17 08:58:55.124  INFO 26872 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2021-08-17 08:58:55.576  INFO 26872 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2021-08-17 08:58:55.659  INFO 26872 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2021-08-17 08:58:55.662  INFO 26872 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2021-08-17 08:58:55.663  INFO 26872 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2021-08-17 08:58:55.664  INFO 26872 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2021-08-17 08:58:55.665  INFO 26872 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2021-08-17 08:58:55.665  INFO 26872 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2021-08-17 08:58:55.665  INFO 26872 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2021-08-17 08:58:56.065  INFO 26872 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2021-08-17 08:58:56.074  INFO 26872 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2021-08-17 08:58:56.077  INFO 26872 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2021-08-17 08:58:56.086  INFO 26872 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1629179936083 with initial instances count: 3
+2021-08-17 08:58:56.091  INFO 26872 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application INTEG-MS-AARPRO-EDI with eureka with status UP
+2021-08-17 08:58:56.092  INFO 26872 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1629179936092, current=UP, previous=STARTING]
+2021-08-17 08:58:56.098  INFO 26872 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_INTEG-MS-AARPRO-EDI/localhost:integ-ms-aarpro-edi:8301: registering service...
+2021-08-17 08:58:56.162  INFO 26872 --- [scheduling-1] com.smart.integ.daemon.RenewToken        : **************************POST CLAIM TO EDI  SERVICE ACTIVATED***********************
+2021-08-17 08:58:56.163  INFO 26872 --- [scheduling-1] com.smart.integ.threads.ThreadInterface  : ============================POSTING CLAIMS TO EDI=====================================
+2021-08-17 08:58:56.165  INFO 26872 --- [scheduling-1] com.smart.integ.service.EDIClaimService  : ---------GETTING UNSWITCHED CLAIMS---------------
+https://data.smartapplicationsgroup.com/api/v2/prod/provider/integration?country_code=KE&integ_app_code=AARPRODT6HFYU25YT3WGIYI6&prov_code=SKSP_301
+2021-08-17 08:58:56.170  INFO 26872 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_INTEG-MS-AARPRO-EDI/localhost:integ-ms-aarpro-edi:8301 - registration status: 204
+2021-08-17 08:58:56.215  INFO 26872 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8301 (http) with context path ''
+2021-08-17 08:58:56.219  INFO 26872 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8301
+2021-08-17 08:58:58.216  INFO 26872 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2021-08-17 08:58:58.218  INFO 26872 --- [main] com.smart.integ.Application              : Started Application in 49.397 seconds (JVM running for 51.041)
+2021-08-17 08:58:58.229  INFO 26872 --- [main] c.smart.integ.controller.StartupRunner   : *****************************GETTING NEW TOKEN*****************************
+2021-08-17 08:58:58.230  INFO 26872 --- [main] com.smart.integ.service.TokenService     : ====================PREPARING TO GET AUTH TOKEN FROM AUTHER SERVER USING THE LINK: ======================
+ https://data.smartapplicationsgroup.com/auth/integ-clients/oauth/token?client_id=a760c52c-97ee-4f31-a5bf-f0c43e4e8725&client_secret=KszCjWj8DcXTzJGKQPk_jJ-ujiw&grant_type=client_credentials 
+
+2021-08-17 08:58:58.363  INFO 26872 --- [main] com.smart.integ.service.TokenService     : resp token = eyJraWQiOiJkZWZhdWx0LWdyYXZpdGVlLUFNLWtleSIsImFsZyI6IkhTMjU2In0.eyJzdWIiOiJhNzYwYzUyYy05N2VlLTRmMzEtYTViZi1mMGM0M2U0ZTg3MjUiLCJhdWQiOiJhNzYwYzUyYy05N2VlLTRmMzEtYTViZi1mMGM0M2U0ZTg3MjUiLCJkb21haW4iOiJpbnRlZy1jbGllbnRzIiwiaXNzIjoiaHR0cDovL2RhdGEuc21hcnRhcHBsaWNhdGlvbnNncm91cC5jb20vaW50ZWctY2xpZW50cy9vaWRjIiwiZXhwIjoxNjI5MTg3MTM4LCJpYXQiOjE2MjkxNzk5MzgsImp0aSI6Imo2WFNHQm93NWNSdmhIeW5oZ05fTnRIWGItWSJ9.LdDg8IKStoLB54hH08EurcSkgYfK4ycrj6hCLDijX0g
+2021-08-17 08:58:58.363  INFO 26872 --- [main] c.smart.integ.controller.StartupRunner   : *****************************UPDATING TOKEN : eyJraWQiOiJkZWZhdWx0LWdyYXZpdGVlLUFNLWtleSIsImFsZyI6IkhTMjU2In0.eyJzdWIiOiJhNzYwYzUyYy05N2VlLTRmMzEtYTViZi1mMGM0M2U0ZTg3MjUiLCJhdWQiOiJhNzYwYzUyYy05N2VlLTRmMzEtYTViZi1mMGM0M2U0ZTg3MjUiLCJkb21haW4iOiJpbnRlZy1jbGllbnRzIiwiaXNzIjoiaHR0cDovL2RhdGEuc21hcnRhcHBsaWNhdGlvbnNncm91cC5jb20vaW50ZWctY2xpZW50cy9vaWRjIiwiZXhwIjoxNjI5MTg3MTM4LCJpYXQiOjE2MjkxNzk5MzgsImp0aSI6Imo2WFNHQm93NWNSdmhIeW5oZ05fTnRIWGItWSJ9.LdDg8IKStoLB54hH08EurcSkgYfK4ycrj6hCLDijX0g*****************************
+2021-08-17 08:58:58.364  INFO 26872 --- [main] c.smart.integ.controller.StartupRunner   : *****************************PROVIDER CLAIMS SERVICE ACTIVATED********************************
+2021-08-17 08:58:58.364  INFO 26872 --- [main] com.smart.integ.threads.ThreadInterface  : ==========================FETCHING CLAIMS FROM THE PROVIDER=================================
+2021-08-17 08:59:03.994  INFO 26872 --- [main] com.smart.integ.threads.ThreadInterface  : =============== 14,789 CLAIMS FETCHED FROM THE PROVIDER READY TO BE DELIVERED TO SMART=========
+2021-08-17 08:59:05.021  INFO 26872 --- [Thread-8] c.s.integ.service.ProviderClaimsService  : ---------CHECKING IF CLAIM EXIST---------------AAR210511136
+2021-08-17 08:59:07.015  INFO 26872 --- [Thread-10] c.s.integ.service.ProviderClaimsService  : ---------CHECKING IF CLAIM EXIST---------------AAR210511264
+2021-08-17 08:59:10.525  INFO 26872 --- [Thread-12] c.s.integ.service.ProviderClaimsService  : ---------CHECKING IF CLAIM EXIST---------------AAR211310141
+2021-08-17 08:59:13.029  INFO 26872 --- [Thread-14] c.s.integ.service.ProviderClaimsService  : ---------CHECKING IF CLAIM EXIST---------------AAR210606869
+2021-08-17 08:59:16.041  INFO 26872 --- [Thread-16] c.s.integ.service.ProviderClaimsService  : ---------CHECKING IF CLAIM EXIST---------------AAR211409099
+2021-08-17 08:59:19.047  INFO 26872 --- [Thread-18] c.s.integ.service.ProviderClaimsService  : ---------CHECKING IF CLAIM EXIST---------------AAR210114450
+2021-08-17 08:59:22.058  INFO 26872 --- [Thread-20] c.s.integ.service.ProviderClaimsService  : ---------CHECKING IF CLAIM EXIST---------------AAR211019194
+2021-08-17 08:59:25.060  INFO 26872 --- [Thread-22] c.s.integ.service.ProviderClaimsService  : ---------CHECKING IF CLAIM EXIST---------------AAR210511335
+2021-08-17 08:59:28.075  INFO 26872 --- [Thread-24] c.s.integ.service.ProviderClaimsService  : ---------CHECKING IF CLAIM EXIST---------------AAR211219005
+2021-08-17 08:59:31.078  INFO 26872 --- [Thread-26] c.s.integ.service.ProviderClaimsService  : ---------CHECKING IF CLAIM EXIST---------------AAR211219284
