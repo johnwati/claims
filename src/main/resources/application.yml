@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: integ-ms-aarpro-edi
+    name: abacus-ms-edi-kra-invoice-claims
   profiles:
     active: default
     
@@ -102,7 +102,7 @@ management:
 
 
 logging:
-  file: integ-ms-aarpro-edi.log
+  file: {spring.application.name}
   pattern:
     console: '%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n'
   level:
@@ -117,7 +117,9 @@ logging:
       netflix:
         loadbalancer: info   
 
-
+springdoc:
+  packagesToScan: com.smart.integ.controller;
+  version: 1.5.8
 
 
 

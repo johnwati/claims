@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorator="layout">
+<head>
+ 	<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+</head>
+<body>
+
+	<div layout:fragment="content">
+		<h1>List KraEdiClaim</h1>
+		<hr />
+		<a th:href="@{/kraediclaims/new}">New KraEdiClaim</a><br/><br/>
+		
+		<table class="table">
+			<thead>
+				<tr>
+					<th>POLICY_NUMBER</th> 
+					<th>PROVIDER_CODE</th> 
+					<th>MEMBERSHIP_NUMBER</th> 
+					<th>MEMBER_NAME</th> 
+					<th>CARD_SERIAL</th> 
+					<th>TRANSACTION_DATE</th> 
+					<th>SERVICE_DESCRIPTION</th> 
+					<th>BENEFIT_CODE</th> 
+					<th>AMOUNT</th> 
+					<th>DATE_RECEIVED</th> 
+					<th>PROVIDER_CLAIM_ID</th> 
+					<th>SMART_INVOICE_NR</th> 
+					<th>ADMIT_ID</th> 
+					<th>CLN_UNIQUE_MEM_NUMBER</th> 
+					<th>ERROR_DESCRIPTION</th> 
+					<th>CLN_BEN_CLAUSE_CODE</th> 
+					<th>INSURER_ID</th> 
+					<th>CLAIM_ID</th> 
+					<th>INSERT_DATE</th> 
+					<th>STAFF_NUMBER</th> 
+					<th>COUNTRY_CODE</th> 
+					<th>LOG_TIME</th> 
+					<th>CURRENCY_CODE</th> 
+					<th>CURRENCY_CONV_RATE</th> 
+					<th>IS_ROAMING</th> 
+					<th>ROAMING_AMOUNT</th> 
+					<th>ROAMING_COUNTRY</th> 
+					<th>DIAGNOSIS_CODE</th> 
+					<th>DIAGNOSIS_DESCRIPTION</th> 
+					<th>POLICY_CURRENCY_CODE</th> 
+					<th>PICKED_DATE</th> 
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="kraediclaim : ${listKraEdiClaim}">
+					<td th:text="${kraediclaim.POLICY_NUMBER}"></td> 
+					<td th:text="${kraediclaim.PROVIDER_CODE}"></td> 
+					<td th:text="${kraediclaim.MEMBERSHIP_NUMBER}"></td> 
+					<td th:text="${kraediclaim.MEMBER_NAME}"></td> 
+					<td th:text="${kraediclaim.CARD_SERIAL}"></td> 
+					<td th:text="${kraediclaim.TRANSACTION_DATE}"></td> 
+					<td th:text="${kraediclaim.SERVICE_DESCRIPTION}"></td> 
+					<td th:text="${kraediclaim.BENEFIT_CODE}"></td> 
+					<td th:text="${kraediclaim.AMOUNT}"></td> 
+					<td th:text="${kraediclaim.DATE_RECEIVED}"></td> 
+					<td th:text="${kraediclaim.PROVIDER_CLAIM_ID}"></td> 
+					<td th:text="${kraediclaim.SMART_INVOICE_NR}"></td> 
+					<td th:text="${kraediclaim.ADMIT_ID}"></td> 
+					<td th:text="${kraediclaim.CLN_UNIQUE_MEM_NUMBER}"></td> 
+					<td th:text="${kraediclaim.ERROR_DESCRIPTION}"></td> 
+					<td th:text="${kraediclaim.CLN_BEN_CLAUSE_CODE}"></td> 
+					<td th:text="${kraediclaim.INSURER_ID}"></td> 
+					<td th:text="${kraediclaim.CLAIM_ID}"></td> 
+					<td th:text="${kraediclaim.INSERT_DATE}"></td> 
+					<td th:text="${kraediclaim.STAFF_NUMBER}"></td> 
+					<td th:text="${kraediclaim.COUNTRY_CODE}"></td> 
+					<td th:text="${kraediclaim.LOG_TIME}"></td> 
+					<td th:text="${kraediclaim.CURRENCY_CODE}"></td> 
+					<td th:text="${kraediclaim.CURRENCY_CONV_RATE}"></td> 
+					<td th:text="${kraediclaim.IS_ROAMING}"></td> 
+					<td th:text="${kraediclaim.ROAMING_AMOUNT}"></td> 
+					<td th:text="${kraediclaim.ROAMING_COUNTRY}"></td> 
+					<td th:text="${kraediclaim.DIAGNOSIS_CODE}"></td> 
+					<td th:text="${kraediclaim.DIAGNOSIS_DESCRIPTION}"></td> 
+					<td th:text="${kraediclaim.POLICY_CURRENCY_CODE}"></td> 
+					<td th:text="${kraediclaim.PICKED_DATE}"></td> 
+					<td>
+							<a th:href="@{/kraediclaims/{id}(id = ${kraediclaim.id})}">Show</a> 
+					 		<a th:href="@{/kraediclaims/{id}/edit(id = ${kraediclaim.id})}">Edit</a> 
+							<a href="#">Destroy</a> 
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

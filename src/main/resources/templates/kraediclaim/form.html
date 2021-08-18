@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+<title>New KraEdiClaim</title>
+</head>
+<body>
+	<div layout:fragment="content">
+		<h1 th:if="${kraediclaim.id == null}">New KraEdiClaim</h1>
+		<h1 th:if="${kraediclaim.id != null}">Edit KraEdiClaim</h1>
+		<hr />
+		<form th:action="@{/kraediclaims}" th:method="@{${kraediclaim.id == null} ? 'post' : 'put'}"
+			th:object="${kraediclaim}">
+			<input type="hidden" th:field="*{id}" /> 
+			
+				<div class="form-group"> 
+					<label for="POLICY_NUMBER">POLICY_NUMBER</label>  
+					<input id="POLICY_NUMBER" name="POLICY_NUMBER" type="text" class="form-control" th:field="*{POLICY_NUMBER}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PROVIDER_CODE">PROVIDER_CODE</label>  
+					<input id="PROVIDER_CODE" name="PROVIDER_CODE" type="text" class="form-control" th:field="*{PROVIDER_CODE}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="MEMBERSHIP_NUMBER">MEMBERSHIP_NUMBER</label>  
+					<input id="MEMBERSHIP_NUMBER" name="MEMBERSHIP_NUMBER" type="text" class="form-control" th:field="*{MEMBERSHIP_NUMBER}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="MEMBER_NAME">MEMBER_NAME</label>  
+					<input id="MEMBER_NAME" name="MEMBER_NAME" type="text" class="form-control" th:field="*{MEMBER_NAME}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CARD_SERIAL">CARD_SERIAL</label>  
+					<input id="CARD_SERIAL" name="CARD_SERIAL" type="text" class="form-control" th:field="*{CARD_SERIAL}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TRANSACTION_DATE">TRANSACTION_DATE</label>  
+					<input id="TRANSACTION_DATE" name="TRANSACTION_DATE" type="text" class="form-control" th:field="*{TRANSACTION_DATE}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="SERVICE_DESCRIPTION">SERVICE_DESCRIPTION</label>  
+					<input id="SERVICE_DESCRIPTION" name="SERVICE_DESCRIPTION" type="text" class="form-control" th:field="*{SERVICE_DESCRIPTION}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BENEFIT_CODE">BENEFIT_CODE</label>  
+					<input id="BENEFIT_CODE" name="BENEFIT_CODE" type="text" class="form-control" th:field="*{BENEFIT_CODE}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="AMOUNT">AMOUNT</label>  
+					<input id="AMOUNT" name="AMOUNT" type="text" class="form-control" th:field="*{AMOUNT}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="DATE_RECEIVED">DATE_RECEIVED</label>  
+					<input id="DATE_RECEIVED" name="DATE_RECEIVED" type="text" class="form-control" th:field="*{DATE_RECEIVED}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PROVIDER_CLAIM_ID">PROVIDER_CLAIM_ID</label>  
+					<input id="PROVIDER_CLAIM_ID" name="PROVIDER_CLAIM_ID" type="text" class="form-control" th:field="*{PROVIDER_CLAIM_ID}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="SMART_INVOICE_NR">SMART_INVOICE_NR</label>  
+					<input id="SMART_INVOICE_NR" name="SMART_INVOICE_NR" type="text" class="form-control" th:field="*{SMART_INVOICE_NR}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="ADMIT_ID">ADMIT_ID</label>  
+					<input id="ADMIT_ID" name="ADMIT_ID" type="text" class="form-control" th:field="*{ADMIT_ID}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CLN_UNIQUE_MEM_NUMBER">CLN_UNIQUE_MEM_NUMBER</label>  
+					<input id="CLN_UNIQUE_MEM_NUMBER" name="CLN_UNIQUE_MEM_NUMBER" type="text" class="form-control" th:field="*{CLN_UNIQUE_MEM_NUMBER}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="ERROR_DESCRIPTION">ERROR_DESCRIPTION</label>  
+					<input id="ERROR_DESCRIPTION" name="ERROR_DESCRIPTION" type="text" class="form-control" th:field="*{ERROR_DESCRIPTION}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CLN_BEN_CLAUSE_CODE">CLN_BEN_CLAUSE_CODE</label>  
+					<input id="CLN_BEN_CLAUSE_CODE" name="CLN_BEN_CLAUSE_CODE" type="text" class="form-control" th:field="*{CLN_BEN_CLAUSE_CODE}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="INSURER_ID">INSURER_ID</label>  
+					<input id="INSURER_ID" name="INSURER_ID" type="text" class="form-control" th:field="*{INSURER_ID}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CLAIM_ID">CLAIM_ID</label>  
+					<input id="CLAIM_ID" name="CLAIM_ID" type="text" class="form-control" th:field="*{CLAIM_ID}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="INSERT_DATE">INSERT_DATE</label>  
+					<input id="INSERT_DATE" name="INSERT_DATE" type="text" class="form-control" th:field="*{INSERT_DATE}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="STAFF_NUMBER">STAFF_NUMBER</label>  
+					<input id="STAFF_NUMBER" name="STAFF_NUMBER" type="text" class="form-control" th:field="*{STAFF_NUMBER}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="COUNTRY_CODE">COUNTRY_CODE</label>  
+					<input id="COUNTRY_CODE" name="COUNTRY_CODE" type="text" class="form-control" th:field="*{COUNTRY_CODE}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="LOG_TIME">LOG_TIME</label>  
+					<input id="LOG_TIME" name="LOG_TIME" type="text" class="form-control" th:field="*{LOG_TIME}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CURRENCY_CODE">CURRENCY_CODE</label>  
+					<input id="CURRENCY_CODE" name="CURRENCY_CODE" type="text" class="form-control" th:field="*{CURRENCY_CODE}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CURRENCY_CONV_RATE">CURRENCY_CONV_RATE</label>  
+					<input id="CURRENCY_CONV_RATE" name="CURRENCY_CONV_RATE" type="text" class="form-control" th:field="*{CURRENCY_CONV_RATE}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IS_ROAMING">IS_ROAMING</label>  
+					<input id="IS_ROAMING" name="IS_ROAMING" type="text" class="form-control" th:field="*{IS_ROAMING}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="ROAMING_AMOUNT">ROAMING_AMOUNT</label>  
+					<input id="ROAMING_AMOUNT" name="ROAMING_AMOUNT" type="text" class="form-control" th:field="*{ROAMING_AMOUNT}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="ROAMING_COUNTRY">ROAMING_COUNTRY</label>  
+					<input id="ROAMING_COUNTRY" name="ROAMING_COUNTRY" type="text" class="form-control" th:field="*{ROAMING_COUNTRY}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="DIAGNOSIS_CODE">DIAGNOSIS_CODE</label>  
+					<input id="DIAGNOSIS_CODE" name="DIAGNOSIS_CODE" type="text" class="form-control" th:field="*{DIAGNOSIS_CODE}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="DIAGNOSIS_DESCRIPTION">DIAGNOSIS_DESCRIPTION</label>  
+					<input id="DIAGNOSIS_DESCRIPTION" name="DIAGNOSIS_DESCRIPTION" type="text" class="form-control" th:field="*{DIAGNOSIS_DESCRIPTION}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="POLICY_CURRENCY_CODE">POLICY_CURRENCY_CODE</label>  
+					<input id="POLICY_CURRENCY_CODE" name="POLICY_CURRENCY_CODE" type="text" class="form-control" th:field="*{POLICY_CURRENCY_CODE}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PICKED_DATE">PICKED_DATE</label>  
+					<input id="PICKED_DATE" name="PICKED_DATE" type="text" class="form-control" th:field="*{PICKED_DATE}" />  
+				</div> 
+
+			<button type="submit" class="btn btn-success">Save</button>
+			<a th:href="@{/kraediclaims}" class="btn btn-default">Back</a>
+		</form>
+	</div>
+</body>
+</html>

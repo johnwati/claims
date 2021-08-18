@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+<title>Show KraEdiClaim</title>
+</head>
+<body>
+	<div layout:fragment="content">
+		<h1>Show KraEdiClaim</h1>
+		<hr />
+		<div class="form-group"> 
+			<label for="POLICY_NUMBER">POLICY_NUMBER: </label>  
+			<span th:text="${kraediclaim.POLICY_NUMBER}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PROVIDER_CODE">PROVIDER_CODE: </label>  
+			<span th:text="${kraediclaim.PROVIDER_CODE}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="MEMBERSHIP_NUMBER">MEMBERSHIP_NUMBER: </label>  
+			<span th:text="${kraediclaim.MEMBERSHIP_NUMBER}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="MEMBER_NAME">MEMBER_NAME: </label>  
+			<span th:text="${kraediclaim.MEMBER_NAME}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CARD_SERIAL">CARD_SERIAL: </label>  
+			<span th:text="${kraediclaim.CARD_SERIAL}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="TRANSACTION_DATE">TRANSACTION_DATE: </label>  
+			<span th:text="${kraediclaim.TRANSACTION_DATE}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="SERVICE_DESCRIPTION">SERVICE_DESCRIPTION: </label>  
+			<span th:text="${kraediclaim.SERVICE_DESCRIPTION}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BENEFIT_CODE">BENEFIT_CODE: </label>  
+			<span th:text="${kraediclaim.BENEFIT_CODE}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="AMOUNT">AMOUNT: </label>  
+			<span th:text="${kraediclaim.AMOUNT}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="DATE_RECEIVED">DATE_RECEIVED: </label>  
+			<span th:text="${kraediclaim.DATE_RECEIVED}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PROVIDER_CLAIM_ID">PROVIDER_CLAIM_ID: </label>  
+			<span th:text="${kraediclaim.PROVIDER_CLAIM_ID}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="SMART_INVOICE_NR">SMART_INVOICE_NR: </label>  
+			<span th:text="${kraediclaim.SMART_INVOICE_NR}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="ADMIT_ID">ADMIT_ID: </label>  
+			<span th:text="${kraediclaim.ADMIT_ID}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CLN_UNIQUE_MEM_NUMBER">CLN_UNIQUE_MEM_NUMBER: </label>  
+			<span th:text="${kraediclaim.CLN_UNIQUE_MEM_NUMBER}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="ERROR_DESCRIPTION">ERROR_DESCRIPTION: </label>  
+			<span th:text="${kraediclaim.ERROR_DESCRIPTION}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CLN_BEN_CLAUSE_CODE">CLN_BEN_CLAUSE_CODE: </label>  
+			<span th:text="${kraediclaim.CLN_BEN_CLAUSE_CODE}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="INSURER_ID">INSURER_ID: </label>  
+			<span th:text="${kraediclaim.INSURER_ID}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CLAIM_ID">CLAIM_ID: </label>  
+			<span th:text="${kraediclaim.CLAIM_ID}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="INSERT_DATE">INSERT_DATE: </label>  
+			<span th:text="${kraediclaim.INSERT_DATE}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="STAFF_NUMBER">STAFF_NUMBER: </label>  
+			<span th:text="${kraediclaim.STAFF_NUMBER}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="COUNTRY_CODE">COUNTRY_CODE: </label>  
+			<span th:text="${kraediclaim.COUNTRY_CODE}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="LOG_TIME">LOG_TIME: </label>  
+			<span th:text="${kraediclaim.LOG_TIME}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CURRENCY_CODE">CURRENCY_CODE: </label>  
+			<span th:text="${kraediclaim.CURRENCY_CODE}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CURRENCY_CONV_RATE">CURRENCY_CONV_RATE: </label>  
+			<span th:text="${kraediclaim.CURRENCY_CONV_RATE}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IS_ROAMING">IS_ROAMING: </label>  
+			<span th:text="${kraediclaim.IS_ROAMING}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="ROAMING_AMOUNT">ROAMING_AMOUNT: </label>  
+			<span th:text="${kraediclaim.ROAMING_AMOUNT}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="ROAMING_COUNTRY">ROAMING_COUNTRY: </label>  
+			<span th:text="${kraediclaim.ROAMING_COUNTRY}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="DIAGNOSIS_CODE">DIAGNOSIS_CODE: </label>  
+			<span th:text="${kraediclaim.DIAGNOSIS_CODE}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="DIAGNOSIS_DESCRIPTION">DIAGNOSIS_DESCRIPTION: </label>  
+			<span th:text="${kraediclaim.DIAGNOSIS_DESCRIPTION}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="POLICY_CURRENCY_CODE">POLICY_CURRENCY_CODE: </label>  
+			<span th:text="${kraediclaim.POLICY_CURRENCY_CODE}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PICKED_DATE">PICKED_DATE: </label>  
+			<span th:text="${kraediclaim.PICKED_DATE}"></span> 
+		</div> 
+
+		<a th:href="@{/kraediclaims/{id}/edit(id = ${kraediclaim.id})}">Edit this record</a> <br/>
+		<a href="#">Delete this record</a> <br/>
+		<a th:href="@{/kraediclaims}">Back to list KraEdiClaim</a> <br/>
+	</div>
+</body>
+</html>

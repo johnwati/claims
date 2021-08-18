@@ -1,0 +1,5 @@
+package:com.smart.integ.db.abacus
+dataBaseName:mydb
+username:root
+password:root
+springVersion:1.x
