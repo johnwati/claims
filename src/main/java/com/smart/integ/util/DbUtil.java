@@ -1,6 +1,6 @@
-package com.finaccess.groboxcooperative.util;
+package com.smart.integ.util;
 
-import com.finaccess.groboxcooperative.infrastructure.exception.APIException;
+import com.smart.integ.infrastructure.exception.APIException;
 
 import java.sql.*;
 import java.util.List;

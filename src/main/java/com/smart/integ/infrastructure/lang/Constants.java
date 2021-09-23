@@ -1,4 +1,4 @@
-package com.finaccess.groboxcooperative.infrastructure.lang;
+package com.smart.integ.infrastructure.lang;
 
 /**
  *

@@ -1,4 +1,4 @@
-package com.finaccess.groboxcooperative.util;
+package com.smart.integ.util;
 
 public class QueryClass {
     Object id;

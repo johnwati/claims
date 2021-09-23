@@ -1,4 +1,4 @@
-package com.finaccess.groboxcooperative.infrastructure.utility;
+package com.smart.integ.infrastructure.utility;
   
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;

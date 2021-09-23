@@ -1,5 +1,5 @@
 server:
-  port: 8301
+  port: 8310
 
 spring:
   application:
@@ -50,9 +50,9 @@ integ:
 
 abacus:
   datasource:
-    jdbc-url: ${abacus.datasource.url}
-    username: ${abacus.datasource.username}
-    password: ${abacus.datasource.password}
+    jdbc-url: ${abacus.prod.datasource.url}
+    username: ${abacus.prod.datasource.username}
+    password: ${abacus.prod.datasource.password}
     driver-class-name: oracle.jdbc.driver.OracleDriver
     
 aar:

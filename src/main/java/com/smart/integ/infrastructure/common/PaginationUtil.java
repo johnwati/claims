@@ -1,8 +1,8 @@
 package com.smart.integ.infrastructure.common;
-
-import com.finaccess.groboxcooperative.infrastructure.exception.APIException;
-import com.finaccess.groboxcooperative.infrastructure.utility.PageDetails;
-import com.finaccess.groboxcooperative.infrastructure.utility.Pager;
+  
+import com.smart.integ.infrastructure.exception.APIException;
+import com.smart.integ.infrastructure.utility.PageDetails;
+import com.smart.integ.infrastructure.utility.Pager;
 import org.springframework.data.domain.*;
 import org.springframework.http.HttpHeaders;
 import org.springframework.util.MultiValueMap;

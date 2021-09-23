@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.finaccess.groboxcooperative.infrastructure.utility;
+package com.smart.integ.infrastructure.utility;
 
-import com.finaccess.groboxcooperative.infrastructure.lang.Constants;
+import com.smart.integ.infrastructure.lang.Constants;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;

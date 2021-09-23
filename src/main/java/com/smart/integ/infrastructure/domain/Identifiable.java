@@ -1,4 +1,4 @@
-package com.finaccess.groboxcooperative.infrastructure.domain;
+package com.smart.integ.infrastructure.domain;
 
 import lombok.EqualsAndHashCode;
 

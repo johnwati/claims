@@ -1,7 +1,7 @@
 package com.smart.integ.controller;
 
-import com.finaccess.groboxcooperative.infrastructure.utility.PageDetails;
-import com.finaccess.groboxcooperative.infrastructure.utility.Pager;
+import com.smart.integ.infrastructure.utility.PageDetails;
+import com.smart.integ.infrastructure.utility.Pager;
 import com.smart.integ.db.abacus.EdiClaimDto;
 import java.util.List;
 

@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-package com.finaccess.groboxcooperative.infrastructure.common;
+package com.smart.integ.infrastructure.common;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;

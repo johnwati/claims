@@ -1,4 +1,4 @@
-package com.finaccess.groboxcooperative.infrastructure.exception;
+package com.smart.integ.infrastructure.exception;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;

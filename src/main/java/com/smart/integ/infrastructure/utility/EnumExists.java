@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.finaccess.groboxcooperative.infrastructure.utility;
+package com.smart.integ.infrastructure.utility;
 
 /**
  *

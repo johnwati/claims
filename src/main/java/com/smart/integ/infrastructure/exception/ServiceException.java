@@ -1,4 +1,4 @@
-package com.finaccess.groboxcooperative.infrastructure.exception;
+package com.smart.integ.infrastructure.exception;
 
 public class ServiceException extends RuntimeException {
 

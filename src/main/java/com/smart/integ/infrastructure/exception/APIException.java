@@ -1,4 +1,4 @@
-package com.finaccess.groboxcooperative.infrastructure.exception;
+package com.smart.integ.infrastructure.exception;
 
 import org.springframework.http.HttpStatus;
 

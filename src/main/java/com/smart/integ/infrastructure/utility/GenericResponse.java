@@ -1,4 +1,4 @@
-package com.finaccess.groboxcooperative.infrastructure.utility;
+package com.smart.integ.infrastructure.utility;
 
 import org.springframework.validation.FieldError;
 import org.springframework.validation.ObjectError;

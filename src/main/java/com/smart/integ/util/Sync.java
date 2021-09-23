@@ -1,6 +1,5 @@
 package com.smart.integ.util;
-
-import com.finaccess.groboxcooperative.infrastructure.exception.APIException;
+ 
 import com.smart.integ.util.Common;
 
 import java.beans.BeanInfo;

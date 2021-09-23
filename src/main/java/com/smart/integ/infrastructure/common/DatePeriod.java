@@ -1,4 +1,4 @@
-package com.finaccess.groboxcooperative.infrastructure.common;
+package com.smart.integ.infrastructure.common;
 
 public enum DatePeriod {
     MONTH_TO_DATE,
